@@ -1,0 +1,28 @@
+{
+  "assets": {
+    "test": {
+      "type": "image",
+      "source": "assets/images/background.png"
+    }
+  },
+  "groups": [
+    "test"
+  ],
+  "prefabs": {
+    "test": {
+      "type": "test",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "test",
+        "group": "test",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    }
+  }
+}
