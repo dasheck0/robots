@@ -7,17 +7,11 @@
 let Template = Template || {};
 
 Template.Robot = function (state, name, position, properties) {
-    Phaser.Sprite.call(this, state.game, position.x, position.y, properties.key);
+    Template.Prefab.call(this, state, name, position, properties);
 
-    this.state = state;
-    this.name = name;
     this.dropped = false;
-
     this.anchor.setTo(0.5);
     this.dropRobot();
-
-    this.state.groups[properties.group].add(this);
-    this.state.prefabs[name] = this;
 };
 
 Template.Robot.prototype = Object.create(Phaser.Sprite.prototype);
@@ -63,8 +57,11 @@ Template.Robot.prototype.render = function () {
 }
 
 Template.Robot.prototype.dropRobot = function () {
-    this.scale.setTo(4);
-    const tween = this.game.add.tween(this.scale).to({ x: 0.5, y: 0.5 }, 750, Phaser.Easing.Bounce.Out, true);
+    this.scale.setTo(Template.scale * 8);
+    const tween = this.game.add.tween(this.scale).to({
+        x: Template.scale,
+        y: Template.scale
+    }, 750, Phaser.Easing.Bounce.Out, true);
     tween.onComplete.add(this.initializeRobot, this);
 }
 
@@ -79,7 +76,7 @@ Template.Robot.prototype.initializeRobot = function () {
 
     this.weapon = this.game.add.weapon(10, 'bullet');
     this.weapon.bullets.forEach((bullet) => {
-        bullet.scale.setTo(0.5);
+        bullet.scale.setTo(Template.scale);
     }, this);
     this.weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
     this.weapon.bulletSpeed = 600;

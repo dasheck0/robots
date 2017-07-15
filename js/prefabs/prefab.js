@@ -6,8 +6,7 @@
 let Template = Template || {};
 
 Template.Prefab = function (state, name, position, properties) {
-    "use strict";
-
+    console.log(state, name, position, properties);
     Phaser.Sprite.call(this, state.game, position.x, position.y, properties.key);
 
     this.state = state;
@@ -21,8 +20,6 @@ Template.Prefab = function (state, name, position, properties) {
     if (properties.frame) {
         this.frame = properties.frame;
     }
-
-    
 };
 
 Template.Prefab.prototype = Object.create(Phaser.Sprite.prototype);
