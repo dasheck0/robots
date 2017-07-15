@@ -48,17 +48,6 @@
     "robots"
   ],
   "prefabs": {
-    "crateWood": {
-      "type": "chest",
-      "position": {
-        "x": 100,
-        "y": 100
-      },
-      "properties": {
-        "group": "chests",
-        "key": "crateWood"
-      }
-    },
     "robotSpawner": {
       "type": "robotSpawner",
       "position": {
