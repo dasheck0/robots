@@ -40,5 +40,7 @@ Template.Spawner.prototype.spawn = function () {
 
     if (this.properties.mode === 'infinite') {
         this.scheduleSpawn();
+    } else if (this.properties.mode === 'limited' && this.ppol.countLiving() < this.properties.limit) {
+        this.scheduleSpawn();
     }
 }
