@@ -7,14 +7,12 @@
 let Template = Template || {};
 
 Template.Robot = function (state, name, position, properties) {
-    Template.Prefab.call(this, state, name, position, properties);
+    Template.Droppable.call(this, state, name, position, properties);
 
-    this.dropped = false;
     this.anchor.setTo(0.5);
-    this.dropRobot();
 };
 
-Template.Robot.prototype = Object.create(Phaser.Sprite.prototype);
+Template.Robot.prototype = Object.create(Template.Droppable.prototype);
 Template.Robot.prototype.constructor = Template.Robot;
 
 Template.Robot.prototype.updateLife = function (life) {
@@ -46,6 +44,8 @@ Template.Robot.prototype.update = function () {
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
                 this.weapon.fire();
             }
+
+            this.game.physics.arcade.overlap(this.weapon.bullets, this.state.groups.chests, this.onBulletChestCollide, null, this);
         }
     }
 }
@@ -56,21 +56,11 @@ Template.Robot.prototype.render = function () {
     }, this)
 }
 
-Template.Robot.prototype.dropRobot = function () {
-    this.scale.setTo(Template.scale * 8);
-    const tween = this.game.add.tween(this.scale).to({
-        x: Template.scale,
-        y: Template.scale
-    }, 750, Phaser.Easing.Bounce.Out, true);
-    tween.onComplete.add(this.initializeRobot, this);
-}
-
-Template.Robot.prototype.initializeRobot = function () {
-    this.dropped = true;
-
+Template.Robot.prototype.initializeObject = function () {
     /* Physics */
 
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
+    this.body.mass = 1;
 
     /* Weapon */
 
@@ -90,4 +80,9 @@ Template.Robot.prototype.initializeRobot = function () {
     this.life.scale.setTo(1);
     this.life.angle = 90;
     this.addChild(this.life);
+}
+
+Template.Robot.prototype.onBulletChestCollide = function (bullet, chest) {
+    bullet.kill();
+    chest.kill();
 }
