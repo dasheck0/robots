@@ -30,15 +30,25 @@ Template.Robot.prototype.update = function () {
 
         if (this.dropped) {
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
-                this.body.angularVelocity -= 200;
+                this.angle -= 4;
             } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
-                this.body.angularVelocity += 200;
+                this.angle += 4;
             }
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
-                this.game.physics.arcade.velocityFromAngle(this.angle, 300, this.body.velocity);
+                this.currentSpeed = this.properties.speed;
             } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
-                this.game.physics.arcade.velocityFromAngle(this.angle, -300, this.body.velocity);
+                this.currentSpeed = -this.properties.speed;
+            } else {
+                if (this.currentSpeed > 0) {
+                    this.currentSpeed -= this.properties.friction;
+                } else {
+                    this.currentSpeed += this.properties.friction;
+                }
+            }
+
+            if (this.currentSpeed !== 0) {
+                this.game.physics.arcade.velocityFromRotation(this.rotation, this.currentSpeed, this.body.velocity);
             }
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
@@ -60,8 +70,8 @@ Template.Robot.prototype.initializeObject = function () {
     /* Physics */
 
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
-    this.body.mass = 1;
-
+    this.currentSpeed = 0;
+    this.body.maxVelocity.setTo(400);
     /* Weapon */
 
     this.weapon = this.game.add.weapon(10, 'bullet');

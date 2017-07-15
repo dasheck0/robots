@@ -14,6 +14,8 @@ Template.RobotSpawner.prototype.constructor = Template.RobotSpawner;
 Template.RobotSpawner.prototype.createObject = function (name, position) {
     return new Template.Robot(this.state, name, position, {
         "group": "robots",
-        "key": "robot3Dblue"
+        "key": "robot3Dblue",
+        "friction": 10,
+        "speed": 500
     });
 }
