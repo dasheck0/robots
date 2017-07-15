@@ -1,39 +1,36 @@
 {
   "assets": {
-    "cardBack": {
+    "robot3Dblue": {
       "type": "image",
-      "source": "assets/images/cardBack.png"
+      "source": "assets/images/robot_3Dblue.png"
     },
-    "cardFront": {
+    "robot3Dgreen": {
       "type": "image",
-      "source": "assets/images/cardFront.png"
+      "source": "assets/images/robot_3Dgreen.png"
+    },
+    "robot3Dred": {
+      "type": "image",
+      "source": "assets/images/robot_3Dred.png"
+    },
+    "robot3Dyellow": {
+      "type": "image",
+      "source": "assets/images/robot_3Dyellow.png"
     }
   },
   "groups": [
     "background",
-    "cards"
+    "robots"
   ],
   "prefabs": {
-    "card": {
-      "type": "sprite",
-      "position": {
-        "x": 0,
-        "y": 0
-      },
-      "properties": {
-        "key": "cardBack",
-        "group": "cards"
-      }
-    },
     "card2": {
-      "type": "card",
+      "type": "robot",
       "position": {
         "x": 250,
         "y": 0
       },
       "properties": {
-        "group": "cards",
-        "name": "Green tank"
+        "group": "robots",
+        "key": "robot3Dblue"
       }
     }
   }

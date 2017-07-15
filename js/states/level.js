@@ -9,7 +9,7 @@ Template.Level = function () {
 
     this.prefabClasses = {
         'sprite': Template.Prefab.prototype.constructor,
-        'card': Template.Card.prototype.constructor
+        'robot': Template.Robot.prototype.constructor
     }
 };
 
