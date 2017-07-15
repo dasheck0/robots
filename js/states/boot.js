@@ -6,7 +6,6 @@
 let Template = Template || {};
 
 Template.Boot = function () {
-    "use strict";
     Phaser.State.call(this);
 };
 
@@ -14,22 +13,19 @@ Template.Boot.prototype = Object.create(Phaser.State.prototype);
 Template.Boot.prototype.constructor = Template.Boot;
 
 Template.Boot.prototype.init = function (data) {
-    "use strict";
     this.data = data;
 };
 
 Template.Boot.prototype.preload = function () {
-    "use strict";
-    this.load.text("data", this.data);
+    this.load.text('data', this.data);
 };
 
 Template.Boot.prototype.create = function () {
-    "use strict";
-    var content = this.game.cache.getText("data");
+    var content = this.game.cache.getText('data');
     var payload = JSON.parse(content);
 
     this.prepareScreenForScaling();
-    this.game.state.start("loading", true, false, payload);
+    this.game.state.start('loading', true, false, payload);
 };
 
 Template.Boot.prototype.prepareScreenForScaling = function () {
