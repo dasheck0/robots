@@ -11,7 +11,8 @@ Template.Level = function () {
         'sprite': Template.Prefab.prototype.constructor,
         'robot': Template.Robot.prototype.constructor,
         'spawner': Template.Spawner.prototype.constructor,
-        'robotSpawner': Template.RobotSpawner.prototype.constructor
+        'robotSpawner': Template.RobotSpawner.prototype.constructor,
+        'chest': Template.Chest.prototype.constructor
     }
 };
 
@@ -43,6 +44,6 @@ Template.Level.prototype.createPrefab = function (prefabName, properties) {
     }
 };
 
-Template.Level.prototype.render = function () {
-    // this.prefabs.robot.render();
+Template.Level.prototype.update = function () {
+    this.game.physics.arcade.collide(this.groups.chests, this.groups.robots);
 }
