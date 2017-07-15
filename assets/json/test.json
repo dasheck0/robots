@@ -1,27 +1,39 @@
 {
   "assets": {
-    "test": {
+    "cardBack": {
       "type": "image",
-      "source": "assets/images/background.png"
+      "source": "assets/images/cardBack.png"
+    },
+    "cardFront": {
+      "type": "image",
+      "source": "assets/images/cardFront.png"
     }
   },
   "groups": [
-    "test"
+    "background",
+    "cards"
   ],
   "prefabs": {
-    "test": {
-      "type": "test",
+    "card": {
+      "type": "sprite",
       "position": {
         "x": 0,
         "y": 0
       },
       "properties": {
-        "key": "test",
-        "group": "test",
-        "anchor": {
-          "x": 0.5,
-          "y": 0.5
-        }
+        "key": "cardBack",
+        "group": "cards"
+      }
+    },
+    "card2": {
+      "type": "card",
+      "position": {
+        "x": 250,
+        "y": 0
+      },
+      "properties": {
+        "group": "cards",
+        "name": "Green tank"
       }
     }
   }

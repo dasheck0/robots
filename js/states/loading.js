@@ -3,7 +3,7 @@
  */
 
 
-var Template = Template || {};
+let Template = Template || {};
 
 Template.Loading = function () {
     "use strict";

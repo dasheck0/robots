@@ -3,7 +3,7 @@
  */
 
 
-var Template = Template || {};
+let Template = Template || {};
 
 Template.Prefab = function (state, name, position, properties) {
     "use strict";
@@ -12,10 +12,17 @@ Template.Prefab = function (state, name, position, properties) {
 
     this.state = state;
     this.name = name;
-
-    this.state.groups[properties.group].add(this);
-    this.frame = properties.frame;
     this.state.prefabs[name] = this;
+
+    if (properties.group) {
+        this.state.groups[properties.group].add(this);
+    }
+
+    if (properties.frame) {
+        this.frame = properties.frame;
+    }
+
+    
 };
 
 Template.Prefab.prototype = Object.create(Phaser.Sprite.prototype);
