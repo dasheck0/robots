@@ -37,4 +37,8 @@ Template.Spawner.prototype.spawn = function () {
         const name = `object_${this.pool.countLiving()}`;
         object = this.createObject(name, position);
     }
+
+    if (this.properties.mode === 'infinite') {
+        this.scheduleSpawn();
+    }
 }

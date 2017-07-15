@@ -12,6 +12,7 @@ Template.Level = function () {
         'robot': Template.Robot.prototype.constructor,
         'spawner': Template.Spawner.prototype.constructor,
         'robotSpawner': Template.RobotSpawner.prototype.constructor,
+        'chestSpawner': Template.ChestSpawner.prototype.constructor,
         'chest': Template.Chest.prototype.constructor
     }
 };
