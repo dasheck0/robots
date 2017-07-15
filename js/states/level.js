@@ -25,7 +25,7 @@ Template.Level.prototype.create = function () {
     this.game.stage.backgroundColor = '#212A31';
     this.groups = {};
     this.prefabs = {};
-    
+
     this.data.groups.forEach(groupName => (this.groups[groupName] = this.game.add.group()), this);
     for (var prefabName in this.data.prefabs) {
         if (this.data.prefabs.hasOwnProperty(prefabName)) {
@@ -40,3 +40,7 @@ Template.Level.prototype.createPrefab = function (prefabName, properties) {
         const prefab = new this.prefabClasses[properties.type](this, prefabName, position, properties.properties);
     }
 };
+
+Template.Level.prototype.render = function () {
+    // this.prefabs.robot.render();
+}

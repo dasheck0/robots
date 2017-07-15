@@ -15,6 +15,14 @@
     "robot3Dyellow": {
       "type": "image",
       "source": "assets/images/robot_3Dyellow.png"
+    },
+    "bullet": {
+      "type": "image",
+      "source": "assets/images/tank_bullet3.png"
+    },
+    "heart": {
+      "type": "image",
+      "source": "assets/images/hud_heartFull.png"
     }
   },
   "groups": [
@@ -22,11 +30,11 @@
     "robots"
   ],
   "prefabs": {
-    "card2": {
+    "robot": {
       "type": "robot",
       "position": {
         "x": 250,
-        "y": 0
+        "y": 150
       },
       "properties": {
         "group": "robots",
