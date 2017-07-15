@@ -23,23 +23,40 @@
     "heart": {
       "type": "image",
       "source": "assets/images/hud_heartFull.png"
+    },
+    "crateAmmo": {
+      "type": "image",
+      "source": "assets/images/tanks_crateAmmo.png"
+    },
+    "crateArmor": {
+      "type": "image",
+      "source": "assets/images/tanks_crateArmor.png"
+    },
+    "crateRepair": {
+      "type": "image",
+      "source": "assets/images/tanks_crateRepair.png"
+    },
+    "crateWood": {
+      "type": "image",
+      "source": "assets/images/tanks_crateWood.png"
     }
   },
   "groups": [
     "background",
     "spawners",
+    "chests",
     "robots"
   ],
   "prefabs": {
-    "robot": {
-      "type": "robot",
+    "crateWood": {
+      "type": "chest",
       "position": {
-        "x": 250,
-        "y": 150
+        "x": 100,
+        "y": 100
       },
       "properties": {
-        "group": "robots",
-        "key": "robot3Dblue"
+        "group": "chests",
+        "key": "crateWood"
       }
     },
     "robotSpawner": {
