@@ -27,8 +27,9 @@ goodies. These will help to upgrade your robot.
 
 ## Used assets
 
-[Robot pack](http://kenney.nl/assets/robot-pack)
-[Tanks](http://kenney.nl/assets/tanks)
+* [Robot pack](http://kenney.nl/assets/robot-pack)
+* [Tanks](http://kenney.nl/assets/tanks)
+* [Platformer Art Deluxe](http://kenney.nl/assets/platformer-art-deluxe)
 
 ## License
 
