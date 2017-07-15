@@ -16,6 +16,7 @@ Template.RobotSpawner.prototype.createObject = function (name, position) {
         "group": "robots",
         "key": "robot3Dblue",
         "friction": 10,
-        "speed": 500
+        "speed": 500,
+        "rotationSpeed": 10
     });
 }

@@ -30,9 +30,9 @@ Template.Robot.prototype.update = function () {
 
         if (this.dropped) {
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
-                this.angle -= 4;
+                this.angle -= this.properties.rotationSpeed;
             } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
-                this.angle += 4;
+                this.angle += this.properties.rotationSpeed;
             }
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
