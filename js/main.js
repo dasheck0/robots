@@ -12,7 +12,7 @@ window.onload = function () {
     game.state.add('loading', new Template.Loading());
     game.state.add('level', new Template.Level());
 
-    game.state.start('boot', true, false, 'assets/json/test.json');
+    game.state.start('boot', true, false, 'assets/json/level.json');
 
     Template.scale = 0.5;
 };
