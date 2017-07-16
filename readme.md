@@ -30,6 +30,11 @@ goodies. These will help to upgrade your robot.
 * [Robot pack](http://kenney.nl/assets/robot-pack)
 * [Tanks](http://kenney.nl/assets/tanks)
 * [Platformer Art Deluxe](http://kenney.nl/assets/platformer-art-deluxe)
+* [Hand Painted Texture - Sandstone](https://opengameart.org/content/hand-painted-texture-sandstone)
+* [Hand Painted Mountain Texture](https://opengameart.org/content/hand-painted-mountain-texture)
+* [Hand Painted Texture - Floor Tile](https://opengameart.org/content/hand-painted-texture-floor-tile)
+* [Hand Painted Grass Texture](https://opengameart.org/content/hand-painted-grass-texture)
+* [Hand Painted Sand Texture](https://opengameart.org/content/hand-painted-sand-texture-0)
 
 ## License
 

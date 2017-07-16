@@ -6,7 +6,6 @@
 let Template = Template || {};
 
 Template.Prefab = function (state, name, position, properties) {
-    console.log(state, name, position, properties);
     Phaser.Sprite.call(this, state.game, position.x, position.y, properties.key);
 
     this.state = state;
@@ -20,6 +19,10 @@ Template.Prefab = function (state, name, position, properties) {
 
     if (properties.frame) {
         this.frame = properties.frame;
+    }
+
+    if (properties.anchor) {
+        this.anchor.setTo(properties.anchor.x, properties.anchor.y);
     }
 };
 

@@ -1,5 +1,25 @@
 {
   "assets": {
+    "groundStone": {
+      "type": "image",
+      "source": "assets/images/sandstone_64.png"
+    },
+    "groundMountain": {
+      "type": "image",
+      "source": "assets/images/mountain_64.png"
+    },
+    "groundSand": {
+      "type": "image",
+      "source": "assets/images/sand_64.png"
+    },
+    "groundGrass": {
+      "type": "image",
+      "source": "assets/images/grass_64.png"
+    },
+    "groundTiled": {
+      "type": "image",
+      "source": "assets/images/tiled_64.png"
+    },
     "robot3Dblue": {
       "type": "image",
       "source": "assets/images/robot_3Dblue.png"
@@ -48,6 +68,22 @@
     "robots"
   ],
   "prefabs": {
+    "background": {
+      "type": "tileSprite",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "group": "background",
+        "key": "groundTiled",
+        "size": {
+          "width": 640,
+          "height": 360
+        },
+        "fixedToCamera": true
+      }
+    },
     "robotSpawner": {
       "type": "robotSpawner",
       "position": {

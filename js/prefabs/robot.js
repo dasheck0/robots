@@ -10,6 +10,10 @@ Template.Robot = function (state, name, position, properties) {
     Template.Droppable.call(this, state, name, position, properties);
 
     this.anchor.setTo(0.5);
+
+    this.game.camera.follow(this);
+    this.game.camera.deadzone = new Phaser.Rectangle(100, 100, 400, 200);
+    this.game.camera.focusOnXY(0, 0);
 };
 
 Template.Robot.prototype = Object.create(Template.Droppable.prototype);
@@ -45,6 +49,10 @@ Template.Robot.prototype.update = function () {
                 } else {
                     this.currentSpeed += this.properties.friction;
                 }
+
+                if (Math.abs(this.currentSpeed) <= this.properties.friction) {
+                    this.currentSpeed = 0;
+                }
             }
 
             if (this.currentSpeed !== 0) {
@@ -72,6 +80,7 @@ Template.Robot.prototype.initializeObject = function () {
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
     this.currentSpeed = 0;
     this.body.maxVelocity.setTo(400);
+    this.body.collideWorldBounds = true;
     /* Weapon */
 
     this.weapon = this.game.add.weapon(10, 'bullet');

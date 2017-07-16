@@ -9,6 +9,7 @@ Template.Level = function () {
 
     this.prefabClasses = {
         'sprite': Template.Prefab.prototype.constructor,
+        'tileSprite': Template.TileSprite.prototype.constructor,
         'robot': Template.Robot.prototype.constructor,
         'spawner': Template.Spawner.prototype.constructor,
         'robotSpawner': Template.RobotSpawner.prototype.constructor,
@@ -32,14 +33,20 @@ Template.Level.prototype.create = function () {
 
     this.data.groups.forEach(groupName => (this.groups[groupName] = this.game.add.group()), this);
     for (var prefabName in this.data.prefabs) {
+        console.log(prefabName);
+
         if (this.data.prefabs.hasOwnProperty(prefabName)) {
             this.createPrefab(prefabName, this.data.prefabs[prefabName]);
         }
     }
+
+    this.game.world.setBounds(-1000, -1000, 2000, 2000);
 };
 
 Template.Level.prototype.createPrefab = function (prefabName, properties) {
     if (this.prefabClasses.hasOwnProperty(properties.type)) {
+        console.log("fdbhsj", prefabName, properties);
+
         const position = new Phaser.Point(properties.position.x, properties.position.y);
         const prefab = new this.prefabClasses[properties.type](this, prefabName, position, properties.properties);
     }
