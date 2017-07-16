@@ -27,7 +27,7 @@ Template.Spawner.prototype.scheduleSpawn = function () {
 
 Template.Spawner.prototype.spawn = function () {
     if (this.isAllowedToSpawn()) {
-        const position = new Phaser.Point(this.game.rnd.between(0, this.game.world.width), this.game.rnd.between(0, this.game.world.height));
+        const position = new Phaser.Point(this.game.rnd.between(-Template.worldSize.x / 2, Template.worldSize.x / 2), this.game.rnd.between(-Template.worldSize.y / 2, Template.worldSize.y / 2));
 
         let object = this.pool.getFirstDead();
         if (object) {

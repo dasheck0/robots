@@ -12,7 +12,7 @@ Template.Robot = function (state, name, position, properties) {
     this.anchor.setTo(0.5);
 
     this.game.camera.follow(this);
-    this.game.camera.deadzone = new Phaser.Rectangle(100, 100, 400, 200);
+    this.game.camera.deadzone = new Phaser.Rectangle(Template.cameraPadding, Template.cameraPadding, Template.screenSize.x - 4 * Template.minimapPadding.x - Template.minimapWidth - Template.cameraPadding, Template.screenSize.y - 2 * Template.cameraPadding);
     this.game.camera.focusOnXY(0, 0);
 };
 
@@ -21,7 +21,6 @@ Template.Robot.prototype.constructor = Template.Robot;
 
 Template.Robot.prototype.updateLife = function (life) {
     const alpha = life < 0 ? 0 : (life > 1 ? 1 : life);
-    console.log("Life", life, alpha);
     this.life.alpha = alpha;
 }
 
@@ -99,6 +98,21 @@ Template.Robot.prototype.initializeObject = function () {
     this.life.scale.setTo(1);
     this.life.angle = 90;
     this.addChild(this.life);
+
+    // /* Shadow */
+    //
+    // this.shadow = this.game.add.sprite(0, 0, this.properties.key)
+    // this.shadow.tint = 0x000000;
+    // this.shadow.alpha = 0.1;
+    // this.shadow.scale.setTo(1.2);
+    // // this.shadow.angle = 90;
+    // this.shadow.anchor.setTo(0.5);
+    // this.addChild(this.shadow);
+    //
+    // this.aim = this.game.add.sprite(0, 0, this.properties.key);
+    // // this.aim.scale.setTo(Template.scale);
+    // this.aim.anchor.setTo(0.5);
+    // this.addChild(this.aim);
 }
 
 Template.Robot.prototype.onBulletChestCollide = function (bullet, chest) {

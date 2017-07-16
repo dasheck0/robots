@@ -14,7 +14,8 @@ Template.Level = function () {
         'spawner': Template.Spawner.prototype.constructor,
         'robotSpawner': Template.RobotSpawner.prototype.constructor,
         'chestSpawner': Template.ChestSpawner.prototype.constructor,
-        'chest': Template.Chest.prototype.constructor
+        'chest': Template.Chest.prototype.constructor,
+        'minimap': Template.Minimap.prototype.constructor
     }
 };
 
@@ -40,13 +41,11 @@ Template.Level.prototype.create = function () {
         }
     }
 
-    this.game.world.setBounds(-1000, -1000, 2000, 2000);
+    this.game.world.setBounds(-Template.worldSize.x / 2, -Template.worldSize.y / 2, Template.worldSize.x, Template.worldSize.y);
 };
 
 Template.Level.prototype.createPrefab = function (prefabName, properties) {
     if (this.prefabClasses.hasOwnProperty(properties.type)) {
-        console.log("fdbhsj", prefabName, properties);
-
         const position = new Phaser.Point(properties.position.x, properties.position.y);
         const prefab = new this.prefabClasses[properties.type](this, prefabName, position, properties.properties);
     }

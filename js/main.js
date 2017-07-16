@@ -13,6 +13,4 @@ window.onload = function () {
     game.state.add('level', new Template.Level());
 
     game.state.start('boot', true, false, 'assets/json/level.json');
-
-    Template.scale = 0.5;
 };

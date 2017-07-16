@@ -65,7 +65,8 @@
     "background",
     "spawners",
     "chests",
-    "robots"
+    "robots",
+    "hud"
   ],
   "prefabs": {
     "background": {
@@ -112,11 +113,22 @@
         "group": "spawners",
         "pool": "chests",
         "mode": "limited",
-        "limit": 5,
+        "limit": 15,
         "spawnTimeInSeconds": {
           "min": 1,
           "max": 3
         }
+      }
+    },
+    "minimap": {
+      "type": "minimap",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "group": "hud",
+        "alpha": 0.5
       }
     }
   }
