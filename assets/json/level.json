@@ -95,10 +95,29 @@
         "key": "",
         "group": "spawners",
         "pool": "robots",
-        "mode": "once",
+        "mode": "limited",
+        "limit": 1,
         "spawnTimeInSeconds": {
-          "min": 1,
-          "max": 3
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    "enemyRobotSpawner": {
+      "type": "enemyRobotSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "robots",
+        "mode": "limited",
+        "limit": 30,
+        "spawnTimeInSeconds": {
+          "min": 0,
+          "max": 1
         }
       }
     },
@@ -113,10 +132,10 @@
         "group": "spawners",
         "pool": "chests",
         "mode": "limited",
-        "limit": 15,
+        "limit": 25,
         "spawnTimeInSeconds": {
-          "min": 1,
-          "max": 3
+          "min": 0,
+          "max": 1
         }
       }
     },

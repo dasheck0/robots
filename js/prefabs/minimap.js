@@ -42,8 +42,6 @@ Template.Minimap.prototype.drawRectangle = function (x, y, w, h, color = 0x00000
 }
 
 Template.Minimap.prototype.drawMinimapObject = function (object, color = 0xffffff) {
-    console.log("Object", object);
-
     const x = object.world.x + Template.worldSize.x / 2;
     const y = object.world.y + Template.worldSize.y / 2;
 

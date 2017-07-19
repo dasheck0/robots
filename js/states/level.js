@@ -11,8 +11,10 @@ Template.Level = function () {
         'sprite': Template.Prefab.prototype.constructor,
         'tileSprite': Template.TileSprite.prototype.constructor,
         'robot': Template.Robot.prototype.constructor,
+        'enemyRobot': Template.EnemyRobot.prototype.constructor,
         'spawner': Template.Spawner.prototype.constructor,
         'robotSpawner': Template.RobotSpawner.prototype.constructor,
+        'enemyRobotSpawner': Template.EnemyRobotSpawner.prototype.constructor,
         'chestSpawner': Template.ChestSpawner.prototype.constructor,
         'chest': Template.Chest.prototype.constructor,
         'minimap': Template.Minimap.prototype.constructor

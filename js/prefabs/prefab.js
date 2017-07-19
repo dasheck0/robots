@@ -12,6 +12,7 @@ Template.Prefab = function (state, name, position, properties) {
     this.name = name;
     this.properties = properties;
     this.state.prefabs[name] = this;
+    this.game = state.game;
 
     if (properties.group) {
         this.state.groups[properties.group].add(this);

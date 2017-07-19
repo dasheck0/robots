@@ -4,7 +4,7 @@
 
 let Template = Template || {};
 
-Template.scale = 0.5;
+Template.scale = 0.3;
 Template.worldSize = new Phaser.Point(4000, 4000);
 Template.screenSize = new Phaser.Point(640, 360);
 Template.cameraPadding = 100;
