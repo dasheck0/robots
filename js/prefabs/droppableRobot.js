@@ -25,6 +25,8 @@ Template.DroppableRobot = function (state, name, position, properties) {
     this.weapon.bulletSpeed = 600;
     this.weapon.fireRate = 100; // 1 per 60 ms
     this.weapon.trackSprite(this, 0, 0, true);
+
+    this.healthBar = this.game.add.graphics(0, 0, state.groups[properties.group]);
 };
 
 Template.DroppableRobot.prototype = Object.create(Template.Droppable.prototype);
@@ -63,6 +65,20 @@ Template.DroppableRobot.prototype.update = function (instance) {
     if (instance.body) {
         instance.game.physics.arcade.overlap(instance.weapon.bullets, instance.state.groups.chests, this.onBulletChestCollide, null, instance);
         instance.game.physics.arcade.overlap(instance.weapon.bullets, instance.state.groups.robots, this.onBulletRobotCollide, this.onBulletRobotCollideProcess, instance);
+    }
+
+    if (instance.healthBar) {
+        instance.healthBar.clear();
+
+        if (instance.properties.health > 0) {
+            instance.healthBar.beginFill(0x00ff00);
+            instance.healthBar.lineStyle(0);
+            instance.healthBar.drawRect(instance.x - instance.width / 2 + 16, instance.y + instance.height / 2 + 4, (instance.width - 16) * (instance.properties.health / instance.properties.maxHealth), 4);
+            instance.healthBar.endFill();
+
+            instance.healthBar.lineStyle(1, 0x000000, 0.8)
+            instance.healthBar.drawRect(instance.x - instance.width / 2 + 16, instance.y + instance.height / 2 + 4, instance.width - 16, 4);
+        }
     }
 }
 

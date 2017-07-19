@@ -21,6 +21,7 @@ Template.RobotSpawner.prototype.createObject = function (name, position) {
         "attack": 24,
         "defense": 18,
         "speed": 159,
-        "health": 1000
+        "health": 1000,
+        "maxHealth": 1000
     });
 }

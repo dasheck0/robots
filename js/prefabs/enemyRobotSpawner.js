@@ -12,6 +12,8 @@ Template.EnemyRobotSpawner.prototype = Object.create(Template.Spawner.prototype)
 Template.EnemyRobotSpawner.prototype.constructor = Template.EnemyRobotSpawner;
 
 Template.EnemyRobotSpawner.prototype.createObject = function (name, position) {
+    const maxHealth = this.state.game.rnd.integerInRange(900, 1200);
+
     return new Template.EnemyRobot(this.state, name, position, {
         "group": "robots",
         "key": sample(['robot3Dred', 'robot3Dblue', 'robot3Dgreen', 'robot3Dyellow']),
@@ -20,6 +22,7 @@ Template.EnemyRobotSpawner.prototype.createObject = function (name, position) {
         "attack": this.state.game.rnd.integerInRange(18, 30),
         "defense": this.state.game.rnd.integerInRange(12, 24),
         "speed": this.state.game.rnd.integerInRange(50, 70),
-        "health": this.state.game.rnd.integerInRange(900, 1200)
+        "health": maxHealth,
+        "maxHealth": maxHealth
     });
 }
