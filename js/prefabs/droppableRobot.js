@@ -33,6 +33,18 @@ Template.DroppableRobot.prototype.constructor = Template.DroppableRobot;
 Template.DroppableRobot.prototype.initializeObject = function (game) {
 }
 
+Template.DroppableRobot.prototype.dealDamage = function (damage) {
+    this.properties.health = Math.ceil(this.properties.health - damage);
+
+    if (this.human) {
+        getMemberByName(this.state.groups.hud, 'healthText').text = this.properties.health < 0 ? 0 : this.properties.health;
+    }
+
+    if (this.properties.health < 0) {
+        this.animateDeath();
+    }
+}
+
 Template.DroppableRobot.prototype.animateDeath = function () {
     this.isDead = true;
 
@@ -62,9 +74,7 @@ Template.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest
 Template.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
     if (robot !== this) {
         bullet.kill();
-        if (!robot.human) {
-            robot.animateDeath();
-        }
+        robot.dealDamage(calculateDamage(this.properties.attack, robot.properties.defense));
     }
 }
 
