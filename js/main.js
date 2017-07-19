@@ -13,11 +13,4 @@ window.onload = function () {
     game.state.add('level', new Template.Level());
 
     game.state.start('boot', true, false, 'assets/json/level.json');
-
-    console.log(36, 24, calculateDamage(36, 24));
-    console.log(36, 36, calculateDamage(36, 36));
-    console.log(36, 59, calculateDamage(36, 59));
-    console.log(127, 59, calculateDamage(127, 59));
-    console.log(127, 127, calculateDamage(127, 127));
-    console.log(127, 240, calculateDamage(127, 240));
 };
