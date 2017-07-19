@@ -25,6 +25,16 @@ Template.Prefab = function (state, name, position, properties) {
     if (properties.anchor) {
         this.anchor.setTo(properties.anchor.x, properties.anchor.y);
     }
+
+    if (properties.scale) {
+        this.scale.setTo(properties.scale.x, properties.scale.y);
+    }
+
+    if (properties.alpha) {
+        this.alpha = properties.alpha;
+    }
+
+    this.fixedToCamera = properties.fixedToCamera;
 };
 
 Template.Prefab.prototype = Object.create(Phaser.Sprite.prototype);

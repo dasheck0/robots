@@ -59,6 +59,62 @@
     "crateWood": {
       "type": "image",
       "source": "assets/images/tanks_crateWood.png"
+    },
+    "ammo_box": {
+      "type": "image",
+      "source": "assets/images/ammo_box.png"
+    },
+    "battery_pack": {
+      "type": "image",
+      "source": "assets/images/battery_pack.png"
+    },
+    "battery_pack_alt": {
+      "type": "image",
+      "source": "assets/images/battery_pack_alt.png"
+    },
+    "blaster": {
+      "type": "image",
+      "source": "assets/images/blaster.png"
+    },
+    "death_skull": {
+      "type": "image",
+      "source": "assets/images/death_skull.png"
+    },
+    "jet_pack": {
+      "type": "image",
+      "source": "assets/images/jet_pack.png"
+    },
+    "kevlar": {
+      "type": "image",
+      "source": "assets/images/kevlar.png"
+    },
+    "lava": {
+      "type": "image",
+      "source": "assets/images/lava.png"
+    },
+    "lucifer_cannon": {
+      "type": "image",
+      "source": "assets/images/lucifer_cannon.png"
+    },
+    "medical_pack": {
+      "type": "image",
+      "source": "assets/images/medical_pack.png"
+    },
+    "medical_pack_alt": {
+      "type": "image",
+      "source": "assets/images/medical_pack_alt.png"
+    },
+    "reactor": {
+      "type": "image",
+      "source": "assets/images/reactor.png"
+    },
+    "rifle": {
+      "type": "image",
+      "source": "assets/images/rifle.png"
+    },
+    "shield": {
+      "type": "image",
+      "source": "assets/images/shield.png"
     }
   },
   "groups": [
@@ -69,6 +125,174 @@
     "hud"
   ],
   "prefabs": {
+    "atkIcon": {
+      "type": "sprite",
+      "position": {
+        "x": 464,
+        "y": 184
+      },
+      "properties": {
+        "group": "hud",
+        "key": "lucifer_cannon",
+        "fixedToCamera": true,
+        "scale": {
+          "x": 0.75,
+          "y": 0.75
+        },
+        "alpha": 0.5
+      }
+    },
+    "defIcon": {
+      "type": "sprite",
+      "position": {
+        "x": 544,
+        "y": 184
+      },
+      "properties": {
+        "group": "hud",
+        "key": "shield",
+        "fixedToCamera": true,
+        "scale": {
+          "x": 0.75,
+          "y": 0.75
+        },
+        "alpha": 0.5
+      }
+    },
+    "healthIcon": {
+      "type": "sprite",
+      "position": {
+        "x": 464,
+        "y": 216
+      },
+      "properties": {
+        "group": "hud",
+        "key": "medical_pack",
+        "fixedToCamera": true,
+        "scale": {
+          "x": 0.75,
+          "y": 0.75
+        },
+        "alpha": 0.5
+      }
+    },
+    "speedIcon": {
+      "type": "sprite",
+      "position": {
+        "x": 544,
+        "y": 216
+      },
+      "properties": {
+        "group": "hud",
+        "key": "jet_pack",
+        "fixedToCamera": true,
+        "scale": {
+          "x": 0.75,
+          "y": 0.75
+        },
+        "alpha": 0.5
+      }
+    },
+    "atkText": {
+      "type": "text",
+      "position": {
+        "x": 496,
+        "y": 200
+      },
+      "properties": {
+        "text": "",
+        "group": "hud",
+        "fixedToCamera": true,
+        "style": {
+          "font": "20pt Arial",
+          "fill": "#ffffff",
+          "align": "left"
+        },
+        "size": {
+          "width": 64,
+          "height": 24
+        },
+        "anchor": {
+          "x": 0,
+          "y": 0.5
+        }
+      }
+    },
+    "defText": {
+      "type": "text",
+      "position": {
+        "x": 576,
+        "y": 200
+      },
+      "properties": {
+        "text": "",
+        "group": "hud",
+        "fixedToCamera": true,
+        "style": {
+          "font": "20pt Arial",
+          "fill": "#ffffff",
+          "align": "left"
+        },
+        "size": {
+          "width": 64,
+          "height": 24
+        },
+        "anchor": {
+          "x": 0,
+          "y": 0.5
+        }
+      }
+    },
+    "healthText": {
+      "type": "text",
+      "position": {
+        "x": 496,
+        "y": 232
+      },
+      "properties": {
+        "text": "",
+        "group": "hud",
+        "fixedToCamera": true,
+        "style": {
+          "font": "20pt Arial",
+          "fill": "#ffffff",
+          "align": "left"
+        },
+        "size": {
+          "width": 64,
+          "height": 24
+        },
+        "anchor": {
+          "x": 0,
+          "y": 0.5
+        }
+      }
+    },
+    "speedText": {
+      "type": "text",
+      "position": {
+        "x": 576,
+        "y": 232
+      },
+      "properties": {
+        "text": "",
+        "group": "hud",
+        "fixedToCamera": true,
+        "style": {
+          "font": "20pt Arial",
+          "fill": "#ffffff",
+          "align": "left"
+        },
+        "size": {
+          "width": 64,
+          "height": 24
+        },
+        "anchor": {
+          "x": 0,
+          "y": 0.5
+        }
+      }
+    },
     "background": {
       "type": "tileSprite",
       "position": {

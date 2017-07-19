@@ -20,33 +20,19 @@ Template.Robot.prototype.constructor = Template.Robot;
 Template.Robot.prototype.initializeObject = function () {
     Template.DroppableRobot.prototype.initializeObject(this.game);
 
-    // /* Life */
-    //
-    // this.life = this.game.add.sprite(-this.width * 0.25, 0, 'heart');
-    // this.life.anchor.setTo(0.5);
-    // this.life.scale.setTo(1);
-    // this.life.angle = 90;
-    // this.addChild(this.life);
-    //
-    // /* Shadow */
-    //
-    // this.shadow = this.game.add.sprite(0, 0, this.properties.key)
-    // this.shadow.tint = 0x000000;
-    // this.shadow.alpha = 0.1;
-    // this.shadow.scale.setTo(1.2);
-    // // this.shadow.angle = 90;
-    // this.shadow.anchor.setTo(0.5);
-    // this.addChild(this.shadow);
-    //
-    // this.aim = this.game.add.sprite(0, 0, this.properties.key);
-    // // this.aim.scale.setTo(Template.scale);
-    // this.aim.anchor.setTo(0.5);
-    // this.addChild(this.aim);
+    getMemberByName(this.state.groups.hud, 'atkText').text = this.properties.attack;
+    getMemberByName(this.state.groups.hud, 'defText').text = this.properties.defense;
+    getMemberByName(this.state.groups.hud, 'healthText').text = this.properties.health;
+    getMemberByName(this.state.groups.hud, 'speedText').text = this.properties.speed;
+
+    this.properties.rotationSpeed = this.properties.speed / 17;
+    this.properties.maxSpeed = this.properties.speed * 2;
+    this.body.maxVelocity.setTo(this.properties.maxSpeed);
 }
 
 Template.Robot.prototype.update = function () {
     Template.DroppableRobot.prototype.update(this);
-    
+
     if (this.body) {
         this.body.angularAcceleration = 0;
         this.body.velocity.x = 0;
@@ -61,9 +47,9 @@ Template.Robot.prototype.update = function () {
             }
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
-                this.currentSpeed = this.properties.speed;
+                this.currentSpeed = this.properties.maxSpeed;
             } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
-                this.currentSpeed = -this.properties.speed;
+                this.currentSpeed = -this.properties.maxSpeed;
             } else {
                 if (this.currentSpeed > 0) {
                     this.currentSpeed -= this.properties.friction;
@@ -85,11 +71,6 @@ Template.Robot.prototype.update = function () {
             }
         }
     }
-}
-
-Template.Robot.prototype.updateLife = function (life) {
-    const alpha = life < 0 ? 0 : (life > 1 ? 1 : life);
-    this.life.alpha = alpha;
 }
 
 Template.Robot.prototype.onBulletChestCollide = function (bullet, chest) {
