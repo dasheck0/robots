@@ -35,6 +35,7 @@ goodies. These will help to upgrade your robot.
 * [Hand Painted Texture - Floor Tile](https://opengameart.org/content/hand-painted-texture-floor-tile)
 * [Hand Painted Grass Texture](https://opengameart.org/content/hand-painted-grass-texture)
 * [Hand Painted Sand Texture](https://opengameart.org/content/hand-painted-sand-texture-0)
+* [95 Game icons](https://opengameart.org/content/95-game-icons)
 
 ## License
 
