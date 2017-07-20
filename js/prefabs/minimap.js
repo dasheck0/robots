@@ -31,6 +31,7 @@ Template.Minimap.prototype.update = function () {
     this.clear();
 
     this.drawRectangle(0, 0, Template.minimapWidth, Template.minimapHeight);
+
     this.state.groups.robots.forEachAlive((robot) => this.drawMinimapObject(robot));
     this.state.groups.chests.forEachAlive((chest) => this.drawMinimapObject(chest, 0x00ff00));
 }

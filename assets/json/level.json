@@ -319,8 +319,7 @@
         "key": "",
         "group": "spawners",
         "pool": "robots",
-        "mode": "limited",
-        "limit": 1,
+        "mode": "once",
         "spawnTimeInSeconds": {
           "min": 0,
           "max": 1
@@ -338,7 +337,7 @@
         "group": "spawners",
         "pool": "robots",
         "mode": "limited",
-        "limit": 30,
+        "limit": 20,
         "spawnTimeInSeconds": {
           "min": 0,
           "max": 1

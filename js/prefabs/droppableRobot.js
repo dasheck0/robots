@@ -26,7 +26,7 @@ Template.DroppableRobot = function (state, name, position, properties) {
     this.weapon.fireRate = 100; // 1 per 60 ms
     this.weapon.trackSprite(this, 0, 0, true);
 
-    this.healthBar = this.game.add.graphics(0, 0, state.groups[properties.group]);
+    this.healthBar = this.game.add.graphics(0, 0, state.groups.hud);
 };
 
 Template.DroppableRobot.prototype = Object.create(Template.Droppable.prototype);
