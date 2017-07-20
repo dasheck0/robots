@@ -18,7 +18,9 @@ Template.Level = function () {
         'chestSpawner': Template.ChestSpawner.prototype.constructor,
         'chest': Template.Chest.prototype.constructor,
         'minimap': Template.Minimap.prototype.constructor,
-        'text': Template.TextPrefab.prototype.constructor
+        'text': Template.TextPrefab.prototype.constructor,
+        'lootSpawner': Template.LootSpawner.prototype.constructor,
+        'loot': Template.Loot.prototype.constructor
     }
 };
 

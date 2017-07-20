@@ -19,10 +19,12 @@ Template.Spawner.prototype = Object.create(Template.Prefab.prototype);
 Template.Spawner.prototype.constructor = Template.Spawner;
 
 Template.Spawner.prototype.scheduleSpawn = function () {
-    const time = this.game.rnd.between(this.spawnTime.min, this.spawnTime.max);
+    if (this.properties.mode !== 'never') {
+        const time = this.game.rnd.between(this.spawnTime.min, this.spawnTime.max);
 
-    this.spawnTimer.add(Phaser.Timer.SECOND * time, this.spawn, this);
-    this.spawnTimer.start();
+        this.spawnTimer.add(Phaser.Timer.SECOND * time, this.spawn, this);
+        this.spawnTimer.start();
+    }
 }
 
 Template.Spawner.prototype.spawn = function () {

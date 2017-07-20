@@ -122,6 +122,7 @@
     "spawners",
     "chests",
     "robots",
+    "loot",
     "hud"
   ],
   "prefabs": {
@@ -356,6 +357,23 @@
         "pool": "chests",
         "mode": "limited",
         "limit": 25,
+        "spawnTimeInSeconds": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    "lootSpawner": {
+      "type": "lootSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "hud",
+        "mode": "never",
         "spawnTimeInSeconds": {
           "min": 0,
           "max": 1

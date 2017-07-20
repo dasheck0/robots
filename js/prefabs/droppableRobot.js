@@ -120,6 +120,8 @@ Template.DroppableRobot.prototype.update = function (instance) {
 Template.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
     bullet.kill();
     chest.kill();
+
+    getMemberByName(this.state.groups.spawners, 'lootSpawner').spawn(chest, this);
 }
 
 Template.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {

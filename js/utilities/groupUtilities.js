@@ -8,5 +8,6 @@ const getMemberByName = (group, name) => {
     }
 }
 
-const getCleanRobotGroup = (group) => {
-} 
+const getHumanRobot = (robotsGroup) => {
+    return robotsGroup.filter(item => item.human).list[0];
+}
