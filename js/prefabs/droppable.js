@@ -30,7 +30,7 @@ Template.Droppable.prototype.dropObject = function () {
 
 Template.Droppable.prototype.reset = function (x, y) {
     Phaser.Sprite.prototype.reset.call(this, x, y);
-    
+
     this.dropped = false;
     this.dropObject();
 }

@@ -26,6 +26,10 @@ Template.DroppableRobot = function (state, name, position, properties) {
     this.weapon.fireRate = 100; // 1 per 60 ms
     this.weapon.trackSprite(this, 0, 0, true);
 
+    this.killCounter = this.game.add.text(0, 0, '1', { font: '10pt Arial', fill: '#ffffff', align: 'right' })
+    this.killCounter.anchor.setTo(1, 0);
+    this.state.groups.hud.add(this.killCounter);
+
     this.healthBar = this.game.add.graphics(0, 0, state.groups.hud);
 };
 
@@ -35,8 +39,16 @@ Template.DroppableRobot.prototype.constructor = Template.DroppableRobot;
 Template.DroppableRobot.prototype.initializeObject = function (game) {
 }
 
+Template.DroppableRobot.prototype.reset = function (x, y) {
+    Template.Droppable.prototype.reset.call(this, x, y);
+}
+
 Template.DroppableRobot.prototype.dealDamage = function (damage) {
     this.properties.health = Math.ceil(this.properties.health - damage);
+
+    if (this.properties.health > this.properties.maxHealth) {
+        this.properties.health = this.properties.maxHealth;
+    }
 
     if (this.human) {
         getMemberByName(this.state.groups.hud, 'healthText').text = this.properties.health < 0 ? 0 : this.properties.health;
@@ -44,7 +56,15 @@ Template.DroppableRobot.prototype.dealDamage = function (damage) {
 
     if (this.properties.health < 0) {
         this.animateDeath();
+        return true;
     }
+
+    return false;
+}
+
+Template.DroppableRobot.prototype.killedOtherRobot = function () {
+    this.dealDamage(-this.properties.maxHealth);
+    this.killCounter.text = parseInt(this.killCounter.text) + 1;
 }
 
 Template.DroppableRobot.prototype.animateDeath = function () {
@@ -54,9 +74,18 @@ Template.DroppableRobot.prototype.animateDeath = function () {
     deathTween.onComplete.add(function () {
         this.game.add.tween(this.scale).to({ x: 4, y: 4 }, 500, Phaser.Easing.Quadratic.Out, true);
         this.game.add.tween(this).to({ alpha: 0 }, 500, Phaser.Easing.Quadratic.Out, true).onComplete.add(function () {
+            this.killCounter.kill();
+            this.killCounter.destroy();
+            this.state.groups.hud.remove(this.killCounter);
+
+            this.healthBar.kill();
+            this.healthBar.destroy();
+            this.state.groups.hud.remove(this.healthBar);
+
             this.kill();
             this.destroy();
             this.state.groups.robots.remove(this);
+
         }, this);
     }, this);
 }
@@ -81,6 +110,11 @@ Template.DroppableRobot.prototype.update = function (instance) {
             instance.healthBar.drawRect(instance.x - instance.width / 2 + 16, instance.y + instance.height / 2 + 4, instance.width - 16, 4);
         }
     }
+
+    if (instance.killCounter) {
+        instance.killCounter.x = instance.x - instance.width / 2 + 12;
+        instance.killCounter.y = instance.y + instance.height / 2 - 2;
+    }
 }
 
 Template.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
@@ -89,9 +123,12 @@ Template.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest
 }
 
 Template.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
-    if (robot !== this) {
+    if (robot !== this && !robot.isDead) {
         bullet.kill();
-        robot.dealDamage(calculateDamage(this.properties.attack, robot.properties.defense));
+
+        if (robot.dealDamage(calculateDamage(this.properties.attack, robot.properties.defense))) {
+            this.killedOtherRobot();
+        }
     }
 }
 
