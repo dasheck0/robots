@@ -65,6 +65,7 @@ Template.DroppableRobot.prototype.update = function (instance) {
     if (instance.body) {
         instance.game.physics.arcade.overlap(instance.weapon.bullets, instance.state.groups.chests, this.onBulletChestCollide, null, instance);
         instance.game.physics.arcade.overlap(instance.weapon.bullets, instance.state.groups.robots, this.onBulletRobotCollide, this.onBulletRobotCollideProcess, instance);
+        instance.game.physics.arcade.collide(instance.state.groups.robots);
     }
 
     if (instance.healthBar) {
