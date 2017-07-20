@@ -25,6 +25,45 @@ you can. Other robots will spawn and attack you. But fear not! Dodge
 their bullets and fire your own to destroy them and gain loot and other 
 goodies. These will help to upgrade your robot. 
 
+### Features
+
+#### Comprehensive battle system
+
+Your robot has 4 main states, namely attack, defense, speed and health.
+Attack and defense are used for damage calculation once your robot is hit. 
+The formula is quite complex and tweaked, such that you last at least a few 
+hits before you die. Speed controls not only your translation speed but 
+also how fast you can rotate. And health is the most important stat you 
+need to focus on. Once it drops below zero you are dead. Don't worry!
+Your health is replenished after killing an enemy robot.
+
+### Loots
+
+There are several possibilities to gain loot within the game. The most 
+obvious one is to open chests by destroying them. Once they are opened
+you get a persistent boost of one of your main stats. So do not focus 
+that much on killing robots and get some chests too!
+
+## Road map
+
+* Drop loot after killing another robot
+* Add more robot ai types (timid, circeling, random)
+* Add bosses
+* Draw human robot in another color for the minimap
+* Increase size of robot for the minimap based on kill counter
+* Add stats for controlling weapon system
+* Add more weapon graphics
+* Add pause mode in game
+* Add menu, settings, credits, options
+* Add sounds
+* Add more create graphics
+* Add robot shadows
+* Add explosion tweens and scorch marks after killing a robot
+* Animate gaining loots and stat boosts
+* Add temp stat boosts for special actions
+* Add task systems, which give medals and stat boosts
+* Add temps special loot (e.g. invincible, super speed, mirror, ...)
+
 ## Used assets
 
 * [Robot pack](http://kenney.nl/assets/robot-pack)
