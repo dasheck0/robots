@@ -73,13 +73,13 @@ that much on killing robots and get some chests too!
 * Add more weapon graphics
 * Add more crate graphics
 * Add robot shadows
-* Add tracks to robot for the last 100 meters
 * Scrolling message window (like a ticker)
 * Funny names for bots
 
 ### Done
 
 * ~~Add explosion tweens and scorch marks after killing a robot~~
+* ~~Add tracks to robot for the last 100 meters~~
 
 
 ## Used assets
@@ -95,6 +95,7 @@ that much on killing robots and get some chests too!
 * [95 Game icons](https://opengameart.org/content/95-game-icons)
 * [Bomb Explosion Animation](https://opengameart.org/content/bomb-explosion-animation)
 * [Smoke Particle Assets](https://opengameart.org/content/smoke-particle-assets)
+* [Topdown Tanks](https://kenney.nl/assets/topdown-tanks)
 
 ## License
 
