@@ -46,28 +46,40 @@ that much on killing robots and get some chests too!
 
 ## Road map
 
+### Crucial
+
+* Add pause mode in game
+* Add menu, settings, credits, options
+* Add support for mobile
+
+### Important
+
 * Drop loot after killing another robot
 * Add more robot ai types (timid, circeling, random)
 * Add bosses
-* Draw human robot in another color for the minimap
-* Increase size of robot for the minimap based on kill counter
 * Add stats for controlling weapon system
-* Add more weapon graphics
-* Add pause mode in game
-* Add menu, settings, credits, options
 * Add sounds
-* Add more create graphics
-* Add robot shadows
-* Add explosion tweens and scorch marks after killing a robot
-* Animate gaining loots and stat boosts
-* Add temp stat boosts for special actions
-* Add task systems, which give medals and stat boosts
 * Add temps special loot (e.g. invincible, super speed, mirror, ...)
-* Add support for mobile
-* Add tracks to robot for the last 100 meters
 * Add mines as secondary weapons and add camera shake for explosion
+
+### Nice to have
+
+* Add task systems, which give medals and stat boosts
+* Add temp stat boosts for special actions
+* Animate gaining loots and stat boosts
+* Increase size of robot for the minimap based on kill counter
+* Draw human robot in another color for the minimap
+* Add more weapon graphics
+* Add more crate graphics
+* Add robot shadows
+* Add tracks to robot for the last 100 meters
 * Scrolling message window (like a ticker)
 * Funny names for bots
+
+### Done
+
+* ~~Add explosion tweens and scorch marks after killing a robot~~
+
 
 ## Used assets
 
@@ -81,6 +93,7 @@ that much on killing robots and get some chests too!
 * [Hand Painted Sand Texture](https://opengameart.org/content/hand-painted-sand-texture-0)
 * [95 Game icons](https://opengameart.org/content/95-game-icons)
 * [Bomb Explosion Animation](https://opengameart.org/content/bomb-explosion-animation)
+* [Smoke Particle Assets](https://opengameart.org/content/smoke-particle-assets)
 
 ## License
 
