@@ -63,6 +63,11 @@ that much on killing robots and get some chests too!
 * Add temp stat boosts for special actions
 * Add task systems, which give medals and stat boosts
 * Add temps special loot (e.g. invincible, super speed, mirror, ...)
+* Add support for mobile
+* Add tracks to robot for the last 100 meters
+* Add mines as secondary weapons and add camera shake for explosion
+* Scrolling message window (like a ticker)
+* Funny names for bots
 
 ## Used assets
 
