@@ -80,6 +80,7 @@ that much on killing robots and get some chests too!
 * [Hand Painted Grass Texture](https://opengameart.org/content/hand-painted-grass-texture)
 * [Hand Painted Sand Texture](https://opengameart.org/content/hand-painted-sand-texture-0)
 * [95 Game icons](https://opengameart.org/content/95-game-icons)
+* [Bomb Explosion Animation](https://opengameart.org/content/bomb-explosion-animation)
 
 ## License
 

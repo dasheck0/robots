@@ -72,6 +72,9 @@ Template.DroppableRobot.prototype.animateDeath = function () {
 
     const deathTween = this.game.add.tween(this).to({ x: this.x - 10 }, 25, Phaser.Easing.Quadratic.InOut, true, 0, 5, true);
     deathTween.onComplete.add(function () {
+        getMemberByName(this.state.groups.spawners, 'dustSpawner').spawn(this);
+        getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(this);
+
         this.game.add.tween(this.scale).to({ x: 4, y: 4 }, 500, Phaser.Easing.Quadratic.Out, true);
         this.game.add.tween(this).to({ alpha: 0 }, 500, Phaser.Easing.Quadratic.Out, true).onComplete.add(function () {
             this.killCounter.kill();
@@ -121,6 +124,8 @@ Template.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest
     bullet.kill();
     chest.kill();
 
+    getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(chest);
+    getMemberByName(this.state.groups.spawners, 'dustSpawner').spawn(chest);
     getMemberByName(this.state.groups.spawners, 'lootSpawner').spawn(chest, this);
 }
 

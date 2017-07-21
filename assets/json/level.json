@@ -115,13 +115,26 @@
     "shield": {
       "type": "image",
       "source": "assets/images/shield.png"
+    },
+    "blackSmoke": {
+      "type": "image",
+      "source": "assets/images/blackSmoke21.png"
+    },
+    "explosion2": {
+      "type": "spritesheet",
+      "source": "assets/images/explosion2.png",
+      "frameWidth": 64,
+      "frameHeight": 64,
+      "frames": 16
     }
   },
   "groups": [
     "background",
     "spawners",
+    "ground",
     "chests",
     "robots",
+    "explosions",
     "loot",
     "hud"
   ],
@@ -365,6 +378,40 @@
     },
     "lootSpawner": {
       "type": "lootSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "hud",
+        "mode": "never",
+        "spawnTimeInSeconds": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    "explosionSpawner": {
+      "type": "explosionSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "hud",
+        "mode": "never",
+        "spawnTimeInSeconds": {
+          "min": 0,
+          "max": 1
+        }
+      }
+    },
+    "dustSpawner": {
+      "type": "dustSpawner",
       "position": {
         "x": 0,
         "y": 0

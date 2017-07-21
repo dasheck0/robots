@@ -34,6 +34,10 @@ Template.Prefab = function (state, name, position, properties) {
         this.alpha = properties.alpha;
     }
 
+    if (properties.angle) {
+        this.angle = properties.angle;
+    }
+
     this.fixedToCamera = properties.fixedToCamera;
 };
 

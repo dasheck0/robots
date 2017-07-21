@@ -20,7 +20,11 @@ Template.Level = function () {
         'minimap': Template.Minimap.prototype.constructor,
         'text': Template.TextPrefab.prototype.constructor,
         'lootSpawner': Template.LootSpawner.prototype.constructor,
-        'loot': Template.Loot.prototype.constructor
+        'loot': Template.Loot.prototype.constructor,
+        'explosionSpawner': Template.ExplosionSpawner.prototype.constructor,
+        'explosion': Template.Explosion.prototype.constructor,
+        'dust': Template.Dust.prototype.constructor,
+        'dustSpawner': Template.DustSpawner.prototype.constructor
     }
 };
 
@@ -33,6 +37,8 @@ Template.Level.prototype.init = function (data) {
 };
 
 Template.Level.prototype.create = function () {
+    this.game.time.advancedTiming = true
+
     this.game.stage.backgroundColor = '#212A31';
     this.groups = {};
     this.prefabs = {};
@@ -58,4 +64,10 @@ Template.Level.prototype.createPrefab = function (prefabName, properties) {
 
 Template.Level.prototype.update = function () {
     this.game.physics.arcade.collide(this.groups.chests, this.groups.robots);
+}
+
+Template.Level.prototype.render = function () {
+    if (Template.debug) {
+        this.game.debug.text(this.game.time.fps, 2, 14, "#00ff00");
+    }
 }

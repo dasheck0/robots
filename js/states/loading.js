@@ -22,12 +22,15 @@ Template.Loading.prototype.preload = function () {
     for (var assetKey in assets) {
         if (assets.hasOwnProperty(assetKey)) {
             var asset = assets[assetKey];
+
+
             switch (asset.type) {
                 case "image":
                     this.load.image(assetKey, asset.source);
                     break;
                 case "spritesheet":
-                    this.load.image.spritesheet(assetKey, asset.source, asset.frameWidth, asset.frameHeight, asset.frames, asset.margin, asset.spacing);
+                    console.log("Loaing spritesheet");
+                    this.load.spritesheet(assetKey, asset.source, asset.frameWidth, asset.frameHeight, asset.frames, asset.margin || 0, asset.spacing || 0);
                     break;
             }
         }
