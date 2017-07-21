@@ -12,6 +12,8 @@ Template.Robot = function (state, name, position, properties) {
     this.game.camera.follow(this);
     this.game.camera.deadzone = new Phaser.Rectangle(Template.cameraPadding, Template.cameraPadding, Template.screenSize.x - 4 * Template.minimapPadding.x - Template.minimapWidth - Template.cameraPadding, Template.screenSize.y - 2 * Template.cameraPadding);
     this.game.camera.focusOnXY(0, 0);
+
+    this.trackTimer = null;
 };
 
 Template.Robot.prototype = Object.create(Template.DroppableRobot.prototype);
@@ -64,6 +66,15 @@ Template.Robot.prototype.update = function () {
 
             if (this.currentSpeed !== 0) {
                 this.game.physics.arcade.velocityFromRotation(this.rotation, this.currentSpeed, this.body.velocity);
+
+                if (!this.trackTimer) {
+                    this.trackTimer = this.game.time.events.loop(100, function () {
+                        getMemberByName(this.state.groups.spawners, 'trackSpawner').spawn(this);
+                    }, this);
+                }
+            } else {
+                this.game.time.events.remove(this.trackTimer);
+                this.trackTimer = 0;
             }
 
             if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {

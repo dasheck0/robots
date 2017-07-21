@@ -24,7 +24,9 @@ Template.Level = function () {
         'explosionSpawner': Template.ExplosionSpawner.prototype.constructor,
         'explosion': Template.Explosion.prototype.constructor,
         'dust': Template.Dust.prototype.constructor,
-        'dustSpawner': Template.DustSpawner.prototype.constructor
+        'dustSpawner': Template.DustSpawner.prototype.constructor,
+        'track': Template.Track.prototype.constructor,
+        'trackSpawner': Template.TrackSpawner.prototype.constructor
     }
 };
 

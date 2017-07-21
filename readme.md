@@ -51,6 +51,7 @@ that much on killing robots and get some chests too!
 * Add pause mode in game
 * Add menu, settings, credits, options
 * Add support for mobile
+* Respawn player after death
 
 ### Important
 

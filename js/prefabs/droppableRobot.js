@@ -77,6 +77,11 @@ Template.DroppableRobot.prototype.animateDeath = function () {
 
         this.game.add.tween(this.scale).to({ x: 4, y: 4 }, 500, Phaser.Easing.Quadratic.Out, true);
         this.game.add.tween(this).to({ alpha: 0 }, 500, Phaser.Easing.Quadratic.Out, true).onComplete.add(function () {
+            if (this.trackTimer) {
+                this.game.time.events.remove(this.trackTimer);
+                this.trackTimer = null;
+            }
+
             this.killCounter.kill();
             this.killCounter.destroy();
             this.state.groups.hud.remove(this.killCounter);

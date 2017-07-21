@@ -21,6 +21,10 @@ Template.EnemyRobot.prototype.initializeObject = function () {
     this.properties.rotationSpeed = this.properties.speed / 17;
     this.properties.maxSpeed = this.properties.speed * 2;
     this.body.maxVelocity.setTo(this.properties.maxSpeed);
+
+    this.trackTimer = this.game.time.events.loop(100, function () {
+        getMemberByName(this.state.groups.spawners, 'trackSpawner').spawn(this);
+    }, this);
 }
 
 Template.EnemyRobot.prototype.getClosestMemberOfGroup = function (group) {
