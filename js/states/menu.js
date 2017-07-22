@@ -11,7 +11,9 @@ Bots.Menu = function () {
         'animatedSprite': Bots.AnimatedSprite.prototype.constructor,
         'tileSprite': Bots.TileSprite.prototype.constructor,
         'button': Bots.Button.prototype.constructor,
-        'menuRobotChooser': Bots.MenuRobotChooser.prototype.constructor
+        'menuRobotChooser': Bots.MenuRobotChooser.prototype.constructor,
+        'menuBackgroundChooser': Bots.MenuBackgroundChooser.prototype.constructor,
+        'selectableSprite': Bots.SelectableSprite.prototype.constructor
     }
 };
 
@@ -86,6 +88,8 @@ Bots.Menu.prototype.create = function () {
 
     this.chooser = getMemberByName(this.groups.spawners, 'menuChooser');
     this.chooser.showRobot(0, true);
+
+    this.backgroundChooser = getMemberByName(this.groups.spawners, 'menuBackgroundChooser');
 };
 
 Bots.Menu.prototype.createPrefab = function (prefabName, properties) {
@@ -114,6 +118,7 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
         const content = this.game.cache.getText('level');
         const payload = JSON.parse(content);
         payload.prefabs.robotSpawner.properties.spawnKey = this.chooser.getChosenRobot().properties.secondKey;
+        payload.prefabs.background.properties.key = this.backgroundChooser.selectedTile.properties.key;
 
         this.chooser.chooseRobot(500);
         this.game.add.tween(this.groups.logo).to({ y: -200 }, 500, Phaser.Easing.Elastic.In, true);

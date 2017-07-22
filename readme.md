@@ -101,6 +101,7 @@ that much on killing robots and get some chests too!
 * [Game icons](https://opengameart.org/content/game-icons)
 * [Cloud set](https://opengameart.org/content/cloud-set)
 * [Onscreen - Controls](http://kenney.nl/assets/onscreen-controls)
+* [Sokoban (100+ Tiles)](https://opengameart.org/content/sokoban-100-tiles)
 
 ## License
 

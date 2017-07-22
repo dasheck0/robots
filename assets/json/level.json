@@ -40,10 +40,6 @@
       "type": "image",
       "source": "assets/images/tank_bullet3.png"
     },
-    "heart": {
-      "type": "image",
-      "source": "assets/images/hud_heartFull.png"
-    },
     "crateAmmo": {
       "type": "image",
       "source": "assets/images/tanks_crateAmmo.png"
@@ -373,7 +369,7 @@
       },
       "properties": {
         "group": "background",
-        "key": "groundTiled",
+        "key": "groundGrass",
         "size": {
           "width": 640,
           "height": 360

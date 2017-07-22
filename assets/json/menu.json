@@ -1,6 +1,22 @@
 {
   "assets": {
-    "groundTiles": {
+    "groundStone": {
+      "type": "image",
+      "source": "assets/images/sandstone_64.png"
+    },
+    "groundMountain": {
+      "type": "image",
+      "source": "assets/images/mountain_64.png"
+    },
+    "groundSand": {
+      "type": "image",
+      "source": "assets/images/sand_64.png"
+    },
+    "groundGrass": {
+      "type": "image",
+      "source": "assets/images/grass_64.png"
+    },
+    "groundTiled": {
       "type": "image",
       "source": "assets/images/tiled_64.png"
     },
@@ -78,6 +94,7 @@
     "spawners",
     "logo",
     "chooser",
+    "selectables",
     "hud"
   ],
   "prefabs": {
@@ -89,7 +106,7 @@
       },
       "properties": {
         "group": "background",
-        "key": "groundTiles",
+        "key": "groundGrass",
         "size": {
           "width": 640,
           "height": 360
@@ -417,6 +434,33 @@
           "x": 0.5,
           "y": 0.5
         }
+      }
+    },
+    "menuBackgroundChooser": {
+      "type": "menuBackgroundChooser",
+      "position": {
+        "x": 320,
+        "y": 328
+      },
+      "properties": {
+        "group": "spawners",
+        "pool": "selectables",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "scale": {
+          "x": 0.75,
+          "y": 0.75
+        },
+        "spacing": 16,
+        "backgrounds": [
+          "groundStone",
+          "groundMountain",
+          "groundSand",
+          "groundGrass",
+          "groundTiled"
+        ]
       }
     }
   },
