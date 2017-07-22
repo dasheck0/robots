@@ -98,6 +98,8 @@ that much on killing robots and get some chests too!
 * [Bomb Explosion Animation](https://opengameart.org/content/bomb-explosion-animation)
 * [Smoke Particle Assets](https://opengameart.org/content/smoke-particle-assets)
 * [Topdown Tanks](https://kenney.nl/assets/topdown-tanks)
+* [Game icons](https://opengameart.org/content/game-icons)
+* [Cloud set](https://opengameart.org/content/cloud-set)
 
 ## License
 
