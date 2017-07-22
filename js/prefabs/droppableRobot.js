@@ -149,6 +149,7 @@ Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
         bullet.kill();
 
         if (robot.dealDamage(calculateDamage(this.properties.attack, robot.properties.defense))) {
+            getMemberByName(this.state.groups.spawners, 'textSpawner').spawn(`${this.properties.displayName} (${this.killCounter.text}) killed ${robot.properties.displayName} (${robot.killCounter.text})`);
             this.killedOtherRobot();
         }
     }

@@ -22,6 +22,7 @@ Bots.Level = function () {
         'lootSpawner': Bots.LootSpawner.prototype.constructor,
         'loot': Bots.Loot.prototype.constructor,
         'explosionSpawner': Bots.ExplosionSpawner.prototype.constructor,
+        'textSpawner': Bots.TextSpawner.prototype.constructor,
         'explosion': Bots.Explosion.prototype.constructor,
         'dust': Bots.Dust.prototype.constructor,
         'dustSpawner': Bots.DustSpawner.prototype.constructor,

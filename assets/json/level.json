@@ -487,6 +487,19 @@
         "mode": "never"
       }
     },
+    "textSpawner": {
+      "type": "textSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "hud",
+        "mode": "never"
+      }
+    },
     "minimap": {
       "type": "minimap",
       "position": {

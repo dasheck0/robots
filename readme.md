@@ -73,10 +73,10 @@ that much on killing robots and get some chests too!
 * Add more crate graphics
 * Add robot shadows
 * Scrolling message window (like a ticker)
-* Funny names for bots
 
 ### Done
 
+* ~~Funny names for bots~~
 * ~~Draw human robot in another color for the minimap~~
 * ~~Respawn player after death~~
 * ~~Add support for mobile~~
