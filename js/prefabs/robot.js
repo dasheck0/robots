@@ -11,7 +11,7 @@ Bots.Robot = function (state, name, position, properties) {
 
     this.game.camera.follow(this);
     this.game.camera.deadzone = new Phaser.Rectangle(Bots.cameraPadding, Bots.cameraPadding, Bots.screenSize.x - 4 * Bots.minimapPadding.x - Bots.minimapWidth - Bots.cameraPadding, Bots.screenSize.y - 2 * Bots.cameraPadding);
-    this.game.camera.focusOnXY(0, 0);
+    this.game.camera.focusOnXY(position.x, position.y);
 
     this.trackTimer = null;
 

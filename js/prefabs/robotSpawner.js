@@ -12,7 +12,7 @@ Bots.RobotSpawner.prototype = Object.create(Bots.Spawner.prototype);
 Bots.RobotSpawner.prototype.constructor = Bots.RobotSpawner;
 
 Bots.RobotSpawner.prototype.createObject = function (name, position) {
-    position = new Phaser.Point(0, 0);
+    // position = new Phaser.Point(0, 0);
 
     return new Bots.Robot(this.state, name, position, {
         "group": "robots",
