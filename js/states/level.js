@@ -3,42 +3,42 @@
  */
 
 
-let Template = Template || {};
-Template.Level = function () {
+let Bots = Bots || {};
+Bots.Level = function () {
     Phaser.State.call(this);
 
     this.prefabClasses = {
-        'sprite': Template.Prefab.prototype.constructor,
-        'tileSprite': Template.TileSprite.prototype.constructor,
-        'robot': Template.Robot.prototype.constructor,
-        'enemyRobot': Template.EnemyRobot.prototype.constructor,
-        'spawner': Template.Spawner.prototype.constructor,
-        'robotSpawner': Template.RobotSpawner.prototype.constructor,
-        'enemyRobotSpawner': Template.EnemyRobotSpawner.prototype.constructor,
-        'chestSpawner': Template.ChestSpawner.prototype.constructor,
-        'chest': Template.Chest.prototype.constructor,
-        'minimap': Template.Minimap.prototype.constructor,
-        'text': Template.TextPrefab.prototype.constructor,
-        'lootSpawner': Template.LootSpawner.prototype.constructor,
-        'loot': Template.Loot.prototype.constructor,
-        'explosionSpawner': Template.ExplosionSpawner.prototype.constructor,
-        'explosion': Template.Explosion.prototype.constructor,
-        'dust': Template.Dust.prototype.constructor,
-        'dustSpawner': Template.DustSpawner.prototype.constructor,
-        'track': Template.Track.prototype.constructor,
-        'trackSpawner': Template.TrackSpawner.prototype.constructor
+        'sprite': Bots.Prefab.prototype.constructor,
+        'tileSprite': Bots.TileSprite.prototype.constructor,
+        'robot': Bots.Robot.prototype.constructor,
+        'enemyRobot': Bots.EnemyRobot.prototype.constructor,
+        'spawner': Bots.Spawner.prototype.constructor,
+        'robotSpawner': Bots.RobotSpawner.prototype.constructor,
+        'enemyRobotSpawner': Bots.EnemyRobotSpawner.prototype.constructor,
+        'chestSpawner': Bots.ChestSpawner.prototype.constructor,
+        'chest': Bots.Chest.prototype.constructor,
+        'minimap': Bots.Minimap.prototype.constructor,
+        'text': Bots.TextPrefab.prototype.constructor,
+        'lootSpawner': Bots.LootSpawner.prototype.constructor,
+        'loot': Bots.Loot.prototype.constructor,
+        'explosionSpawner': Bots.ExplosionSpawner.prototype.constructor,
+        'explosion': Bots.Explosion.prototype.constructor,
+        'dust': Bots.Dust.prototype.constructor,
+        'dustSpawner': Bots.DustSpawner.prototype.constructor,
+        'track': Bots.Track.prototype.constructor,
+        'trackSpawner': Bots.TrackSpawner.prototype.constructor
     }
 };
 
-Template.Level.prototype = Object.create(Phaser.State.prototype);
-Template.Level.prototype.constructor = Template.Level;
+Bots.Level.prototype = Object.create(Phaser.State.prototype);
+Bots.Level.prototype.constructor = Bots.Level;
 
-Template.Level.prototype.init = function (data) {
+Bots.Level.prototype.init = function (data) {
     this.data = data;
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
 };
 
-Template.Level.prototype.create = function () {
+Bots.Level.prototype.create = function () {
     this.game.time.advancedTiming = true
 
     this.game.stage.backgroundColor = '#212A31';
@@ -54,22 +54,22 @@ Template.Level.prototype.create = function () {
         }
     }
 
-    this.game.world.setBounds(-Template.worldSize.x / 2, -Template.worldSize.y / 2, Template.worldSize.x, Template.worldSize.y);
+    this.game.world.setBounds(-Bots.worldSize.x / 2, -Bots.worldSize.y / 2, Bots.worldSize.x, Bots.worldSize.y);
 };
 
-Template.Level.prototype.createPrefab = function (prefabName, properties) {
+Bots.Level.prototype.createPrefab = function (prefabName, properties) {
     if (this.prefabClasses.hasOwnProperty(properties.type)) {
         const position = new Phaser.Point(properties.position.x, properties.position.y);
         const prefab = new this.prefabClasses[properties.type](this, prefabName, position, properties.properties);
     }
 };
 
-Template.Level.prototype.update = function () {
+Bots.Level.prototype.update = function () {
     this.game.physics.arcade.collide(this.groups.chests, this.groups.robots);
 }
 
-Template.Level.prototype.render = function () {
-    if (Template.debug) {
+Bots.Level.prototype.render = function () {
+    if (Bots.debug) {
         this.game.debug.text(this.game.time.fps, 2, 14, "#00ff00");
     }
 }

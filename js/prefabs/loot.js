@@ -3,10 +3,10 @@
  */
 
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.Loot = function (state, name, position, properties) {
-    Template.Prefab.call(this, state, name, position, properties);
+Bots.Loot = function (state, name, position, properties) {
+    Bots.Prefab.call(this, state, name, position, properties);
 
     this.game.add.tween(this).to({ y: position.y - 50, alpha: 0 }, 500, Phaser.Easing.Quadratic.Out, true);
     this.game.add.tween(this.scale).to({ x: 4, y: 4 }, 500, Phaser.Easing.Quadratic.Out, true).onComplete.add(function () {
@@ -21,5 +21,5 @@ Template.Loot = function (state, name, position, properties) {
     }, this);
 };
 
-Template.Loot.prototype = Object.create(Template.Prefab.prototype);
-Template.Loot.prototype.constructor = Template.Loot;
+Bots.Loot.prototype = Object.create(Bots.Prefab.prototype);
+Bots.Loot.prototype.constructor = Bots.Loot;

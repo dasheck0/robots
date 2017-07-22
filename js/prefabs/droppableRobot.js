@@ -4,10 +4,10 @@
 
 "use strict";
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.DroppableRobot = function (state, name, position, properties) {
-    Template.Droppable.call(this, state, name, position, properties);
+Bots.DroppableRobot = function (state, name, position, properties) {
+    Bots.Droppable.call(this, state, name, position, properties);
     this.anchor.setTo(0.5);
     this.human = false;
     this.isDead = false;
@@ -19,7 +19,7 @@ Template.DroppableRobot = function (state, name, position, properties) {
 
     this.weapon = this.game.add.weapon(10, 'bullet');
     this.weapon.bullets.forEach((bullet) => {
-        bullet.scale.setTo(Template.scale);
+        bullet.scale.setTo(Bots.scale);
     }, this);
     this.weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
     this.weapon.bulletSpeed = 600;
@@ -33,17 +33,17 @@ Template.DroppableRobot = function (state, name, position, properties) {
     this.healthBar = this.game.add.graphics(0, 0, state.groups.hud);
 };
 
-Template.DroppableRobot.prototype = Object.create(Template.Droppable.prototype);
-Template.DroppableRobot.prototype.constructor = Template.DroppableRobot;
+Bots.DroppableRobot.prototype = Object.create(Bots.Droppable.prototype);
+Bots.DroppableRobot.prototype.constructor = Bots.DroppableRobot;
 
-Template.DroppableRobot.prototype.initializeObject = function (game) {
+Bots.DroppableRobot.prototype.initializeObject = function (game) {
 }
 
-Template.DroppableRobot.prototype.reset = function (x, y) {
-    Template.Droppable.prototype.reset.call(this, x, y);
+Bots.DroppableRobot.prototype.reset = function (x, y) {
+    Bots.Droppable.prototype.reset.call(this, x, y);
 }
 
-Template.DroppableRobot.prototype.dealDamage = function (damage) {
+Bots.DroppableRobot.prototype.dealDamage = function (damage) {
     this.properties.health = Math.ceil(this.properties.health - damage);
 
     if (this.properties.health > this.properties.maxHealth) {
@@ -62,12 +62,12 @@ Template.DroppableRobot.prototype.dealDamage = function (damage) {
     return false;
 }
 
-Template.DroppableRobot.prototype.killedOtherRobot = function () {
+Bots.DroppableRobot.prototype.killedOtherRobot = function () {
     this.dealDamage(-this.properties.maxHealth);
     this.killCounter.text = parseInt(this.killCounter.text) + 1;
 }
 
-Template.DroppableRobot.prototype.animateDeath = function () {
+Bots.DroppableRobot.prototype.animateDeath = function () {
     this.isDead = true;
 
     const deathTween = this.game.add.tween(this).to({ x: this.x - 10 }, 25, Phaser.Easing.Quadratic.InOut, true, 0, 5, true);
@@ -98,7 +98,7 @@ Template.DroppableRobot.prototype.animateDeath = function () {
     }, this);
 }
 
-Template.DroppableRobot.prototype.update = function (instance) {
+Bots.DroppableRobot.prototype.update = function (instance) {
     if (instance.body) {
         instance.game.physics.arcade.overlap(instance.weapon.bullets, instance.state.groups.chests, this.onBulletChestCollide, null, instance);
         instance.game.physics.arcade.overlap(instance.weapon.bullets, instance.state.groups.robots, this.onBulletRobotCollide, this.onBulletRobotCollideProcess, instance);
@@ -125,7 +125,7 @@ Template.DroppableRobot.prototype.update = function (instance) {
     }
 }
 
-Template.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
+Bots.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
     bullet.kill();
     chest.kill();
 
@@ -134,7 +134,7 @@ Template.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest
     getMemberByName(this.state.groups.spawners, 'lootSpawner').spawn(chest, this);
 }
 
-Template.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
+Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
     if (robot !== this && !robot.isDead) {
         bullet.kill();
 
@@ -144,6 +144,6 @@ Template.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot
     }
 }
 
-Template.DroppableRobot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {
+Bots.DroppableRobot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {
     return robot !== this;
 }

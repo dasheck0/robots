@@ -2,21 +2,21 @@
  * Created by s.neidig on 16/07/17.
  */
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.EnemyRobot = function (state, name, position, properties) {
-    Template.DroppableRobot.call(this, state, name, position, properties);
+Bots.EnemyRobot = function (state, name, position, properties) {
+    Bots.DroppableRobot.call(this, state, name, position, properties);
 
     this.humanRobot = null;
     this.currentDestination = null;
 };
 
 
-Template.EnemyRobot.prototype = Object.create(Template.DroppableRobot.prototype);
-Template.EnemyRobot.prototype.constructor = Template.EnemyRobot;
+Bots.EnemyRobot.prototype = Object.create(Bots.DroppableRobot.prototype);
+Bots.EnemyRobot.prototype.constructor = Bots.EnemyRobot;
 
-Template.EnemyRobot.prototype.initializeObject = function () {
-    Template.DroppableRobot.prototype.initializeObject(this.game);
+Bots.EnemyRobot.prototype.initializeObject = function () {
+    Bots.DroppableRobot.prototype.initializeObject(this.game);
 
     this.properties.rotationSpeed = this.properties.speed / 17;
     this.properties.maxSpeed = this.properties.speed * 2;
@@ -27,7 +27,7 @@ Template.EnemyRobot.prototype.initializeObject = function () {
     }, this);
 }
 
-Template.EnemyRobot.prototype.getClosestMemberOfGroup = function (group) {
+Bots.EnemyRobot.prototype.getClosestMemberOfGroup = function (group) {
     let closestMember = null;
     let closestDistance = Number.MAX_VALUE;
 
@@ -48,8 +48,8 @@ Template.EnemyRobot.prototype.getClosestMemberOfGroup = function (group) {
     };
 }
 
-Template.EnemyRobot.prototype.update = function () {
-    Template.DroppableRobot.prototype.update(this);
+Bots.EnemyRobot.prototype.update = function () {
+    Bots.DroppableRobot.prototype.update(this);
 
     if (!this.isDead) {
         const closestRobot = this.getClosestMemberOfGroup(this.state.groups.robots);

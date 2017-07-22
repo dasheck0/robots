@@ -2,16 +2,16 @@
  * Created by s.neidig on 15/07/17.
  */
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.TrackSpawner = function (state, name, position, properties) {
-    Template.Spawner.call(this, state, name, position, properties);
+Bots.TrackSpawner = function (state, name, position, properties) {
+    Bots.Spawner.call(this, state, name, position, properties);
 };
 
-Template.TrackSpawner.prototype = Object.create(Template.Spawner.prototype);
-Template.TrackSpawner.prototype.constructor = Template.TrackSpawner;
+Bots.TrackSpawner.prototype = Object.create(Bots.Spawner.prototype);
+Bots.TrackSpawner.prototype.constructor = Bots.TrackSpawner;
 
-Template.TrackSpawner.prototype.spawn = function (robot) {
+Bots.TrackSpawner.prototype.spawn = function (robot) {
     const position = new Phaser.Point(robot.x, robot.y);
 
     let track = this.pool.getFirstDead();
@@ -27,7 +27,7 @@ Template.TrackSpawner.prototype.spawn = function (robot) {
     }
 }
 
-Template.TrackSpawner.prototype.createObject = function (name, position, robot) {
+Bots.TrackSpawner.prototype.createObject = function (name, position, robot) {
     if (robot) {
         const properties = {
             key: 'tracks',
@@ -40,7 +40,7 @@ Template.TrackSpawner.prototype.createObject = function (name, position, robot) 
             }
         }
 
-        return new Template.Track(this.state, name, position, properties);
+        return new Bots.Track(this.state, name, position, properties);
     }
 
     return null;

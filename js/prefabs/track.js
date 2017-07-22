@@ -2,10 +2,10 @@
  * Created by s.neidig on 21/07/17.
  */
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.Track = function (state, name, position, properties) {
-    Template.Prefab.call(this, state, name, position, properties);
+Bots.Track = function (state, name, position, properties) {
+    Bots.Prefab.call(this, state, name, position, properties);
 
     this.game.add.tween(this).to({ alpha: 0 }, 1000, Phaser.Easing.Quartic.In, true).onComplete.add(function () {
         this.kill();
@@ -14,5 +14,5 @@ Template.Track = function (state, name, position, properties) {
     }, this);
 };
 
-Template.Track.prototype = Object.create(Template.Prefab.prototype);
-Template.Track.prototype.constructor = Template.Track;
+Bots.Track.prototype = Object.create(Bots.Prefab.prototype);
+Bots.Track.prototype.constructor = Bots.Track;

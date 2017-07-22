@@ -3,9 +3,9 @@
  */
 
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.Prefab = function (state, name, position, properties) {
+Bots.Prefab = function (state, name, position, properties) {
     Phaser.Sprite.call(this, state.game, position.x, position.y, properties.key);
 
     this.state = state;
@@ -41,5 +41,5 @@ Template.Prefab = function (state, name, position, properties) {
     this.fixedToCamera = properties.fixedToCamera;
 };
 
-Template.Prefab.prototype = Object.create(Phaser.Sprite.prototype);
-Template.Prefab.prototype.constructor = Template.Prefab;
+Bots.Prefab.prototype = Object.create(Phaser.Sprite.prototype);
+Bots.Prefab.prototype.constructor = Bots.Prefab;

@@ -3,24 +3,24 @@
  */
 
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.Boot = function () {
+Bots.Boot = function () {
     Phaser.State.call(this);
 };
 
-Template.Boot.prototype = Object.create(Phaser.State.prototype);
-Template.Boot.prototype.constructor = Template.Boot;
+Bots.Boot.prototype = Object.create(Phaser.State.prototype);
+Bots.Boot.prototype.constructor = Bots.Boot;
 
-Template.Boot.prototype.init = function (data) {
+Bots.Boot.prototype.init = function (data) {
     this.data = data;
 };
 
-Template.Boot.prototype.preload = function () {
+Bots.Boot.prototype.preload = function () {
     this.load.text('data', this.data);
 };
 
-Template.Boot.prototype.create = function () {
+Bots.Boot.prototype.create = function () {
     var content = this.game.cache.getText('data');
     var payload = JSON.parse(content);
 
@@ -28,7 +28,7 @@ Template.Boot.prototype.create = function () {
     this.game.state.start('loading', true, false, payload, 'menu');
 };
 
-Template.Boot.prototype.prepareScreenForScaling = function () {
+Bots.Boot.prototype.prepareScreenForScaling = function () {
     this.game.stage.disableVisibilityChange = true;
 
     this.game.scale.maxWidth = window.innerWidth * window.devicePixelRatio;

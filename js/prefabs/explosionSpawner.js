@@ -2,16 +2,16 @@
  * Created by s.neidig on 15/07/17.
  */
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.ExplosionSpawner = function (state, name, position, properties) {
-    Template.Spawner.call(this, state, name, position, properties);
+Bots.ExplosionSpawner = function (state, name, position, properties) {
+    Bots.Spawner.call(this, state, name, position, properties);
 };
 
-Template.ExplosionSpawner.prototype = Object.create(Template.Spawner.prototype);
-Template.ExplosionSpawner.prototype.constructor = Template.ExplosionSpawner;
+Bots.ExplosionSpawner.prototype = Object.create(Bots.Spawner.prototype);
+Bots.ExplosionSpawner.prototype.constructor = Bots.ExplosionSpawner;
 
-Template.ExplosionSpawner.prototype.spawn = function (object) {
+Bots.ExplosionSpawner.prototype.spawn = function (object) {
     const position = new Phaser.Point(object.x, object.y);
 
     let explosion = this.pool.getFirstDead();
@@ -27,7 +27,7 @@ Template.ExplosionSpawner.prototype.spawn = function (object) {
     }
 }
 
-Template.ExplosionSpawner.prototype.createObject = function (name, position, object) {
+Bots.ExplosionSpawner.prototype.createObject = function (name, position, object) {
     if (object) {
         const properties = {
             key: 'explosion2',
@@ -38,7 +38,7 @@ Template.ExplosionSpawner.prototype.createObject = function (name, position, obj
             }
         }
 
-        return new Template.Explosion(this.state, name, position, properties);
+        return new Bots.Explosion(this.state, name, position, properties);
     }
 
     return null;

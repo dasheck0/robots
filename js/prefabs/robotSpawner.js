@@ -2,19 +2,19 @@
  * Created by s.neidig on 15/07/17.
  */
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.RobotSpawner = function (state, name, position, properties) {
-    Template.Spawner.call(this, state, name, position, properties);
+Bots.RobotSpawner = function (state, name, position, properties) {
+    Bots.Spawner.call(this, state, name, position, properties);
 };
 
-Template.RobotSpawner.prototype = Object.create(Template.Spawner.prototype);
-Template.RobotSpawner.prototype.constructor = Template.RobotSpawner;
+Bots.RobotSpawner.prototype = Object.create(Bots.Spawner.prototype);
+Bots.RobotSpawner.prototype.constructor = Bots.RobotSpawner;
 
-Template.RobotSpawner.prototype.createObject = function (name, position) {
+Bots.RobotSpawner.prototype.createObject = function (name, position) {
     position = new Phaser.Point(0, 0);
 
-    return new Template.Robot(this.state, name, position, {
+    return new Bots.Robot(this.state, name, position, {
         "group": "robots",
         "key": "robot3Dblue",
         "friction": 10,

@@ -2,28 +2,28 @@
  * Created by s.neidig on 22/07/17.
  */
 
-let Template = Template || {};
-Template.Menu = function () {
+let Bots = Bots || {};
+Bots.Menu = function () {
     Phaser.State.call(this);
 
     this.prefabClasses = {
-        'tileSprite': Template.TileSprite.prototype.constructor
+        'tileSprite': Bots.TileSprite.prototype.constructor
     }
 };
 
-Template.Menu.prototype = Object.create(Phaser.State.prototype);
-Template.Menu.prototype.constructor = Template.Menu;
+Bots.Menu.prototype = Object.create(Phaser.State.prototype);
+Bots.Menu.prototype.constructor = Bots.Menu;
 
-Template.Menu.prototype.create = function () {
+Bots.Menu.prototype.create = function () {
     this.game.time.advancedTiming = true;
 }
 
-Template.Menu.prototype.init = function (data) {
+Bots.Menu.prototype.init = function (data) {
     this.data = data;
     this.game.physics.startSystem(Phaser.Physics.ARCADE);
 }
 
-Template.Menu.prototype.create = function () {
+Bots.Menu.prototype.create = function () {
     this.game.time.advancedTiming = true
 
     this.game.stage.backgroundColor = '#212A31';
@@ -40,15 +40,15 @@ Template.Menu.prototype.create = function () {
     }
 };
 
-Template.Menu.prototype.createPrefab = function (prefabName, properties) {
+Bots.Menu.prototype.createPrefab = function (prefabName, properties) {
     if (this.prefabClasses.hasOwnProperty(properties.type)) {
         const position = new Phaser.Point(properties.position.x, properties.position.y);
         const prefab = new this.prefabClasses[properties.type](this, prefabName, position, properties.properties);
     }
 };
 
-Template.Menu.prototype.render = function () {
-    if (Template.debug) {
+Bots.Menu.prototype.render = function () {
+    if (Bots.debug) {
         this.game.debug.text(this.game.time.fps, 2, 14, "#00ff00");
     }
 }

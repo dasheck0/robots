@@ -2,25 +2,25 @@
  * Created by s.neidig on 15/07/17.
  */
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.Robot = function (state, name, position, properties) {
-    Template.DroppableRobot.call(this, state, name, position, properties);
+Bots.Robot = function (state, name, position, properties) {
+    Bots.DroppableRobot.call(this, state, name, position, properties);
 
     this.human = true;
 
     this.game.camera.follow(this);
-    this.game.camera.deadzone = new Phaser.Rectangle(Template.cameraPadding, Template.cameraPadding, Template.screenSize.x - 4 * Template.minimapPadding.x - Template.minimapWidth - Template.cameraPadding, Template.screenSize.y - 2 * Template.cameraPadding);
+    this.game.camera.deadzone = new Phaser.Rectangle(Bots.cameraPadding, Bots.cameraPadding, Bots.screenSize.x - 4 * Bots.minimapPadding.x - Bots.minimapWidth - Bots.cameraPadding, Bots.screenSize.y - 2 * Bots.cameraPadding);
     this.game.camera.focusOnXY(0, 0);
 
     this.trackTimer = null;
 };
 
-Template.Robot.prototype = Object.create(Template.DroppableRobot.prototype);
-Template.Robot.prototype.constructor = Template.Robot;
+Bots.Robot.prototype = Object.create(Bots.DroppableRobot.prototype);
+Bots.Robot.prototype.constructor = Bots.Robot;
 
-Template.Robot.prototype.initializeObject = function () {
-    Template.DroppableRobot.prototype.initializeObject(this.game);
+Bots.Robot.prototype.initializeObject = function () {
+    Bots.DroppableRobot.prototype.initializeObject(this.game);
 
     getMemberByName(this.state.groups.hud, 'atkText').text = this.properties.attack;
     getMemberByName(this.state.groups.hud, 'defText').text = this.properties.defense;
@@ -32,8 +32,8 @@ Template.Robot.prototype.initializeObject = function () {
     this.body.maxVelocity.setTo(this.properties.maxSpeed);
 }
 
-Template.Robot.prototype.update = function () {
-    Template.DroppableRobot.prototype.update(this);
+Bots.Robot.prototype.update = function () {
+    Bots.DroppableRobot.prototype.update(this);
 
     if (this.body) {
         this.body.angularAcceleration = 0;
@@ -84,18 +84,18 @@ Template.Robot.prototype.update = function () {
     }
 }
 
-Template.Robot.prototype.onBulletChestCollide = function (bullet, chest) {
+Bots.Robot.prototype.onBulletChestCollide = function (bullet, chest) {
     bullet.kill();
     chest.kill();
 }
 
-Template.Robot.prototype.onBulletRobotCollide = function (bullet, robot) {
+Bots.Robot.prototype.onBulletRobotCollide = function (bullet, robot) {
     if (robot !== this) {
         bullet.kill();
         robot.animateDeath();
     }
 }
 
-Template.Robot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {
+Bots.Robot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {
     return robot !== this;
 }

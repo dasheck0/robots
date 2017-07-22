@@ -3,9 +3,9 @@
  */
 
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.TextPrefab = function (state, name, position, properties) {
+Bots.TextPrefab = function (state, name, position, properties) {
     Phaser.Text.call(this, state.game, position.x, position.y, properties.text, properties.style);
 
     this.state = state;
@@ -37,10 +37,10 @@ Template.TextPrefab = function (state, name, position, properties) {
     }
 };
 
-Template.TextPrefab.prototype = Object.create(Phaser.Text.prototype);
-Template.TextPrefab.prototype.constructor = Template.TextPrefab;
+Bots.TextPrefab.prototype = Object.create(Phaser.Text.prototype);
+Bots.TextPrefab.prototype.constructor = Bots.TextPrefab;
 
-Template.TextPrefab.prototype.autoSize = function (width, height) {
+Bots.TextPrefab.prototype.autoSize = function (width, height) {
     if (!this.defaultFontSize) {
         this.defaultFontSize = this.fontSize;
     }

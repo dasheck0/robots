@@ -2,19 +2,19 @@
  * Created by s.neidig on 15/07/17.
  */
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.EnemyRobotSpawner = function (state, name, position, properties) {
-    Template.Spawner.call(this, state, name, position, properties);
+Bots.EnemyRobotSpawner = function (state, name, position, properties) {
+    Bots.Spawner.call(this, state, name, position, properties);
 };
 
-Template.EnemyRobotSpawner.prototype = Object.create(Template.Spawner.prototype);
-Template.EnemyRobotSpawner.prototype.constructor = Template.EnemyRobotSpawner;
+Bots.EnemyRobotSpawner.prototype = Object.create(Bots.Spawner.prototype);
+Bots.EnemyRobotSpawner.prototype.constructor = Bots.EnemyRobotSpawner;
 
-Template.EnemyRobotSpawner.prototype.createObject = function (name, position) {
+Bots.EnemyRobotSpawner.prototype.createObject = function (name, position) {
     const maxHealth = this.state.game.rnd.integerInRange(900, 1200);
 
-    return new Template.EnemyRobot(this.state, name, position, {
+    return new Bots.EnemyRobot(this.state, name, position, {
         "group": "robots",
         "key": sample(['robot3Dred', 'robot3Dblue', 'robot3Dgreen', 'robot3Dyellow']),
         "friction": 10,

@@ -2,16 +2,16 @@
  * Created by s.neidig on 15/07/17.
  */
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.DustSpawner = function (state, name, position, properties) {
-    Template.Spawner.call(this, state, name, position, properties);
+Bots.DustSpawner = function (state, name, position, properties) {
+    Bots.Spawner.call(this, state, name, position, properties);
 };
 
-Template.DustSpawner.prototype = Object.create(Template.Spawner.prototype);
-Template.DustSpawner.prototype.constructor = Template.DustSpawner;
+Bots.DustSpawner.prototype = Object.create(Bots.Spawner.prototype);
+Bots.DustSpawner.prototype.constructor = Bots.DustSpawner;
 
-Template.DustSpawner.prototype.spawn = function (object) {
+Bots.DustSpawner.prototype.spawn = function (object) {
     const position = new Phaser.Point(object.x, object.y);
 
     let dust = this.pool.getFirstDead();
@@ -27,7 +27,7 @@ Template.DustSpawner.prototype.spawn = function (object) {
     }
 }
 
-Template.DustSpawner.prototype.createObject = function (name, position, object) {
+Bots.DustSpawner.prototype.createObject = function (name, position, object) {
     if (object) {
         const properties = {
             key: 'blackSmoke',
@@ -44,7 +44,7 @@ Template.DustSpawner.prototype.createObject = function (name, position, object) 
             }
         }
 
-        return new Template.Dust(this.state, name, position, properties);
+        return new Bots.Dust(this.state, name, position, properties);
     }
 
     return null;

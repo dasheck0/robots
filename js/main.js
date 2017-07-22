@@ -3,15 +3,15 @@
  */
 
 
-let Template = Template || {};
+let Bots = Bots || {};
 
 window.onload = function () {
     var game = new Phaser.Game(640, 360, Phaser.CANVAS);
 
-    game.state.add('boot', new Template.Boot());
-    game.state.add('loading', new Template.Loading());
-    game.state.add('level', new Template.Level());
-    game.state.add('menu', new Template.Menu());
+    game.state.add('boot', new Bots.Boot());
+    game.state.add('loading', new Bots.Loading());
+    game.state.add('level', new Bots.Level());
+    game.state.add('menu', new Bots.Menu());
 
     game.state.start('boot', true, false, 'assets/json/level.json');
 };

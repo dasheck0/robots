@@ -3,21 +3,21 @@
  */
 
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.Loading = function () {
+Bots.Loading = function () {
     Phaser.State.call(this);
 };
 
-Template.prototype = Object.create(Phaser.State.prototype);
-Template.prototype.constructor = Template.Loading;
+Bots.prototype = Object.create(Phaser.State.prototype);
+Bots.prototype.constructor = Bots.Loading;
 
-Template.Loading.prototype.init = function (data, nextState) {
+Bots.Loading.prototype.init = function (data, nextState) {
     this.data = data;
     this.nextState = nextState;
 };
 
-Template.Loading.prototype.preload = function () {
+Bots.Loading.prototype.preload = function () {
     var assets = this.data.assets;
 
     for (var assetKey in assets) {
@@ -38,6 +38,6 @@ Template.Loading.prototype.preload = function () {
     }
 };
 
-Template.Loading.prototype.create = function () {
+Bots.Loading.prototype.create = function () {
     this.game.state.start(this.nextState, true, false, this.data);
 };

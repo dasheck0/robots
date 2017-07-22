@@ -2,16 +2,16 @@
  * Created by s.neidig on 15/07/17.
  */
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.LootSpawner = function (state, name, position, properties) {
-    Template.Spawner.call(this, state, name, position, properties);
+Bots.LootSpawner = function (state, name, position, properties) {
+    Bots.Spawner.call(this, state, name, position, properties);
 };
 
-Template.LootSpawner.prototype = Object.create(Template.Spawner.prototype);
-Template.LootSpawner.prototype.constructor = Template.LootSpawner;
+Bots.LootSpawner.prototype = Object.create(Bots.Spawner.prototype);
+Bots.LootSpawner.prototype.constructor = Bots.LootSpawner;
 
-Template.LootSpawner.prototype.spawn = function (chest, robot) {
+Bots.LootSpawner.prototype.spawn = function (chest, robot) {
     const position = new Phaser.Point(chest.x, chest.y);
 
     let loot = this.pool.getFirstDead();
@@ -27,7 +27,7 @@ Template.LootSpawner.prototype.spawn = function (chest, robot) {
     }
 }
 
-Template.LootSpawner.prototype.createObject = function (name, position, robot) {
+Bots.LootSpawner.prototype.createObject = function (name, position, robot) {
     const properties = this.generateLootProperties(robot);
     if (properties) {
         properties.robot = robot;
@@ -35,13 +35,13 @@ Template.LootSpawner.prototype.createObject = function (name, position, robot) {
         properties.group = 'loot';
         properties.anchor = { x: 0.5, y: 0.5 };
 
-        return new Template.Loot(this.state, name, position, properties);
+        return new Bots.Loot(this.state, name, position, properties);
     }
 
     return null;
 }
 
-Template.LootSpawner.prototype.generateLootProperties = function (robot) {
+Bots.LootSpawner.prototype.generateLootProperties = function (robot) {
     if (robot) {
         const properties = [{
             type: 'attack',

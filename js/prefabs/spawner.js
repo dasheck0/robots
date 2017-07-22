@@ -2,10 +2,10 @@
  * Created by s.neidig on 15/07/17.
  */
 
-let Template = Template || {};
+let Bots = Bots || {};
 
-Template.Spawner = function (state, name, position, properties) {
-    Template.Prefab.call(this, state, name, position, properties);
+Bots.Spawner = function (state, name, position, properties) {
+    Bots.Prefab.call(this, state, name, position, properties);
 
     this.pool = this.state.groups[properties.pool];
 
@@ -15,10 +15,10 @@ Template.Spawner = function (state, name, position, properties) {
     this.scheduleSpawn();
 }
 
-Template.Spawner.prototype = Object.create(Template.Prefab.prototype);
-Template.Spawner.prototype.constructor = Template.Spawner;
+Bots.Spawner.prototype = Object.create(Bots.Prefab.prototype);
+Bots.Spawner.prototype.constructor = Bots.Spawner;
 
-Template.Spawner.prototype.scheduleSpawn = function () {
+Bots.Spawner.prototype.scheduleSpawn = function () {
     if (this.properties.mode !== 'never') {
         const time = this.game.rnd.between(this.spawnTime.min, this.spawnTime.max);
 
@@ -27,9 +27,9 @@ Template.Spawner.prototype.scheduleSpawn = function () {
     }
 }
 
-Template.Spawner.prototype.spawn = function () {
+Bots.Spawner.prototype.spawn = function () {
     if (this.isAllowedToSpawn()) {
-        const position = new Phaser.Point(this.game.rnd.between(-Template.worldSize.x / 2, Template.worldSize.x / 2), this.game.rnd.between(-Template.worldSize.y / 2, Template.worldSize.y / 2));
+        const position = new Phaser.Point(this.game.rnd.between(-Bots.worldSize.x / 2, Bots.worldSize.x / 2), this.game.rnd.between(-Bots.worldSize.y / 2, Bots.worldSize.y / 2));
 
         let object = this.pool.getFirstDead();
         if (object) {
@@ -45,7 +45,7 @@ Template.Spawner.prototype.spawn = function () {
     }
 }
 
-Template.Spawner.prototype.isAllowedToSpawn = function () {
+Bots.Spawner.prototype.isAllowedToSpawn = function () {
     return this.properties.mode === 'once' ||
         this.properties.mode === 'infinite' ||
         (this.properties.mode === 'limited' && this.pool.countLiving() < this.properties.limit);

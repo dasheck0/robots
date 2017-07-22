@@ -4,23 +4,23 @@
 
 "use strict";
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.Droppable = function (state, name, position, properties) {
-    Template.Prefab.call(this, state, name, position, properties);
+Bots.Droppable = function (state, name, position, properties) {
+    Bots.Prefab.call(this, state, name, position, properties);
 
     this.dropped = false;
     this.dropObject();
 };
 
-Template.Droppable.prototype = Object.create(Phaser.Sprite.prototype);
-Template.Droppable.prototype.constructor = Template.Droppable;
+Bots.Droppable.prototype = Object.create(Phaser.Sprite.prototype);
+Bots.Droppable.prototype.constructor = Bots.Droppable;
 
-Template.Droppable.prototype.dropObject = function () {
-    this.scale.setTo(Template.scale * 8);
+Bots.Droppable.prototype.dropObject = function () {
+    this.scale.setTo(Bots.scale * 8);
     const tween = this.game.add.tween(this.scale).to({
-        x: Template.scale,
-        y: Template.scale
+        x: Bots.scale,
+        y: Bots.scale
     }, 750, Phaser.Easing.Bounce.Out, true);
     tween.onComplete.add(function () {
         this.dropped = true;
@@ -28,7 +28,7 @@ Template.Droppable.prototype.dropObject = function () {
     }, this);
 }
 
-Template.Droppable.prototype.reset = function (x, y) {
+Bots.Droppable.prototype.reset = function (x, y) {
     Phaser.Sprite.prototype.reset.call(this, x, y);
 
     this.dropped = false;

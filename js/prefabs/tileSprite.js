@@ -4,9 +4,9 @@
 
 "use strict";
 
-var Template = Template || {};
+var Bots = Bots || {};
 
-Template.TileSprite = function (state, name, position, properties) {
+Bots.TileSprite = function (state, name, position, properties) {
     Phaser.TileSprite.call(this, state.game, position.x, position.y, properties.size.width, properties.size.height, properties.key);
 
     this.state = state;
@@ -30,10 +30,10 @@ Template.TileSprite = function (state, name, position, properties) {
     console.log("Name", name, position, properties);
 };
 
-Template.TileSprite.prototype = Object.create(Phaser.TileSprite.prototype);
-Template.TileSprite.prototype.constructor = Template.TileSprite;
+Bots.TileSprite.prototype = Object.create(Phaser.TileSprite.prototype);
+Bots.TileSprite.prototype.constructor = Bots.TileSprite;
 
-Template.TileSprite.prototype.update = function () {
+Bots.TileSprite.prototype.update = function () {
     if (this.properties.fixedToCamera) {
         this.tilePosition.x = -this.game.camera.x;
         this.tilePosition.y = -this.game.camera.y;
