@@ -25,7 +25,7 @@ Template.Boot.prototype.create = function () {
     var payload = JSON.parse(content);
 
     this.prepareScreenForScaling();
-    this.game.state.start('loading', true, false, payload);
+    this.game.state.start('loading', true, false, payload, 'menu');
 };
 
 Template.Boot.prototype.prepareScreenForScaling = function () {

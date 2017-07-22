@@ -1,0 +1,31 @@
+{
+  "assets": {
+    "groundTiled": {
+      "type": "image",
+      "source": "assets/images/tiled_64.png"
+    }
+  },
+  "groups": [
+    "background",
+    "spawners",
+    "hud"
+  ],
+  "prefabs": {
+    "background": {
+      "type": "tileSprite",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "group": "background",
+        "key": "groundTiles",
+        "size": {
+          "width": 640,
+          "height": 360
+        },
+        "fixedToCamera": true
+      }
+    }
+  }
+}

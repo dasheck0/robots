@@ -12,8 +12,9 @@ Template.Loading = function () {
 Template.prototype = Object.create(Phaser.State.prototype);
 Template.prototype.constructor = Template.Loading;
 
-Template.Loading.prototype.init = function (data) {
+Template.Loading.prototype.init = function (data, nextState) {
     this.data = data;
+    this.nextState = nextState;
 };
 
 Template.Loading.prototype.preload = function () {
@@ -38,5 +39,5 @@ Template.Loading.prototype.preload = function () {
 };
 
 Template.Loading.prototype.create = function () {
-    this.game.state.start("level", true, false, this.data);
+    this.game.state.start(this.nextState, true, false, this.data);
 };
