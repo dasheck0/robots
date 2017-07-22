@@ -30,6 +30,14 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.killCounter.anchor.setTo(1, 0);
     this.state.groups.hud.add(this.killCounter);
 
+    this.nameText = this.game.add.text(0, 0, properties.displayName || 'Player', {
+        font: '10pt Arial',
+        fill: '#ffffff',
+        align: 'center'
+    });
+    this.nameText.anchor.setTo(0.5);
+    this.state.groups.hud.add(this.nameText);
+
     this.healthBar = this.game.add.graphics(0, 0, state.groups.hud);
 };
 
@@ -82,18 +90,11 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
                 this.trackTimer = null;
             }
 
-            this.killCounter.kill();
-            this.killCounter.destroy();
-            this.state.groups.hud.remove(this.killCounter);
-
-            this.healthBar.kill();
-            this.healthBar.destroy();
-            this.state.groups.hud.remove(this.healthBar);
-
-            this.kill();
-            this.destroy();
-            this.state.groups.robots.remove(this);
-
+            killFromGroup(this.killCounter, this.state.groups.hud);
+            killFromGroup(this.healthBar, this.state.groups.hud);
+            killFromGroup(this.nameText, this.state.groups.hud);
+            killFromGroup(this, this.state.groups.hud);
+           
             if (this.human) {
                 getMemberByName(this.state.groups.spawners, 'robotSpawner').spawn('robot');
             }
@@ -125,6 +126,11 @@ Bots.DroppableRobot.prototype.update = function (instance) {
     if (instance.killCounter) {
         instance.killCounter.x = instance.x - instance.width / 2 + 12;
         instance.killCounter.y = instance.y + instance.height / 2 - 2;
+    }
+
+    if (instance.nameText) {
+        instance.nameText.x = instance.x;
+        instance.nameText.y = instance.y - instance.height / 2 - 4;
     }
 }
 

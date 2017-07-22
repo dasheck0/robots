@@ -23,6 +23,7 @@ Bots.EnemyRobotSpawner.prototype.createObject = function (name, position) {
         "defense": this.state.game.rnd.integerInRange(12, 24),
         "speed": this.state.game.rnd.integerInRange(50, 70),
         "health": maxHealth,
-        "maxHealth": maxHealth
+        "maxHealth": maxHealth,
+        "displayName": getRandomName()
     });
 }

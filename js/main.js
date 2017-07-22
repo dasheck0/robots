@@ -17,4 +17,8 @@ window.onload = function () {
         menu: 'assets/json/menu.json',
         level: 'assets/json/level.json'
     });
+
+    for (let i = 0; i < 50; i++) {
+        console.log(getRandomName());
+    }
 };
