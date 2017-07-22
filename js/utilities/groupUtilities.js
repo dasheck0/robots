@@ -13,7 +13,9 @@ const getHumanRobot = (robotsGroup) => {
 }
 
 const killFromGroup = (item, group) => {
-    item.kill();
-    item.destroy();
-    group.remove(item);
+    if (item) {
+        item.kill();
+        item.destroy();
+        group.remove(item);
+    }
 }

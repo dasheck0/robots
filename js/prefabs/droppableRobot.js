@@ -94,6 +94,9 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
             this.destroy();
             this.state.groups.robots.remove(this);
 
+            if (this.human) {
+                getMemberByName(this.state.groups.spawners, 'robotSpawner').spawn('robot');
+            }
         }, this);
     }, this);
 }
