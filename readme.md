@@ -67,14 +67,14 @@ that much on killing robots and get some chests too!
 * Add task systems, which give medals and stat boosts
 * Add temp stat boosts for special actions
 * Animate gaining loots and stat boosts
-* Increase size of robot for the minimap based on kill counter
+* Increase size of robot for the min~imap based on kill counter
 * Add more weapon graphics
 * Add more crate graphics
-* Add robot shadows
 * Scrolling message window (like a ticker)
 
 ### Done
 
+* ~~Add robot shadows~
 * ~~Kill notification like in CS:GO~~
 * ~~Funny names for bots~~
 * ~~Draw human robot in another color for the minimap~~
