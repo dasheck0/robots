@@ -32,7 +32,7 @@ Bots.Minimap.prototype.update = function () {
 
     this.drawRectangle(0, 0, Bots.minimapWidth, Bots.minimapHeight);
 
-    this.state.groups.robots.forEachAlive((robot) => this.drawMinimapObject(robot));
+    this.state.groups.robots.forEachAlive((robot) => this.drawMinimapObject(robot, robot.human ? 0x0000ff : 0xffffff));
     this.state.groups.chests.forEachAlive((chest) => this.drawMinimapObject(chest, 0x00ff00));
 }
 
