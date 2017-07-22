@@ -8,8 +8,10 @@ Bots.Menu = function () {
 
     this.prefabClasses = {
         'sprite': Bots.Prefab.prototype.constructor,
+        'animatedSprite': Bots.AnimatedSprite.prototype.constructor,
         'tileSprite': Bots.TileSprite.prototype.constructor,
-        'button': Bots.Button.prototype.constructor
+        'button': Bots.Button.prototype.constructor,
+        'menuRobotChooser': Bots.MenuRobotChooser.prototype.constructor
     }
 };
 
@@ -74,6 +76,16 @@ Bots.Menu.prototype.create = function () {
         .to({ alpha: 1, x: 510, y: 42 }, 500, Phaser.Easing.Circular.InOut, true, 500);
     this.game.add.tween(getMemberByName(this.groups.logo, 'logoBulletLeft'))
         .to({ alpha: 1, x: 194, y: 36 }, 500, Phaser.Easing.Circular.InOut, true, 500);
+
+    /* chooser */
+
+    getMemberByName(this.groups.chooser, 'redRobotMoving').play('driving');
+    getMemberByName(this.groups.chooser, 'greenRobotMoving').play('driving');
+    getMemberByName(this.groups.chooser, 'greyRobotMoving').play('driving');
+    getMemberByName(this.groups.chooser, 'yellowRobotMoving').play('driving');
+
+    this.chooser = getMemberByName(this.groups.spawners, 'menuChooser');
+    this.chooser.showRobot(0, true);
 };
 
 Bots.Menu.prototype.createPrefab = function (prefabName, properties) {
@@ -90,9 +102,24 @@ Bots.Menu.prototype.render = function () {
 }
 
 Bots.Menu.prototype.onButtonPressed = function (button) {
-    if (button.name === 'settingsButton') {
-        this.game.add.tween(this.groups.logo).to({ y: -200 }, 500, Phaser.Easing.Elastic.In, true);
+    if (button.name === 'leftButton') {
+        this.chooser.showPrevious();
     }
 
-    console.log("Your pressed the button", button.name);
+    if (button.name === 'rightButton') {
+        this.chooser.showNext();
+    }
+
+    if (button.name === 'settingsButton') {
+        const content = this.game.cache.getText('level');
+        const payload = JSON.parse(content);
+        payload.prefabs.robotSpawner.properties.spawnKey = this.chooser.getChosenRobot().properties.secondKey;
+
+        this.chooser.chooseRobot(500);
+        this.game.add.tween(this.groups.logo).to({ y: -200 }, 500, Phaser.Easing.Elastic.In, true);
+        this.game.add.tween(this.groups.hud).to({ alpha: 0 }, 500, Phaser.Easing.Quintic.Out, true)
+            .onComplete.add(function () {
+            this.game.state.start('loading', true, false, payload, 'level');
+        }, this);
+    }
 }

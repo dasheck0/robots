@@ -26,7 +26,8 @@ Bots.Level = function () {
         'dust': Bots.Dust.prototype.constructor,
         'dustSpawner': Bots.DustSpawner.prototype.constructor,
         'track': Bots.Track.prototype.constructor,
-        'trackSpawner': Bots.TrackSpawner.prototype.constructor
+        'trackSpawner': Bots.TrackSpawner.prototype.constructor,
+        'button': Bots.Button.prototype.constructor
     }
 };
 
@@ -71,5 +72,13 @@ Bots.Level.prototype.update = function () {
 Bots.Level.prototype.render = function () {
     if (Bots.debug) {
         this.game.debug.text(this.game.time.fps, 2, 14, "#00ff00");
+    }
+}
+
+Bots.Level.prototype.onButtonPressed = function (button) {
+    if (button.name === 'menuButton') {
+        const content = this.game.cache.getText('menu');
+        const payload = JSON.parse(content);
+        this.game.state.start('loading', true, false, payload, 'menu');
     }
 }

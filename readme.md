@@ -63,6 +63,7 @@ that much on killing robots and get some chests too!
 * Add temps special loot (e.g. invincible, super speed, mirror, ...)
 * Add mines as secondary weapons and add camera shake for explosion
 * Add randomly placed obstacles (destroyable and not destroyable)
+* Kill notification like in CS:GO
 
 ### Nice to have
 

@@ -16,7 +16,7 @@ Bots.RobotSpawner.prototype.createObject = function (name, position) {
 
     return new Bots.Robot(this.state, name, position, {
         "group": "robots",
-        "key": "robot3Dblue",
+        "key": this.properties.spawnKey,
         "friction": 10,
         "attack": 34,
         "defense": 43,

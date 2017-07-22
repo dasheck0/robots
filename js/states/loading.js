@@ -30,7 +30,7 @@ Bots.Loading.prototype.preload = function () {
                     this.load.image(assetKey, asset.source);
                     break;
                 case "spritesheet":
-                    console.log("Loaing spritesheet");
+                    console.log("Loading spritesheet");
                     this.load.spritesheet(assetKey, asset.source, asset.frameWidth, asset.frameHeight, asset.frames, asset.margin || 0, asset.spacing || 0);
                     break;
             }

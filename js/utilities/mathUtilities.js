@@ -9,3 +9,5 @@ const calculateDamage = (attack, defense) => {
 
     return baseDamage2 * (730 - (defense * 51 - Math.pow(defense, 2) / 11) / 10) / 7300;
 }
+
+const mod = (number, mod) => ((number % mod) + mod) % mod;

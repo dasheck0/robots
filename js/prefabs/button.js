@@ -9,6 +9,8 @@ var Bots = Bots || {};
 Bots.Button = function (state, name, position, properties) {
     Bots.Prefab.call(this, state, name, position, properties);
 
+    this.fixedToCamera = true;
+
     this.inputEnabled = true;
     this.input.priorityId = 999; // ui
     this.input.useHandCursor = true;
@@ -19,6 +21,7 @@ Bots.Button = function (state, name, position, properties) {
     this.shadow = this.game.add.sprite(this.x, this.y + 2, this.properties.key);
     this.shadow.tint = 0x000000;
     this.shadow.anchor.setTo(0.5);
+    this.shadow.fixedToCamera = true;
 
     this.state.groups.hud.addAt(this.shadow, 0);
 };

@@ -130,6 +130,10 @@
       "frameWidth": 64,
       "frameHeight": 64,
       "frames": 16
+    },
+    "uiMenu": {
+      "type": "image",
+      "source": "assets/images/menuList.png"
     }
   },
   "groups": [
@@ -337,10 +341,11 @@
         "key": "",
         "group": "spawners",
         "pool": "robots",
+        "spawnKey": "robot3Dblue",
         "mode": "once",
         "spawnTimeInSeconds": {
           "min": 0,
-          "max": 1
+          "max": 0
         }
       }
     },
@@ -390,11 +395,7 @@
         "key": "",
         "group": "spawners",
         "pool": "hud",
-        "mode": "never",
-        "spawnTimeInSeconds": {
-          "min": 0,
-          "max": 1
-        }
+        "mode": "never"
       }
     },
     "explosionSpawner": {
@@ -407,11 +408,7 @@
         "key": "",
         "group": "spawners",
         "pool": "hud",
-        "mode": "never",
-        "spawnTimeInSeconds": {
-          "min": 0,
-          "max": 1
-        }
+        "mode": "never"
       }
     },
     "dustSpawner": {
@@ -424,11 +421,7 @@
         "key": "",
         "group": "spawners",
         "pool": "hud",
-        "mode": "never",
-        "spawnTimeInSeconds": {
-          "min": 0,
-          "max": 1
-        }
+        "mode": "never"
       }
     },
     "trackSpawner": {
@@ -441,11 +434,7 @@
         "key": "",
         "group": "spawners",
         "pool": "hud",
-        "mode": "never",
-        "spawnTimeInSeconds": {
-          "min": 0,
-          "max": 1
-        }
+        "mode": "never"
       }
     },
     "minimap": {
@@ -458,6 +447,22 @@
         "group": "hud",
         "alpha": 0.5
       }
+    },
+    "menuButton": {
+      "type": "button",
+      "position": {
+        "x": 24,
+        "y": 24
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiMenu",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
     }
-  }
+  },
+  "fromPreviousState": {}
 }

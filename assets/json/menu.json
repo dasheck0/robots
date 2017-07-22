@@ -8,6 +8,10 @@
       "type": "image",
       "source": "assets/images/arrowRight.png"
     },
+    "uiArrowLeft": {
+      "type": "image",
+      "source": "assets/images/arrowLeft.png"
+    },
     "uiSettings": {
       "type": "image",
       "source": "assets/images/gear.png"
@@ -39,12 +43,41 @@
     "logoBulletRight": {
       "type": "image",
       "source": "assets/images/tank_bulletFly3.png"
+    },
+    "redRobotMoving": {
+      "type": "spritesheet",
+      "source": "assets/images/redRobotMoving.png",
+      "frameWidth": 90,
+      "frameHeight": 75,
+      "frames": 2
+    },
+    "yellowRobotMoving": {
+      "type": "spritesheet",
+      "source": "assets/images/yellowRobotMoving.png",
+      "frameWidth": 92,
+      "frameHeight": 76,
+      "frames": 2
+    },
+    "greenRobotMoving": {
+      "type": "spritesheet",
+      "source": "assets/images/greenRobotMoving.png",
+      "frameWidth": 79,
+      "frameHeight": 60,
+      "frames": 2
+    },
+    "greyRobotMoving": {
+      "type": "spritesheet",
+      "source": "assets/images/greyRobotMoving.png",
+      "frameWidth": 79,
+      "frameHeight": 75,
+      "frames": 2
     }
   },
   "groups": [
     "background",
     "spawners",
     "logo",
+    "chooser",
     "hud"
   ],
   "prefabs": {
@@ -197,6 +230,135 @@
         "angle": 180
       }
     },
+    "redRobotMoving": {
+      "type": "animatedSprite",
+      "position": {
+        "x": 320,
+        "y": 180
+      },
+      "properties": {
+        "group": "chooser",
+        "key": "redRobotMoving",
+        "secondKey": "robot3Dred",
+        "anchor": {
+          "x": 0.5,
+          "y": 1
+        },
+        "animations": [
+          {
+            "name": "driving",
+            "frameRate": 10,
+            "frames": [
+              0,
+              1
+            ],
+            "loop": true,
+            "killOnComplete": false
+          }
+        ]
+      }
+    },
+    "yellowRobotMoving": {
+      "type": "animatedSprite",
+      "position": {
+        "x": 180,
+        "y": 180
+      },
+      "properties": {
+        "group": "chooser",
+        "key": "yellowRobotMoving",
+        "secondKey": "robot3Dyellow",
+        "anchor": {
+          "x": 0.5,
+          "y": 1
+        },
+        "animations": [
+          {
+            "name": "driving",
+            "frameRate": 10,
+            "frames": [
+              0,
+              1
+            ],
+            "loop": true,
+            "killOnComplete": false
+          }
+        ]
+      }
+    },
+    "greenRobotMoving": {
+      "type": "animatedSprite",
+      "position": {
+        "x": 420,
+        "y": 180
+      },
+      "properties": {
+        "group": "chooser",
+        "key": "greenRobotMoving",
+        "secondKey": "robot3Dgreen",
+        "anchor": {
+          "x": 0.5,
+          "y": 1
+        },
+        "animations": [
+          {
+            "name": "driving",
+            "frameRate": 10,
+            "frames": [
+              0,
+              1
+            ],
+            "loop": true,
+            "killOnComplete": false
+          }
+        ]
+      }
+    },
+    "greyRobotMoving": {
+      "type": "animatedSprite",
+      "position": {
+        "x": 550,
+        "y": 180
+      },
+      "properties": {
+        "group": "chooser",
+        "key": "greyRobotMoving",
+        "secondKey": "robot3Dblue",
+        "anchor": {
+          "x": 0.5,
+          "y": 1
+        },
+        "animations": [
+          {
+            "name": "driving",
+            "frameRate": 10,
+            "frames": [
+              0,
+              1
+            ],
+            "loop": true,
+            "killOnComplete": false
+          }
+        ]
+      }
+    },
+    "menuChooser": {
+      "type": "menuRobotChooser",
+      "position": {
+        "x": 320,
+        "y": 290
+      },
+      "properties": {
+        "group": "spawners",
+        "pool": "chooser",
+        "robots": [
+          "redRobotMoving",
+          "greenRobotMoving",
+          "yellowRobotMoving",
+          "greyRobotMoving"
+        ]
+      }
+    },
     "settingsButton": {
       "type": "button",
       "position": {
@@ -226,6 +388,37 @@
           "y": 0.5
         }
       }
+    },
+    "leftButton": {
+      "type": "button",
+      "position": {
+        "x": 140,
+        "y": 250
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiArrowLeft",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    },
+    "rightButton": {
+      "type": "button",
+      "position": {
+        "x": 500,
+        "y": 250
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiArrowRight",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
     }
-  }
+  },
+  "fromPreviousState": {}
 }
