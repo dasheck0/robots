@@ -50,7 +50,6 @@ that much on killing robots and get some chests too!
 
 * Add pause mode in game
 * Add menu, settings, credits, options
-* Respawn player after death
 
 ### Important
 
@@ -70,7 +69,6 @@ that much on killing robots and get some chests too!
 * Add temp stat boosts for special actions
 * Animate gaining loots and stat boosts
 * Increase size of robot for the minimap based on kill counter
-* Draw human robot in another color for the minimap
 * Add more weapon graphics
 * Add more crate graphics
 * Add robot shadows
@@ -79,6 +77,8 @@ that much on killing robots and get some chests too!
 
 ### Done
 
+* ~~Draw human robot in another color for the minimap~~
+* ~~Respawn player after death~~
 * ~~Add support for mobile~~
 * ~~Add explosion tweens and scorch marks after killing a robot~~
 * ~~Add tracks to robot for the last 100 meters~~
