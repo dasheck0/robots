@@ -21,7 +21,8 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.weapon.bullets.forEach((bullet) => {
         bullet.scale.setTo(Bots.scale);
     }, this);
-    this.weapon.bulletKillType = Phaser.Weapon.KILL_WORLD_BOUNDS;
+    this.weapon.bulletKillType = Phaser.Weapon.KILL_DISTANCE;
+    this.weapon.bulletKillDistance = 1000;
     this.weapon.bulletSpeed = 600;
     this.weapon.fireRate = 100; // 1 per 60 ms
     this.weapon.trackSprite(this, 0, 0, true);
@@ -94,7 +95,7 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
             killFromGroup(this.healthBar, this.state.groups.hud);
             killFromGroup(this.nameText, this.state.groups.hud);
             killFromGroup(this, this.state.groups.hud);
-           
+
             if (this.human) {
                 getMemberByName(this.state.groups.spawners, 'robotSpawner').spawn('robot');
             }
