@@ -48,26 +48,28 @@ that much on killing robots and get some chests too!
 
 ### Crucial
 
+* Add start button in menu
 * Add pause mode in game
-* Add menu, settings, credits, options
+* Add ~~menu~~, settings, credits, options
 
 ### Important
 
+* Add bosses
+* Add randomly placed obstacles (destroyable and not destroyable)
+* Add randomly placed structures (like a maze/labyrinth)
+* Add mines as secondary weapons and add camera shake for explosion
 * Drop loot after killing another robot
 * Add more robot ai types (timid, circeling, random)
-* Add bosses
 * Add stats for controlling weapon system
 * Add sounds
 * Add temps special loot (e.g. invincible, super speed, mirror, ...)
-* Add mines as secondary weapons and add camera shake for explosion
-* Add randomly placed obstacles (destroyable and not destroyable)
 
 ### Nice to have
 
+* Animate gaining loots and stat boosts
 * Add task systems, which give medals and stat boosts
 * Add temp stat boosts for special actions
-* Animate gaining loots and stat boosts
-* Increase size of robot for the min~imap based on kill counter
+* Increase size of robot for the minimap based on kill counter
 * Add more weapon graphics
 * Add more crate graphics
 * Scrolling message window (like a ticker)
