@@ -20,7 +20,7 @@ Bots.RobotSpawner.prototype.createObject = function (name, position) {
         "friction": 10,
         "attack": 34,
         "defense": 43,
-        "speed": 75,
+        "speed": 175,
         "health": 1000,
         "maxHealth": 1000,
         "displayName": "Player"

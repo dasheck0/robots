@@ -12,6 +12,7 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.human = false;
     this.isDead = false;
 
+    this.scale.setTo(Bots.scale);
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
     this.currentSpeed = 0;
     this.body.maxVelocity.setTo(this.properties.speed);
@@ -40,6 +41,15 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.state.groups.hud.add(this.nameText);
 
     this.healthBar = this.game.add.graphics(0, 0, state.groups.hud);
+
+    this.shadow = this.game.add.sprite(this.x, this.y, properties.key);
+    this.shadow.scale.x = this.scale.x * 1.2;
+    this.shadow.scale.y = this.scale.y * 1.2;
+    this.shadow.alpha = 0.25;
+    this.shadow.anchor.setTo(0.5);
+    this.shadow.tint = 0x000000;
+    this.shadow.name = `${name}_shadow`;
+    this.state.groups.shadows.add(this.shadow);
 };
 
 Bots.DroppableRobot.prototype = Object.create(Bots.Droppable.prototype);
@@ -84,6 +94,8 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
         getMemberByName(this.state.groups.spawners, 'dustSpawner').spawn(this);
         getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(this);
 
+        killFromGroup(this.shadow, this.state.groups.shadows);
+        
         this.game.add.tween(this.scale).to({ x: 4, y: 4 }, 500, Phaser.Easing.Quadratic.Out, true);
         this.game.add.tween(this).to({ alpha: 0 }, 500, Phaser.Easing.Quadratic.Out, true).onComplete.add(function () {
             if (this.trackTimer) {
@@ -133,11 +145,17 @@ Bots.DroppableRobot.prototype.update = function (instance) {
         instance.nameText.x = instance.x;
         instance.nameText.y = instance.y - instance.height / 2 - 4;
     }
+
+    instance.shadow.x = instance.x;
+    instance.shadow.y = instance.y;
+    instance.shadow.angle = instance.angle;
 }
 
 Bots.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
     bullet.kill();
-    chest.kill();
+
+    killFromGroup(chest.shadow, this.state.groups.shadows);
+    killFromGroup(chest, this.state.groups.chests);
 
     getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(chest);
     getMemberByName(this.state.groups.spawners, 'dustSpawner').spawn(chest);
