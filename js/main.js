@@ -13,5 +13,5 @@ window.onload = function () {
     game.state.add('level', new Bots.Level());
     game.state.add('menu', new Bots.Menu());
 
-    game.state.start('boot', true, false, 'assets/json/level.json');
+    game.state.start('boot', true, false, 'assets/json/menu.json');
 };

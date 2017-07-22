@@ -30,7 +30,7 @@ Bots.Prefab = function (state, name, position, properties) {
         this.scale.setTo(properties.scale.x, properties.scale.y);
     }
 
-    if (properties.alpha) {
+    if (properties.alpha !== undefined) {
         this.alpha = properties.alpha;
     }
 
@@ -38,8 +38,22 @@ Bots.Prefab = function (state, name, position, properties) {
         this.angle = properties.angle;
     }
 
+    if (properties.mirror) {
+        if (properties.mirror.x) {
+            this.scale.x *= -1;
+        }
+
+        if (properties.mirror.y) {
+            this.scale.y *= -1;
+        }
+    }
+
     this.fixedToCamera = properties.fixedToCamera;
 };
 
 Bots.Prefab.prototype = Object.create(Phaser.Sprite.prototype);
 Bots.Prefab.prototype.constructor = Bots.Prefab;
+
+Bots.Prefab.prototype.render = function () {
+    this.game.debug.spriteInfo(this, 32, 32);
+}

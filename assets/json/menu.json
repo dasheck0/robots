@@ -1,13 +1,50 @@
 {
   "assets": {
-    "groundTiled": {
+    "groundTiles": {
       "type": "image",
       "source": "assets/images/tiled_64.png"
+    },
+    "uiArrowRight": {
+      "type": "image",
+      "source": "assets/images/arrowRight.png"
+    },
+    "uiSettings": {
+      "type": "image",
+      "source": "assets/images/gear.png"
+    },
+    "uiInformation": {
+      "type": "image",
+      "source": "assets/images/information.png"
+    },
+    "cloud1": {
+      "type": "image",
+      "source": "assets/images/longCloud.png"
+    },
+    "cloud2": {
+      "type": "image",
+      "source": "assets/images/cloud.png"
+    },
+    "logoRobotRed": {
+      "type": "image",
+      "source": "assets/images/robot_redJump.png"
+    },
+    "logoRobotGreen": {
+      "type": "image",
+      "source": "assets/images/robot_greenJump.png"
+    },
+    "logoBulletLeft": {
+      "type": "image",
+      "source": "assets/images/tank_bulletFly2.png"
+    },
+    "logoBulletRight": {
+      "type": "image",
+      "source": "assets/images/tank_bulletFly3.png"
     }
   },
   "groups": [
     "background",
     "spawners",
+    "logo",
     "hud"
   ],
   "prefabs": {
@@ -25,6 +62,169 @@
           "height": 360
         },
         "fixedToCamera": true
+      }
+    },
+    "logoBulletLeft": {
+      "type": "sprite",
+      "position": {
+        "x": 374,
+        "y": 62
+      },
+      "properties": {
+        "group": "logo",
+        "key": "logoBulletLeft",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "angle": 8,
+        "mirror": {
+          "x": true
+        },
+        "alpha": 0
+      }
+    },
+    "logoBulletRight": {
+      "type": "sprite",
+      "position": {
+        "x": 342,
+        "y": 80
+      },
+      "properties": {
+        "group": "logo",
+        "key": "logoBulletRight",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "angle": 343,
+        "scale": {
+          "x": 0.7,
+          "y": 0.7
+        },
+        "alpha": 0
+      }
+    },
+    "logoRobotRed": {
+      "type": "sprite",
+      "position": {
+        "x": 374,
+        "y": 62
+      },
+      "properties": {
+        "group": "logo",
+        "key": "logoRobotRed",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "angle": 8,
+        "mirror": {
+          "x": true
+        },
+        "alpha": 0
+      }
+    },
+    "logoRobotGreen": {
+      "type": "sprite",
+      "position": {
+        "x": 342,
+        "y": 80
+      },
+      "properties": {
+        "group": "logo",
+        "key": "logoRobotGreen",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "angle": 343,
+        "scale": {
+          "x": 0.9,
+          "y": 0.9
+        },
+        "alpha": 0
+      }
+    },
+    "middleCloud": {
+      "type": "sprite",
+      "position": {
+        "x": 320,
+        "y": 100
+      },
+      "properties": {
+        "group": "logo",
+        "key": "cloud1",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "alpha": 0
+      }
+    },
+    "leftCloud": {
+      "type": "sprite",
+      "position": {
+        "x": -211,
+        "y": 122
+      },
+      "properties": {
+        "group": "logo",
+        "key": "cloud2",
+        "anchor": {
+          "x": 0,
+          "y": 0.5
+        }
+      }
+    },
+    "rightCloud": {
+      "type": "sprite",
+      "position": {
+        "x": 706,
+        "y": 122
+      },
+      "properties": {
+        "group": "logo",
+        "key": "cloud2",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "scale": {
+          "x": 0.63,
+          "y": 0.63
+        },
+        "angle": 180
+      }
+    },
+    "settingsButton": {
+      "type": "button",
+      "position": {
+        "x": 616,
+        "y": 24
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiSettings",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    },
+    "informationButton": {
+      "type": "button",
+      "position": {
+        "x": 616,
+        "y": 72
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiInformation",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        }
       }
     }
   }
