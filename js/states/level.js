@@ -27,7 +27,9 @@ Bots.Level = function () {
         'dustSpawner': Bots.DustSpawner.prototype.constructor,
         'track': Bots.Track.prototype.constructor,
         'trackSpawner': Bots.TrackSpawner.prototype.constructor,
-        'button': Bots.Button.prototype.constructor
+        'button': Bots.Button.prototype.constructor,
+        'dpad': Bots.DPad.prototype.constructor,
+        'control': Bots.Control.prototype.constructor
     }
 };
 

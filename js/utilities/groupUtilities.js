@@ -11,3 +11,9 @@ const getMemberByName = (group, name) => {
 const getHumanRobot = (robotsGroup) => {
     return robotsGroup.filter(item => item.human).list[0];
 }
+
+const killFromGroup = (item, group) => {
+    item.kill();
+    item.destroy();
+    group.remove(item);
+}

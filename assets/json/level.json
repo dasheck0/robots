@@ -134,6 +134,14 @@
     "uiMenu": {
       "type": "image",
       "source": "assets/images/menuList.png"
+    },
+    "uiDPad": {
+      "type": "image",
+      "source": "assets/images/flatDark03.png"
+    },
+    "uiShootButton": {
+      "type": "image",
+      "source": "assets/images/flatDark48.png"
     }
   },
   "groups": [
@@ -147,6 +155,48 @@
     "hud"
   ],
   "prefabs": {
+    "uiDPad": {
+      "type": "dpad",
+      "position": {
+        "x": 68,
+        "y": 292
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiDPad",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "fixedToCamera": true,
+        "alpha": 1,
+        "scale": {
+          "x": 1.5,
+          "y": 1.5
+        }
+      }
+    },
+    "uiShootButton": {
+      "type": "control",
+      "position": {
+        "x": 572,
+        "y": 292
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiShootButton",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "fixedToCamera": true,
+        "alpha": 1,
+        "scale": {
+          "x": 1.5,
+          "y": 1.5
+        }
+      }
+    },
     "atkIcon": {
       "type": "sprite",
       "position": {
@@ -359,7 +409,7 @@
         "key": "",
         "group": "spawners",
         "pool": "robots",
-        "mode": "limited",
+        "mode": "never",
         "limit": 20,
         "spawnTimeInSeconds": {
           "min": 0,
@@ -463,6 +513,5 @@
         }
       }
     }
-  },
-  "fromPreviousState": {}
+  }
 }

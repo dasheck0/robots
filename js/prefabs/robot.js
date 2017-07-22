@@ -14,6 +14,17 @@ Bots.Robot = function (state, name, position, properties) {
     this.game.camera.focusOnXY(0, 0);
 
     this.trackTimer = null;
+
+    this.dpad = getMemberByName(this.state.groups.hud, 'uiDPad');
+    this.shootButton = getMemberByName(this.state.groups.hud, 'uiShootButton');
+
+    if (this.game.device.desktop) {
+        killFromGroup(this.dpad, this.state.groups.hud);
+        killFromGroup(this.shootButton, this.state.groups.hud);
+
+        this.dpad = null;
+        this.shootButton = null;
+    }
 };
 
 Bots.Robot.prototype = Object.create(Bots.DroppableRobot.prototype);
@@ -42,26 +53,44 @@ Bots.Robot.prototype.update = function () {
         this.body.angularVelocity = 0;
 
         if (this.dropped && !this.isDead) {
-            if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
-                this.angle -= this.properties.rotationSpeed;
-            } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
-                this.angle += this.properties.rotationSpeed;
+            if (this.game.device.desktop) {
+                if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
+                    this.angle -= this.properties.rotationSpeed;
+                } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+                    this.angle += this.properties.rotationSpeed;
+                }
+
+                if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
+                    this.currentSpeed = this.properties.maxSpeed;
+                } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
+                    this.currentSpeed = -this.properties.maxSpeed;
+                }
+
+                if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+                    this.weapon.fire();
+                }
+            } else {
+                if (this.dpad && this.dpad.isPressed) {
+                    const angle = this.dpad.dpadAngle();
+                    if (angle) {
+                        this.angle = angle;
+                        this.currentSpeed = this.properties.maxSpeed;
+                    }
+                }
+
+                if (this.shootButton && this.shootButton.isPressed) {
+                    this.weapon.fire();
+                }
             }
 
-            if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
-                this.currentSpeed = this.properties.maxSpeed;
-            } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
-                this.currentSpeed = -this.properties.maxSpeed;
+            if (this.currentSpeed > 0) {
+                this.currentSpeed -= this.properties.friction;
             } else {
-                if (this.currentSpeed > 0) {
-                    this.currentSpeed -= this.properties.friction;
-                } else {
-                    this.currentSpeed += this.properties.friction;
-                }
+                this.currentSpeed += this.properties.friction;
+            }
 
-                if (Math.abs(this.currentSpeed) <= this.properties.friction) {
-                    this.currentSpeed = 0;
-                }
+            if (Math.abs(this.currentSpeed) <= this.properties.friction) {
+                this.currentSpeed = 0;
             }
 
             if (this.currentSpeed !== 0) {
@@ -75,10 +104,6 @@ Bots.Robot.prototype.update = function () {
             } else {
                 this.game.time.events.remove(this.trackTimer);
                 this.trackTimer = 0;
-            }
-
-            if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
-                this.weapon.fire();
             }
         }
     }
