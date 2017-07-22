@@ -50,7 +50,6 @@ that much on killing robots and get some chests too!
 
 * Add pause mode in game
 * Add menu, settings, credits, options
-* Add support for mobile
 * Respawn player after death
 
 ### Important
@@ -80,6 +79,7 @@ that much on killing robots and get some chests too!
 
 ### Done
 
+* ~~Add support for mobile~~
 * ~~Add explosion tweens and scorch marks after killing a robot~~
 * ~~Add tracks to robot for the last 100 meters~~
 
@@ -100,6 +100,7 @@ that much on killing robots and get some chests too!
 * [Topdown Tanks](https://kenney.nl/assets/topdown-tanks)
 * [Game icons](https://opengameart.org/content/game-icons)
 * [Cloud set](https://opengameart.org/content/cloud-set)
+* [Onscreen - Controls](http://kenney.nl/assets/onscreen-controls)
 
 ## License
 
