@@ -44,6 +44,26 @@ obvious one is to open chests by destroying them. Once they are opened
 you get a persistent boost of one of your main stats. So do not focus 
 that much on killing robots and get some chests too!
 
+### Bosses
+
+Every once in a while there spawns a boss robot. There will be a special 
+notification for this event. The boss will be displayed as a red dot on 
+the minimap. But be careful the boss has way better stats than any other
+robot including yourself (probably). Also the boss has special attacks
+like the stun jump and a periodic meteor hail. Each robot will explode
+instantaneously upon boss collision. Boss fights are only for the best
+of the best. But believe me it is worth it. According to the legend one
+will receive its power when a boss dies!
+
+### Environment
+
+The world of Bots is dangerous by itself. But pay attention to your 
+surroundings. There are random events, which you should avoid. This can 
+randomly placed oil on the road, which will slow you down or even 
+meteors dropping from the sky, which will likely kill you instantly. 
+Sometimes the earth shatters for no reason, stunning each robot nearby
+for a certain time.
+
 ## Road map
 
 ### Crucial
@@ -54,7 +74,6 @@ that much on killing robots and get some chests too!
 
 ### Important
 
-* Add bosses (Can jump and stun robots within distance, can drop missiles, yield medals uopn defeat)
 * Add randomly placed obstacles (destroyable and not destroyable)
 * Add randomly placed structures (like a maze/labyrinth)
 * Add mines as secondary weapons and add camera shake for explosion
@@ -71,11 +90,12 @@ that much on killing robots and get some chests too!
 * Add temp stat boosts for special actions
 * Increase size of robot for the minimap based on kill counter
 * Add more weapon graphics
-* Add more crate graphics
 * Scrolling message window (like a ticker)
 
 ### Done
 
+* ~~Add bosses (Can jump and stun robots within distance, can drop missiles, yield medals uopn defeat)~~
+* ~~Add more crate graphics~~
 * ~~Add robot shadows~~
 * ~~Kill notification like in CS:GO~~
 * ~~Funny names for bots~~
@@ -109,4 +129,4 @@ that much on killing robots and get some chests too!
 
 ## License
 
-This game is available as open source under the termns of the [MIT License](https://opensource.org/licenses/MIT)
+This game is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT)
