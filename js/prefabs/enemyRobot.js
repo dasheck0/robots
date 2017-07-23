@@ -6,9 +6,6 @@ let Bots = Bots || {};
 
 Bots.EnemyRobot = function (state, name, position, properties) {
     Bots.DroppableRobot.call(this, state, name, position, properties);
-
-    this.humanRobot = null;
-    this.currentDestination = null;
 };
 
 
@@ -58,8 +55,8 @@ Bots.EnemyRobot.prototype.update = function () {
         const member = (closestRobot.present && closestRobot.distance < closestChest.distance) ? closestRobot : closestChest;
 
         if (member.member) {
-            if (member.distance < 150) {
-                if (member.distance < 100) {
+            if (member.distance < this.properties.shootRange) {
+                if (member.distance < this.properties.stopRange) {
                     this.body.velocity.x = 0;
                     this.body.velocity.y = 0;
                 } else {
@@ -68,8 +65,11 @@ Bots.EnemyRobot.prototype.update = function () {
                 this.weapon.fire();
             }
 
-            this.rotation = this.game.physics.arcade.angleBetween(this, member.member);
-            this.game.physics.arcade.moveToObject(this, member.member /* + random offset */, this.properties.maxSpeed); // speed
+            const offset = -60 * this.game.rnd.realInRange(this.properties.accuracy, 1) + 60;
+            const destinationPosition = new Phaser.Point(member.member.x + offset * (randomBoolean() ? 1 : -1), member.member.y + offset * (randomBoolean() ? 1 : -1));
+
+            this.rotation = this.game.physics.arcade.angleBetween(this, member.member);// + (offset * (randomBoolean() ? 1 : -1)) * 3.141592563 / 180;
+            this.game.physics.arcade.moveToObject(this, destinationPosition, this.properties.maxSpeed);
         }
     }
 }

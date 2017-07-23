@@ -11,3 +11,5 @@ const calculateDamage = (attack, defense) => {
 }
 
 const mod = (number, mod) => ((number % mod) + mod) % mod;
+
+const randomBoolean = () => randomInteger(10) < 5;
