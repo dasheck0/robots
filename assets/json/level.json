@@ -40,22 +40,6 @@
       "type": "image",
       "source": "assets/images/tank_bullet3.png"
     },
-    "crateAmmo": {
-      "type": "image",
-      "source": "assets/images/tanks_crateAmmo.png"
-    },
-    "crateArmor": {
-      "type": "image",
-      "source": "assets/images/tanks_crateArmor.png"
-    },
-    "crateRepair": {
-      "type": "image",
-      "source": "assets/images/tanks_crateRepair.png"
-    },
-    "crateWood": {
-      "type": "image",
-      "source": "assets/images/tanks_crateWood.png"
-    },
     "ammo_box": {
       "type": "image",
       "source": "assets/images/ammo_box.png"
@@ -138,6 +122,66 @@
     "uiShootButton": {
       "type": "image",
       "source": "assets/images/flatDark48.png"
+    },
+    "crate_01": {
+      "type": "image",
+      "source": "assets/images/crate_01.png"
+    },
+    "crate_07": {
+      "type": "image",
+      "source": "assets/images/crate_07.png"
+    },
+    "crate_08": {
+      "type": "image",
+      "source": "assets/images/crate_08.png"
+    },
+    "crate_09": {
+      "type": "image",
+      "source": "assets/images/crate_09.png"
+    },
+    "crate_10": {
+      "type": "image",
+      "source": "assets/images/crate_10.png"
+    },
+    "crate_11": {
+      "type": "image",
+      "source": "assets/images/crate_11.png"
+    },
+    "crate_17": {
+      "type": "image",
+      "source": "assets/images/crate_17.png"
+    },
+    "crate_18": {
+      "type": "image",
+      "source": "assets/images/crate_18.png"
+    },
+    "crate_19": {
+      "type": "image",
+      "source": "assets/images/crate_19.png"
+    },
+    "crate_20": {
+      "type": "image",
+      "source": "assets/images/crate_20.png"
+    },
+    "crate_21": {
+      "type": "image",
+      "source": "assets/images/crate_21.png"
+    },
+    "crate_42": {
+      "type": "image",
+      "source": "assets/images/crate_42.png"
+    },
+    "crate_43": {
+      "type": "image",
+      "source": "assets/images/crate_43.png"
+    },
+    "crate_44": {
+      "type": "image",
+      "source": "assets/images/crate_44.png"
+    },
+    "crate_45": {
+      "type": "image",
+      "source": "assets/images/crate_45.png"
     }
   },
   "groups": [
@@ -425,11 +469,28 @@
         "group": "spawners",
         "pool": "chests",
         "mode": "limited",
-        "limit": 25,
+        "limit": 50,
         "spawnTimeInSeconds": {
           "min": 0,
           "max": 1
-        }
+        },
+        "keys": [
+          "crate_01",
+          "crate_07",
+          "crate_08",
+          "crate_09",
+          "crate_10",
+          "crate_11",
+          "crate_17",
+          "crate_18",
+          "crate_19",
+          "crate_20",
+          "crate_21",
+          "crate_42",
+          "crate_43",
+          "crate_44",
+          "crate_45"
+        ]
       }
     },
     "lootSpawner": {

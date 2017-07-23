@@ -54,7 +54,7 @@ that much on killing robots and get some chests too!
 
 ### Important
 
-* Add bosses
+* Add bosses (Can jump and stun robots within distance, can drop missiles, yield medals uopn defeat)
 * Add randomly placed obstacles (destroyable and not destroyable)
 * Add randomly placed structures (like a maze/labyrinth)
 * Add mines as secondary weapons and add camera shake for explosion
@@ -76,7 +76,7 @@ that much on killing robots and get some chests too!
 
 ### Done
 
-* ~~Add robot shadows~
+* ~~Add robot shadows~~
 * ~~Kill notification like in CS:GO~~
 * ~~Funny names for bots~~
 * ~~Draw human robot in another color for the minimap~~

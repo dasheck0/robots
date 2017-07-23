@@ -12,8 +12,14 @@ Bots.ChestSpawner.prototype = Object.create(Bots.Spawner.prototype);
 Bots.ChestSpawner.prototype.constructor = Bots.ChestSpawner;
 
 Bots.ChestSpawner.prototype.createObject = function (name, position) {
+    const key = sample(this.properties.keys);
+
     return new Bots.Chest(this.state, name, position, {
-        "group": "chests",
-        "key": "crateWood"
+        key,
+        group: 'chests',
+        scale: {
+            x: 0.75,
+            y: 0.75
+        }
     });
 }
