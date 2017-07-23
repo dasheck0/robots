@@ -8,6 +8,18 @@
       "type": "image",
       "source": "assets/images/mountain_64.png"
     },
+    "groundMountain2": {
+      "type": "image",
+      "source": "assets/images/mountain2_64.png"
+    },
+    "grass2": {
+      "type": "image",
+      "source": "assets/images/grass2_64.png"
+    },
+    "stone": {
+      "type": "image",
+      "source": "assets/images/stone_64.png"
+    },
     "groundSand": {
       "type": "image",
       "source": "assets/images/sand_64.png"
@@ -520,10 +532,9 @@
           "groundSand",
           "groundGrass",
           "groundTiled",
-          "groundMountain",
-          "groundSand",
-          "groundGrass",
-          "groundTiled"
+          "groundMountain2",
+          "grass2",
+          "stone"
         ]
       }
     },

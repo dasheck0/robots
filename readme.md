@@ -126,6 +126,8 @@ for a certain time.
 * [Sokoban (100+ Tiles)](https://opengameart.org/content/sokoban-100-tiles)
 * [LCP Terrain Pack](https://opengameart.org/content/lpc-terrain-repack)
 * [Space Shooter Redux](https://opengameart.org/content/space-shooter-redux)
+* [FREE UI ASSET PACK 1](https://opengameart.org/content/free-ui-asset-pack-1)
+* [2d Lost Garden Zelda style tiles resized to 32x32 with additions](https://opengameart.org/content/2d-lost-garden-zelda-style-tiles-resized-to-32x32-with-additions)
 
 ## License
 
