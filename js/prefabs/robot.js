@@ -61,9 +61,9 @@ Bots.Robot.prototype.update = function () {
                 }
 
                 if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
-                    this.currentSpeed = this.properties.maxSpeed;
+                    this.currentSpeed = this.properties.maxSpeed * this.speedMultiplier;
                 } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
-                    this.currentSpeed = -this.properties.maxSpeed;
+                    this.currentSpeed = -this.properties.maxSpeed * this.speedMultiplier;
                 }
 
                 if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
@@ -74,7 +74,7 @@ Bots.Robot.prototype.update = function () {
                     const angle = this.dpad.dpadAngle();
                     if (angle) {
                         this.angle = angle;
-                        this.currentSpeed = this.properties.maxSpeed;
+                        this.currentSpeed = this.properties.maxSpeed * this.speedMultiplier;
                     }
                 }
 

@@ -26,6 +26,7 @@ Bots.Level = function () {
         'explosion': Bots.Explosion.prototype.constructor,
         'dust': Bots.Dust.prototype.constructor,
         'dustSpawner': Bots.DustSpawner.prototype.constructor,
+        'oilSpawner': Bots.OilSpawner.prototype.constructor,
         'track': Bots.Track.prototype.constructor,
         'trackSpawner': Bots.TrackSpawner.prototype.constructor,
         'button': Bots.Button.prototype.constructor,
@@ -70,6 +71,7 @@ Bots.Level.prototype.createPrefab = function (prefabName, properties) {
 
 Bots.Level.prototype.update = function () {
     this.game.physics.arcade.collide(this.groups.chests, this.groups.robots);
+    this.game.physics.arcade.collide(this.groups.robots);
 }
 
 Bots.Level.prototype.render = function () {

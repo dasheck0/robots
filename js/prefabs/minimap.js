@@ -34,6 +34,7 @@ Bots.Minimap.prototype.update = function () {
 
     this.state.groups.robots.forEachAlive((robot) => this.drawMinimapObject(robot, robot.human ? 0x0000ff : 0xffffff));
     this.state.groups.chests.forEachAlive((chest) => this.drawMinimapObject(chest, 0x00ff00));
+    this.state.groups.oil.forEachAlive((oil) => this.drawMinimapObject(oil, 0xff0000));
 }
 
 Bots.Minimap.prototype.drawRectangle = function (x, y, w, h, color = 0x000000) {

@@ -182,12 +182,17 @@
     "crate_45": {
       "type": "image",
       "source": "assets/images/crate_45.png"
+    },
+    "oil": {
+      "type": "image",
+      "source": "assets/images/oil.png"
     }
   },
   "groups": [
     "background",
     "spawners",
     "ground",
+    "oil",
     "shadows",
     "chests",
     "robots",
@@ -530,6 +535,24 @@
         "group": "spawners",
         "pool": "hud",
         "mode": "never"
+      }
+    },
+    "oilSpawner": {
+      "type": "oilSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "oil",
+        "mode": "limited",
+        "limit": 30,
+        "spawnTimeInSeconds": {
+          "min": 0,
+          "max": 1
+        }
       }
     },
     "trackSpawner": {

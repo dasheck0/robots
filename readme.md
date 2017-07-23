@@ -104,6 +104,7 @@ that much on killing robots and get some chests too!
 * [Cloud set](https://opengameart.org/content/cloud-set)
 * [Onscreen - Controls](http://kenney.nl/assets/onscreen-controls)
 * [Sokoban (100+ Tiles)](https://opengameart.org/content/sokoban-100-tiles)
+* [LCP Terrain Pack](https://opengameart.org/content/lpc-terrain-repack)
 
 ## License
 

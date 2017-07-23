@@ -17,6 +17,7 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.currentSpeed = 0;
     this.body.maxVelocity.setTo(this.properties.speed);
     this.body.collideWorldBounds = true;
+    this.speedMultiplier = 1;
 
     this.weapon = this.game.add.weapon(10, 'bullet');
     this.weapon.bullets.forEach((bullet) => {
@@ -116,10 +117,12 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
 }
 
 Bots.DroppableRobot.prototype.update = function (instance) {
+    instance.speedMultiplier = 1;
+
     if (instance.body) {
         instance.game.physics.arcade.overlap(instance.weapon.bullets, instance.state.groups.chests, this.onBulletChestCollide, null, instance);
         instance.game.physics.arcade.overlap(instance.weapon.bullets, instance.state.groups.robots, this.onBulletRobotCollide, this.onBulletRobotCollideProcess, instance);
-        instance.game.physics.arcade.collide(instance.state.groups.robots);
+        instance.game.physics.arcade.overlap(instance.state.groups.oil, instance.state.groups.robots, this.onOilRobotOverlap, null, instance);
     }
 
     if (instance.healthBar) {
@@ -173,6 +176,11 @@ Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
             this.killedOtherRobot();
         }
     }
+}
+
+Bots.DroppableRobot.prototype.onOilRobotOverlap = function (oil, robot) {
+    console.log("overlapped");
+    robot.speedMultiplier = 0.5;
 }
 
 Bots.DroppableRobot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {
