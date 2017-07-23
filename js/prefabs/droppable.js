@@ -17,11 +17,13 @@ Bots.Droppable.prototype = Object.create(Phaser.Sprite.prototype);
 Bots.Droppable.prototype.constructor = Bots.Droppable;
 
 Bots.Droppable.prototype.dropObject = function () {
+    const easing = this.properties.avoidBounce ? Phaser.Easing.Quintic.In : Phaser.Easing.Bounce.Out;
+
     this.scale.setTo(Bots.scale * 8);
     const tween = this.game.add.tween(this.scale).to({
         x: Bots.scale * (this.properties.scaleMultiplier || 1),
         y: Bots.scale * (this.properties.scaleMultiplier || 1)
-    }, 750, Phaser.Easing.Bounce.Out, true);
+    }, 750, easing, true);
     tween.onComplete.add(function () {
         this.dropped = true;
         this.initializeObject();

@@ -27,6 +27,7 @@ Bots.BossRobot.prototype.initializeObject = function () {
     }, this);
 
     this.initiateJump();
+    this.initiateMeteoritHail();
 }
 
 Bots.BossRobot.prototype.getClosestMemberOfGroup = function (group) {
@@ -112,4 +113,23 @@ Bots.BossRobot.prototype.jump = function () {
             getMemberByName(this.state.groups.spawners, 'earthQuakeSpawner').spawn(this, 10);
         }, this);
     }, this);
+}
+
+Bots.BossRobot.prototype.initiateMeteoritHail = function () {
+    this.state.groups.robots.forEachAlive((robot) => {
+        if (!robot.isDead && !robot.boss && this.game.physics.arcade.distanceBetween(this, robot) < this.properties.shootRange) {
+            const position = new Phaser.Point(robot.x, robot.y);
+            getMemberByName(this.state.groups.spawners, 'meteoritSpawner').forceSpawn(position);
+        }
+    })
+
+    const count = this.game.rnd.integerInRange(5, 10);
+    for (let i = 0; i < count; i++) {
+        this.game.time.events.add(this.game.rnd.integerInRange(50, 500), () => {
+            const position = new Phaser.Point(this.x + this.game.rnd.integerInRange(0, 200) * (randomBoolean() ? 1 : -1), this.y + this.game.rnd.integerInRange(0, 200) * (randomBoolean() ? 1 : -1));
+            getMemberByName(this.state.groups.spawners, 'meteoritSpawner').forceSpawn(position);
+        }, this);
+    }
+
+    this.game.time.events.add(this.game.rnd.integerInRange(2000, 5000), this.initiateMeteoritHail, this);
 }

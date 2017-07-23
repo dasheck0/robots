@@ -186,6 +186,46 @@
     "oil": {
       "type": "image",
       "source": "assets/images/oil.png"
+    },
+    "meteorGrey_big1": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_big1.png"
+    },
+    "meteorGrey_big2": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_big2.png"
+    },
+    "meteorGrey_big3": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_big3.png"
+    },
+    "meteorGrey_big4": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_big4.png"
+    },
+    "meteorGrey_med1": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_med1.png"
+    },
+    "meteorGrey_med2": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_med2.png"
+    },
+    "meteorGrey_small1": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_small1.png"
+    },
+    "meteorGrey_small2": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_small2.png"
+    },
+    "meteorGrey_tiny1": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_tiny1.png"
+    },
+    "meteorGrey_tiny2": {
+      "type": "image",
+      "source": "assets/images/meteorGrey_tiny2.png"
     }
   },
   "groups": [
@@ -196,6 +236,7 @@
     "shadows",
     "chests",
     "robots",
+    "meteorits",
     "explosions",
     "loot",
     "hud"
@@ -513,6 +554,37 @@
           "crate_44",
           "crate_45"
         ]
+      }
+    },
+    "meteoritSpawner": {
+      "type": "meteoritSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "meteorits",
+        "mode": "limited",
+        "limit": 50,
+        "spawnTimeInSeconds": {
+          "min": 0,
+          "max": 1
+        },
+        "keys": [
+          "meteorGrey_big1",
+          "meteorGrey_big2",
+          "meteorGrey_big3",
+          "meteorGrey_big4",
+          "meteorGrey_med1",
+          "meteorGrey_med2",
+          "meteorGrey_small1",
+          "meteorGrey_small2",
+          "meteorGrey_tiny1",
+          "meteorGrey_tiny2"
+        ],
+        "avoidBounce": true
       }
     },
     "lootSpawner": {

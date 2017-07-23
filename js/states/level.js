@@ -18,6 +18,8 @@ Bots.Level = function () {
         'bossRobotSpawner': Bots.BossRobotSpawner.prototype.constructor,
         'chestSpawner': Bots.ChestSpawner.prototype.constructor,
         'chest': Bots.Chest.prototype.constructor,
+        'meteoritSpawner': Bots.MeteoritSpawner.prototype.constructor,
+        'meteorit': Bots.Meteorit.prototype.constructor,
         'minimap': Bots.Minimap.prototype.constructor,
         'text': Bots.TextPrefab.prototype.constructor,
         'lootSpawner': Bots.LootSpawner.prototype.constructor,

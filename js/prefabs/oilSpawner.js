@@ -12,13 +12,15 @@ Bots.OilSpawner.prototype = Object.create(Bots.Spawner.prototype);
 Bots.OilSpawner.prototype.constructor = Bots.OilSpawner;
 
 Bots.OilSpawner.prototype.createObject = function (name, position) {
+    const scale = this.game.rnd.realInRange(0.5, 1.3);
+
     const properties = {
         key: 'oil',
         group: 'oil',
         alpha: this.game.rnd.realInRange(0.6, 0.75),
         scale: {
-            x: this.game.rnd.realInRange(0.9, 1.1),
-            y: this.game.rnd.realInRange(0.9, 1.1)
+            x: scale,
+            y: scale
         },
         angle: this.game.rnd.integerInRange(0, 360),
         anchor: {
