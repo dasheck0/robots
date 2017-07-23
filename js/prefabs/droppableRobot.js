@@ -27,6 +27,7 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.weapon.bulletKillDistance = 1000;
     this.weapon.bulletSpeed = 600;
     this.weapon.fireRate = 100; // 1 per 60 ms
+    this.weapon.bulletAngleVariance = 5;
     this.weapon.trackSprite(this, 0, 0, true);
 
     this.killCounter = this.game.add.text(0, 0, '1', { font: '10pt Arial', fill: '#ffffff', align: 'right' })
