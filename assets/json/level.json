@@ -497,7 +497,7 @@
         "group": "spawners",
         "pool": "robots",
         "mode": "limited",
-        "limit": 20,
+        "limit": 15,
         "spawnTimeInSeconds": {
           "min": 0,
           "max": 1
@@ -532,7 +532,7 @@
         "group": "spawners",
         "pool": "chests",
         "mode": "limited",
-        "limit": 50,
+        "limit": 25,
         "spawnTimeInSeconds": {
           "min": 0,
           "max": 1
@@ -567,10 +567,10 @@
         "group": "spawners",
         "pool": "meteorits",
         "mode": "limited",
-        "limit": 50,
+        "limit": 10,
         "spawnTimeInSeconds": {
-          "min": 0,
-          "max": 1
+          "min": 5,
+          "max": 10
         },
         "keys": [
           "meteorGrey_big1",
@@ -650,10 +650,10 @@
         "group": "spawners",
         "pool": "oil",
         "mode": "limited",
-        "limit": 30,
+        "limit": 15,
         "spawnTimeInSeconds": {
-          "min": 0,
-          "max": 1
+          "min": 5,
+          "max": 15
         }
       }
     },

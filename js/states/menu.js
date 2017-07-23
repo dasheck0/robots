@@ -114,7 +114,7 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
         this.chooser.showNext();
     }
 
-    if (button.name === 'settingsButton') {
+    if (button.name === 'startButton') {
         const content = this.game.cache.getText('level');
         const payload = JSON.parse(content);
         payload.prefabs.robotSpawner.properties.spawnKey = this.chooser.getChosenRobot().properties.secondKey;
@@ -126,5 +126,8 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
             .onComplete.add(function () {
             this.game.state.start('loading', true, false, payload, 'level');
         }, this);
+    }
+    
+    if (button.name === 'settingsButton') {
     }
 }

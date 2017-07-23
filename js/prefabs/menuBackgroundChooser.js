@@ -24,7 +24,8 @@ Bots.MenuBackgroundChooser = function (state, name, position, properties) {
 
     this.backgrounds.forEach((background, index) => {
         const length = this.backgrounds.length;
-        background.x += (background.width + properties.spacing) * index - (length * background.width + (length - 1) * properties.spacing) / 2 + background.width / 2;
+        background.x += (background.width + properties.spacing) * mod(index, properties.columns);// - (length * background.width + (length - 1) * properties.spacing) / 2 + background.width / 2;
+        background.y -= Math.trunc(index / properties.columns) * (background.width + properties.spacing);
     });
 
     this.onTileSelected(this.backgrounds[0]);

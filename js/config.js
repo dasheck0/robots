@@ -6,7 +6,7 @@ let Bots = Bots || {};
 
 Bots.debug = true;
 Bots.scale = 0.3;
-Bots.worldSize = new Phaser.Point(4000, 4000);
+Bots.worldSize = new Phaser.Point(3000, 3000);
 Bots.screenSize = new Phaser.Point(640, 360);
 Bots.cameraPadding = 100;
 Bots.minimapWidth = Bots.screenSize.x * 0.25;
