@@ -24,7 +24,6 @@ Bots.Loading.prototype.preload = function () {
         if (assets.hasOwnProperty(assetKey)) {
             var asset = assets[assetKey];
 
-
             switch (asset.type) {
                 case "image":
                     this.load.image(assetKey, asset.source);

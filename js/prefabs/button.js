@@ -30,13 +30,17 @@ Bots.Button.prototype = Object.create(Bots.Prefab.prototype);
 Bots.Button.prototype.constructor = Bots.Button;
 
 Bots.Button.prototype.onButtonPressed = function () {
-    this.scale.setTo(1.1);
-    this.shadow.scale.setTo(1.1);
+    if (!this.game.paused || this.properties.force) {
+        this.scale.setTo(1.1);
+        this.shadow.scale.setTo(1.1);
+    }
 }
 
 Bots.Button.prototype.onButtonReleased = function () {
-    this.scale.setTo(1);
-    this.shadow.scale.setTo(1);
+    if (!this.game.paused || this.properties.force) {
+        this.scale.setTo(1);
+        this.shadow.scale.setTo(1);
 
-    this.state.onButtonPressed(this);
+        this.state.onButtonPressed(this);
+    }
 }

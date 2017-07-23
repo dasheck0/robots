@@ -14,8 +14,10 @@ Bots.SelectableSprite = function (state, name, position, properties) {
 
     this.inputEnabled = true;
     this.events.onInputUp.add(() => {
-        this.isSelected = true;
-        properties.parent.onTileSelected(this);
+        if (!this.game.paused || this.properties.force) {
+            this.isSelected = true;
+            properties.parent.onTileSelected(this);
+        }
     }, this);
 
     this.game.physics.enable(this, Phaser.Physics.ARCADE);

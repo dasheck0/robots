@@ -13,6 +13,7 @@ Bots.Menu = function () {
         'button': Bots.Button.prototype.constructor,
         'menuRobotChooser': Bots.MenuRobotChooser.prototype.constructor,
         'menuBackgroundChooser': Bots.MenuBackgroundChooser.prototype.constructor,
+        'pauseDialogSpawner': Bots.PauseDialogSpawner.prototype.constructor,
         'selectableSprite': Bots.SelectableSprite.prototype.constructor
     }
 };
@@ -127,7 +128,13 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
             this.game.state.start('loading', true, false, payload, 'level');
         }, this);
     }
-    
+
     if (button.name === 'settingsButton') {
+        getMemberByName(this.groups.spawners, 'pauseDialogSpawner').spawn();
+    }
+
+    if (button.name === 'crossButton') {
+        this.game.paused = false;
+        killFromGroup(getMemberByName(this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool], 'pauseDialog'), this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool]);
     }
 }

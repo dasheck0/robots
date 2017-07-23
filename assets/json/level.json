@@ -115,6 +115,10 @@
       "type": "image",
       "source": "assets/images/menuList.png"
     },
+    "uiPause": {
+      "type": "image",
+      "source": "assets/images/pause.png"
+    },
     "uiDPad": {
       "type": "image",
       "source": "assets/images/flatDark03.png"
@@ -226,6 +230,46 @@
     "meteorGrey_tiny2": {
       "type": "image",
       "source": "assets/images/meteorGrey_tiny2.png"
+    },
+    "uiWindow": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_1.png"
+    },
+    "uiWindowBL": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_2.png"
+    },
+    "uiWindowB": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_3.png"
+    },
+    "uiWindowBR": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_4.png"
+    },
+    "uiWindowR": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_5.png"
+    },
+    "uiWindowL": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_6.png"
+    },
+    "uiWindowTR": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_7.png"
+    },
+    "uiWindowTL": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_8.png"
+    },
+    "uiWindowT": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_9.png"
+    },
+    "uiCross": {
+      "type": "image",
+      "source": "assets/images/cross.png"
     }
   },
   "groups": [
@@ -706,6 +750,38 @@
         "anchor": {
           "x": 0.5,
           "y": 0.5
+        }
+      }
+    },
+    "pauseButton": {
+      "type": "button",
+      "position": {
+        "x": 24,
+        "y": 72
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiPause",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    },
+    "pauseDialogSpawner": {
+      "type": "pauseDialogSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "hud",
+        "mode": "never",
+        "size": {
+          "x": 200,
+          "y": 80
         }
       }
     }

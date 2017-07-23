@@ -35,7 +35,8 @@ Bots.Level = function () {
         'trackSpawner': Bots.TrackSpawner.prototype.constructor,
         'button': Bots.Button.prototype.constructor,
         'dpad': Bots.DPad.prototype.constructor,
-        'control': Bots.Control.prototype.constructor
+        'control': Bots.Control.prototype.constructor,
+        'pauseDialogSpawner': Bots.PauseDialogSpawner.prototype.constructor
     }
 };
 
@@ -97,5 +98,15 @@ Bots.Level.prototype.onButtonPressed = function (button) {
         const content = this.game.cache.getText('menu');
         const payload = JSON.parse(content);
         this.game.state.start('loading', true, false, payload, 'menu');
+    }
+
+    if (button.name === 'pauseButton') {
+        const humanRobot = getHumanRobot(this.groups.robots);
+        getMemberByName(this.groups.spawners, 'pauseDialogSpawner').spawn(new Phaser.Point(humanRobot.x - Bots.screenSize.x / 2, humanRobot.y - Bots.screenSize.y / 2));
+    }
+
+    if (button.name === 'crossButton') {
+        this.game.paused = false;
+        killFromGroup(getMemberByName(this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool], 'pauseDialog'), this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool]);
     }
 }

@@ -91,6 +91,46 @@
       "frameWidth": 79,
       "frameHeight": 75,
       "frames": 2
+    },
+    "uiWindow": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_1.png"
+    },
+    "uiWindowBL": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_2.png"
+    },
+    "uiWindowB": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_3.png"
+    },
+    "uiWindowBR": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_4.png"
+    },
+    "uiWindowR": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_5.png"
+    },
+    "uiWindowL": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_6.png"
+    },
+    "uiWindowTR": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_7.png"
+    },
+    "uiWindowTL": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_8.png"
+    },
+    "uiWindowT": {
+      "type": "image",
+      "source": "assets/images/UI_WINDOW_9.png"
+    },
+    "uiCross": {
+      "type": "image",
+      "source": "assets/images/cross.png"
     }
   },
   "groups": [
@@ -486,7 +526,23 @@
           "groundTiled"
         ]
       }
+    },
+    "pauseDialogSpawner": {
+      "type": "pauseDialogSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "hud",
+        "mode": "never",
+        "size": {
+          "x": 200,
+          "y": 80
+        }
+      }
     }
-  },
-  "fromPreviousState": {}
+  }
 }

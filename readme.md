@@ -68,7 +68,6 @@ for a certain time.
 
 ### Crucial
 
-* Add start button in menu
 * Add pause mode in game
 * Add ~~menu~~, settings, credits, options
 
@@ -94,6 +93,7 @@ for a certain time.
 
 ### Done
 
+* ~~Add start button in menu~~
 * ~~Add bosses (Can jump and stun robots within distance, can drop missiles, yield medals uopn defeat)~~
 * ~~Add more crate graphics~~
 * ~~Add robot shadows~~
