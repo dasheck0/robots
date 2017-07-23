@@ -67,6 +67,10 @@ Bots.DroppableRobot.prototype.reset = function (x, y) {
 }
 
 Bots.DroppableRobot.prototype.dealDamage = function (damage) {
+    if (this.boss && damage < 0) {
+        damage = 0;
+    }
+
     this.properties.health = Math.ceil(this.properties.health - damage);
 
     if (this.properties.health > this.properties.maxHealth) {
@@ -103,9 +107,24 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
 
         this.game.add.tween(this.scale).to({ x: 4, y: 4 }, 500, Phaser.Easing.Quadratic.Out, true);
         this.game.add.tween(this).to({ alpha: 0 }, 500, Phaser.Easing.Quadratic.Out, true).onComplete.add(function () {
-            if (this.Timer) {
+            if (this.trackTimer) {
                 this.game.time.events.remove(this.trackTimer);
                 this.trackTimer = null;
+            }
+
+            if (this.checkSurroundingsTimer) {
+                this.game.time.events.remove(this.checkSurroundingsTimer);
+                this.checkSurroundingsTimer = null;
+            }
+
+            if (this.jumpTimer) {
+                this.game.time.events.remove(this.jumpTimer);
+                this.jumpTimer = null;
+            }
+
+            if (this.meteoritTimer) {
+                this.game.time.events.remove(this.meteoritTimer);
+                this.meteoritTimer = null;
             }
 
             killFromGroup(this.killCounter, this.state.groups.hud);
@@ -175,7 +194,7 @@ Bots.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
 }
 
 Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
-    if (robot !== this && !robot.isDead && !robot.isJumping) {
+    if (robot !== this && !robot.isDead) {
         bullet.kill();
 
         if (robot.dealDamage(calculateDamage(this.properties.attack, robot.properties.defense))) {

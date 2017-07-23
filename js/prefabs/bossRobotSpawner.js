@@ -22,7 +22,7 @@ Bots.BossRobotSpawner.prototype.createObject = function (name, position) {
         friction: 10,
         rotationSpeed: 5,
         attack: this.state.game.rnd.integerInRange(60, 120),
-        defense: this.state.game.rnd.integerInRange(80, 189),
+        defense: this.state.game.rnd.integerInRange(30, 35),
         speed: this.state.game.rnd.integerInRange(20, 35),
         health: maxHealth,
         maxHealth: maxHealth,
