@@ -52,58 +52,64 @@ Bots.Robot.prototype.update = function () {
         this.body.velocity.y = 0;
         this.body.angularVelocity = 0;
 
-        if (this.dropped && !this.isDead) {
-            if (this.game.device.desktop) {
-                if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
-                    this.angle -= this.properties.rotationSpeed;
-                } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
-                    this.angle += this.properties.rotationSpeed;
-                }
+        if (!this.stunned) {
+            if (this.dropped && !this.isDead) {
+                if (this.game.device.desktop) {
+                    if (this.game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
+                        this.angle -= this.properties.rotationSpeed;
+                    } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+                        this.angle += this.properties.rotationSpeed;
+                    }
 
-                if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
-                    this.currentSpeed = this.properties.maxSpeed * this.speedMultiplier;
-                } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
-                    this.currentSpeed = -this.properties.maxSpeed * this.speedMultiplier;
-                }
-
-                if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
-                    this.weapon.fire();
-                }
-            } else {
-                if (this.dpad && this.dpad.isPressed) {
-                    const angle = this.dpad.dpadAngle();
-                    if (angle) {
-                        this.angle = angle;
+                    if (this.game.input.keyboard.isDown(Phaser.Keyboard.UP)) {
                         this.currentSpeed = this.properties.maxSpeed * this.speedMultiplier;
+                    } else if (this.game.input.keyboard.isDown(Phaser.Keyboard.DOWN)) {
+                        this.currentSpeed = -this.properties.maxSpeed * this.speedMultiplier;
+                    }
+
+                    if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
+                        this.weapon.fire();
+                    }
+
+                    if (this.game.input.keyboard.isDown(Phaser.Keyboard.SHIFT)) {
+                        this.jump();
+                    }
+                } else {
+                    if (this.dpad && this.dpad.isPressed) {
+                        const angle = this.dpad.dpadAngle();
+                        if (angle) {
+                            this.angle = angle;
+                            this.currentSpeed = this.properties.maxSpeed * this.speedMultiplier;
+                        }
+                    }
+
+                    if (this.shootButton && this.shootButton.isPressed) {
+                        this.weapon.fire();
                     }
                 }
 
-                if (this.shootButton && this.shootButton.isPressed) {
-                    this.weapon.fire();
+                if (this.currentSpeed > 0) {
+                    this.currentSpeed -= this.properties.friction;
+                } else {
+                    this.currentSpeed += this.properties.friction;
                 }
-            }
 
-            if (this.currentSpeed > 0) {
-                this.currentSpeed -= this.properties.friction;
-            } else {
-                this.currentSpeed += this.properties.friction;
-            }
-
-            if (Math.abs(this.currentSpeed) <= this.properties.friction) {
-                this.currentSpeed = 0;
-            }
-
-            if (this.currentSpeed !== 0) {
-                this.game.physics.arcade.velocityFromRotation(this.rotation, this.currentSpeed, this.body.velocity);
-
-                if (!this.trackTimer) {
-                    this.trackTimer = this.game.time.events.loop(100, function () {
-                        getMemberByName(this.state.groups.spawners, 'trackSpawner').spawn(this);
-                    }, this);
+                if (Math.abs(this.currentSpeed) <= this.properties.friction) {
+                    this.currentSpeed = 0;
                 }
-            } else {
-                this.game.time.events.remove(this.trackTimer);
-                this.trackTimer = 0;
+
+                if (this.currentSpeed !== 0) {
+                    this.game.physics.arcade.velocityFromRotation(this.rotation, this.currentSpeed, this.body.velocity);
+
+                    if (!this.trackTimer) {
+                        this.trackTimer = this.game.time.events.loop(100, function () {
+                            getMemberByName(this.state.groups.spawners, 'trackSpawner').spawn(this);
+                        }, this);
+                    }
+                } else {
+                    this.game.time.events.remove(this.trackTimer);
+                    this.trackTimer = 0;
+                }
             }
         }
     }
@@ -123,4 +129,31 @@ Bots.Robot.prototype.onBulletRobotCollide = function (bullet, robot) {
 
 Bots.Robot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {
     return robot !== this;
+}
+
+Bots.Robot.prototype.jump = function () {
+    // console.log("Jump", Bots.scale.x, this.properties.scaleMultiplier, Bots.scale.y, this.properties.scaleMultiplier);
+
+    this.isJumping = true;
+    this.game.add.tween(this.scale).to({
+        x: Bots.scale * this.properties.scaleMultiplier * 2,
+        y: Bots.scale * this.properties.scaleMultiplier * 2
+    }, 500, Phaser.Easing.Linear.None, true)
+        .onComplete.add(() => {
+        this.scale.x = Bots.scale * this.properties.scaleMultiplier * 2;
+        this.scale.y = Bots.scale * this.properties.scaleMultiplier * 2;
+
+        this.isJumping = false;
+        this.game.add.tween(this.scale).to({
+            x: Bots.scale * this.properties.scaleMultiplier,
+            y: Bots.scale * this.properties.scaleMultiplier
+        }, 500, Phaser.Easing.Linear.None, true)
+            .onComplete.add(() => {
+            this.scale.x = Bots.scale * this.properties.scaleMultiplier;
+            this.scale.y = Bots.scale * this.properties.scaleMultiplier;
+
+            getMemberByName(this.state.groups.spawners, 'earthQuakeSpawner').spawn(this);
+
+        }, this);
+    }, this);
 }

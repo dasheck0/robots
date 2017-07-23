@@ -11,11 +11,13 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.anchor.setTo(0.5);
     this.human = false;
     this.isDead = false;
+    this.isJumping = false;
 
     this.scale.setTo(Bots.scale);
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
     this.currentSpeed = 0;
     this.body.maxVelocity.setTo(this.properties.speed);
+    this.body.mass = 1;
     this.body.collideWorldBounds = true;
     this.speedMultiplier = 1;
 
@@ -95,12 +97,13 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
     deathTween.onComplete.add(function () {
         getMemberByName(this.state.groups.spawners, 'dustSpawner').spawn(this);
         getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(this);
+        getMemberByName(this.state.groups.spawners, 'earthQuakeSpawner').spawn(this, 4);
 
         killFromGroup(this.shadow, this.state.groups.shadows);
 
         this.game.add.tween(this.scale).to({ x: 4, y: 4 }, 500, Phaser.Easing.Quadratic.Out, true);
         this.game.add.tween(this).to({ alpha: 0 }, 500, Phaser.Easing.Quadratic.Out, true).onComplete.add(function () {
-            if (this.trackTimer) {
+            if (this.Timer) {
                 this.game.time.events.remove(this.trackTimer);
                 this.trackTimer = null;
             }
@@ -112,6 +115,8 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
 
             if (this.human) {
                 getMemberByName(this.state.groups.spawners, 'robotSpawner').spawn('robot');
+            } else if (this.boss) {
+                getMemberByName(this.state.groups.spawners, 'bossRobotSpawner').spawn('bossRobot');
             }
         }, this);
     }, this);
@@ -164,12 +169,13 @@ Bots.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
 
         getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(chest);
         getMemberByName(this.state.groups.spawners, 'dustSpawner').spawn(chest);
+        getMemberByName(this.state.groups.spawners, 'earthQuakeSpawner').spawn(this, 2);
         getMemberByName(this.state.groups.spawners, 'lootSpawner').spawn(chest, this);
     }
 }
 
 Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
-    if (robot !== this && !robot.isDead) {
+    if (robot !== this && !robot.isDead && !robot.isJumping) {
         bullet.kill();
 
         if (robot.dealDamage(calculateDamage(this.properties.attack, robot.properties.defense))) {
@@ -180,8 +186,9 @@ Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
 }
 
 Bots.DroppableRobot.prototype.onOilRobotOverlap = function (oil, robot) {
-    console.log("overlapped");
-    robot.speedMultiplier = 0.5;
+    if (!robot.isJumping) {
+        robot.speedMultiplier = 0.5;
+    }
 }
 
 Bots.DroppableRobot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {

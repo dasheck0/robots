@@ -19,10 +19,11 @@ Bots.RobotSpawner.prototype.createObject = function (name, position) {
         "key": this.properties.spawnKey,
         "friction": 10,
         "attack": 34,
-        "defense": 43,
+        "defense": 48,
         "speed": 175,
-        "health": 1000,
-        "maxHealth": 1000,
-        "displayName": "Player"
+        "health": 100000,
+        "maxHealth": 100000,
+        "displayName": "Player",
+        scaleMultiplier: 1
     });
 }

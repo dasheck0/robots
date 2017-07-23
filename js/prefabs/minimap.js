@@ -32,9 +32,9 @@ Bots.Minimap.prototype.update = function () {
 
     this.drawRectangle(0, 0, Bots.minimapWidth, Bots.minimapHeight);
 
-    this.state.groups.robots.forEachAlive((robot) => this.drawMinimapObject(robot, robot.human ? 0x0000ff : 0xffffff));
+    this.state.groups.robots.forEachAlive((robot) => this.drawMinimapObject(robot, this.getRobotMinimapColor(robot), robot.boss ? 5 : 3));
     this.state.groups.chests.forEachAlive((chest) => this.drawMinimapObject(chest, 0x00ff00));
-    this.state.groups.oil.forEachAlive((oil) => this.drawMinimapObject(oil, 0xff0000));
+    // this.state.groups.oil.forEachAlive((oil) => this.drawMinimapObject(oil, 0xff0000));
 }
 
 Bots.Minimap.prototype.drawRectangle = function (x, y, w, h, color = 0x000000) {
@@ -43,12 +43,26 @@ Bots.Minimap.prototype.drawRectangle = function (x, y, w, h, color = 0x000000) {
     this.endFill();
 }
 
-Bots.Minimap.prototype.drawMinimapObject = function (object, color = 0xffffff) {
+Bots.Minimap.prototype.drawMinimapObject = function (object, color = 0xffffff, size = 3) {
     const x = object.world.x + Bots.worldSize.x / 2;
     const y = object.world.y + Bots.worldSize.y / 2;
 
     const mapX = (x / (1.0 * Bots.worldSize.x)) * Bots.minimapWidth;
     const mapY = (y / (1.0 * Bots.worldSize.y)) * Bots.minimapHeight;
 
-    this.drawRectangle(mapX - 1, mapY - 1, 3, 3, color);
+    this.drawRectangle(mapX - (size - 1) / 2, mapY - (size - 1) / 2, size, size, color);
+}
+
+Bots.Minimap.prototype.getRobotMinimapColor = function (robot) {
+    if (robot) {
+        if (robot.human) {
+            return 0x0000ff;
+        }
+
+        if (robot.boss) {
+            return 0xff0000;
+        }
+
+        return 0xffffff;
+    }
 }

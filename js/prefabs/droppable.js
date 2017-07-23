@@ -19,8 +19,8 @@ Bots.Droppable.prototype.constructor = Bots.Droppable;
 Bots.Droppable.prototype.dropObject = function () {
     this.scale.setTo(Bots.scale * 8);
     const tween = this.game.add.tween(this.scale).to({
-        x: Bots.scale,
-        y: Bots.scale
+        x: Bots.scale * (this.properties.scaleMultiplier || 1),
+        y: Bots.scale * (this.properties.scaleMultiplier || 1)
     }, 750, Phaser.Easing.Bounce.Out, true);
     tween.onComplete.add(function () {
         this.dropped = true;

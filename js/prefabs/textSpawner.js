@@ -50,7 +50,6 @@ Bots.TextSpawner.prototype.createObject = function (name, position, text) {
     });
 
     const indexOfPlayer = text.indexOf('Player');
-    console.log(text, indexOfPlayer);
 
     if (indexOfPlayer >= 0) {
         result.addColor('#0000ff', indexOfPlayer);
@@ -69,8 +68,6 @@ Bots.TextSpawner.prototype.nextPosition = function () {
         });
         killFromGroup(this.texts[0], this.state.groups.hud);
         this.texts.shift();
-
-        console.log(this.texts.length);
     }
 
     return new Phaser.Point(48, 18 + this.texts.length * this.fontSize * 1.6);

@@ -27,6 +27,7 @@ Bots.EnemyRobotSpawner.prototype.createObject = function (name, position) {
         "displayName": getRandomName(),
         shootRange: this.state.game.rnd.integerInRange(200, 300),
         stopRange: this.state.game.rnd.integerInRange(150, 200),
-        accuracy: this.state.game.rnd.realInRange(0.75, 0.98)
+        accuracy: this.state.game.rnd.realInRange(0.75, 0.98),
+        scaleMultiplier: 1
     });
 }

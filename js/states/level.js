@@ -15,6 +15,7 @@ Bots.Level = function () {
         'spawner': Bots.Spawner.prototype.constructor,
         'robotSpawner': Bots.RobotSpawner.prototype.constructor,
         'enemyRobotSpawner': Bots.EnemyRobotSpawner.prototype.constructor,
+        'bossRobotSpawner': Bots.BossRobotSpawner.prototype.constructor,
         'chestSpawner': Bots.ChestSpawner.prototype.constructor,
         'chest': Bots.Chest.prototype.constructor,
         'minimap': Bots.Minimap.prototype.constructor,
@@ -22,6 +23,7 @@ Bots.Level = function () {
         'lootSpawner': Bots.LootSpawner.prototype.constructor,
         'loot': Bots.Loot.prototype.constructor,
         'explosionSpawner': Bots.ExplosionSpawner.prototype.constructor,
+        'earthQuakeSpawner': Bots.EarthQuakeSpawner.prototype.constructor,
         'textSpawner': Bots.TextSpawner.prototype.constructor,
         'explosion': Bots.Explosion.prototype.constructor,
         'dust': Bots.Dust.prototype.constructor,
@@ -71,7 +73,15 @@ Bots.Level.prototype.createPrefab = function (prefabName, properties) {
 
 Bots.Level.prototype.update = function () {
     this.game.physics.arcade.collide(this.groups.chests, this.groups.robots);
-    this.game.physics.arcade.collide(this.groups.robots);
+    this.game.physics.arcade.collide(this.groups.robots, this.groups.robots, function (robot1, robot2) {
+        if (robot1.boss && !robot2.isDead) {
+            robot2.animateDeath();
+        }
+
+        if (robot2.boss && !robot1.isDead) {
+            robot1.animateDeath();
+        }
+    }, null, this);
 }
 
 Bots.Level.prototype.render = function () {

@@ -20,7 +20,9 @@ Bots.EnemyRobot.prototype.initializeObject = function () {
     this.body.maxVelocity.setTo(this.properties.maxSpeed);
 
     this.trackTimer = this.game.time.events.loop(100, function () {
-        getMemberByName(this.state.groups.spawners, 'trackSpawner').spawn(this);
+        if (!this.isDead) {
+            getMemberByName(this.state.groups.spawners, 'trackSpawner').spawn(this);
+        }
     }, this);
 }
 
@@ -48,28 +50,33 @@ Bots.EnemyRobot.prototype.getClosestMemberOfGroup = function (group) {
 Bots.EnemyRobot.prototype.update = function () {
     Bots.DroppableRobot.prototype.update(this);
 
-    if (!this.isDead) {
-        const closestRobot = this.getClosestMemberOfGroup(this.state.groups.robots);
-        const closestChest = this.getClosestMemberOfGroup(this.state.groups.chests);
+    if (!this.stunned) {
+        if (this.dropped && !this.isDead) {
+            const closestRobot = this.getClosestMemberOfGroup(this.state.groups.robots);
+            const closestChest = this.getClosestMemberOfGroup(this.state.groups.chests);
 
-        const member = (closestRobot.present && closestRobot.distance < closestChest.distance) ? closestRobot : closestChest;
+            const member = (closestRobot.present && closestRobot.distance < closestChest.distance) ? closestRobot : closestChest;
 
-        if (member.member) {
-            if (member.distance < this.properties.shootRange) {
-                if (member.distance < this.properties.stopRange) {
-                    this.body.velocity.x = 0;
-                    this.body.velocity.y = 0;
-                } else {
+            if (member.member) {
+                if (member.distance < this.properties.shootRange) {
+                    if (member.distance < this.properties.stopRange) {
+                        this.body.velocity.x = 0;
+                        this.body.velocity.y = 0;
+                    } else {
+                    }
+
+                    this.weapon.fire();
                 }
 
-                this.weapon.fire();
+                const offset = -60 * this.game.rnd.realInRange(this.properties.accuracy, 1) + 60;
+                const destinationPosition = new Phaser.Point(member.member.x + offset * (randomBoolean() ? 1 : -1), member.member.y + offset * (randomBoolean() ? 1 : -1));
+
+                this.rotation = this.game.physics.arcade.angleBetween(this, member.member);// + (offset * (randomBoolean() ? 1 : -1)) * 3.141592563 / 180;
+                this.game.physics.arcade.moveToObject(this, destinationPosition, this.properties.maxSpeed);
             }
-
-            const offset = -60 * this.game.rnd.realInRange(this.properties.accuracy, 1) + 60;
-            const destinationPosition = new Phaser.Point(member.member.x + offset * (randomBoolean() ? 1 : -1), member.member.y + offset * (randomBoolean() ? 1 : -1));
-
-            this.rotation = this.game.physics.arcade.angleBetween(this, member.member);// + (offset * (randomBoolean() ? 1 : -1)) * 3.141592563 / 180;
-            this.game.physics.arcade.moveToObject(this, destinationPosition, this.properties.maxSpeed);
         }
+    } else {
+        this.body.velocity.x = 0;
+        this.body.velocity.y = 0;
     }
 }
