@@ -95,7 +95,7 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
         getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(this);
 
         killFromGroup(this.shadow, this.state.groups.shadows);
-        
+
         this.game.add.tween(this.scale).to({ x: 4, y: 4 }, 500, Phaser.Easing.Quadratic.Out, true);
         this.game.add.tween(this).to({ alpha: 0 }, 500, Phaser.Easing.Quadratic.Out, true).onComplete.add(function () {
             if (this.trackTimer) {
@@ -154,12 +154,14 @@ Bots.DroppableRobot.prototype.update = function (instance) {
 Bots.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
     bullet.kill();
 
-    killFromGroup(chest.shadow, this.state.groups.shadows);
-    killFromGroup(chest, this.state.groups.chests);
+    if (chest.hit()) {
+        killFromGroup(chest.shadow, this.state.groups.shadows);
+        killFromGroup(chest, this.state.groups.chests);
 
-    getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(chest);
-    getMemberByName(this.state.groups.spawners, 'dustSpawner').spawn(chest);
-    getMemberByName(this.state.groups.spawners, 'lootSpawner').spawn(chest, this);
+        getMemberByName(this.state.groups.spawners, 'explosionSpawner').spawn(chest);
+        getMemberByName(this.state.groups.spawners, 'dustSpawner').spawn(chest);
+        getMemberByName(this.state.groups.spawners, 'lootSpawner').spawn(chest, this);
+    }
 }
 
 Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {

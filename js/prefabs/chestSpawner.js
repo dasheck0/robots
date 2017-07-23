@@ -20,6 +20,7 @@ Bots.ChestSpawner.prototype.createObject = function (name, position) {
         scale: {
             x: 0.75,
             y: 0.75
-        }
+        },
+        lifePoints: this.game.rnd.integerInRange(1, 5)
     });
 }

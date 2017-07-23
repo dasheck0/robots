@@ -29,6 +29,10 @@ Bots.Chest.prototype.constructor = Bots.Chest;
 
 Bots.Chest.prototype.initializeObject = function () {
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
-    this.body.mass = 5;
     this.body.immovable = true;
+}
+
+Bots.Chest.prototype.hit = function () {
+    this.properties.lifePoints -= 1;
+    return this.properties.lifePoints <= 0;
 }
