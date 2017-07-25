@@ -94,7 +94,11 @@ Bots.DroppableRobot.prototype.killedOtherRobot = function (deadRobot) {
     if (this.boss) {
         console.log(this.kill.text, deadRobot.killCounter.text);
     }
+
     this.killCounter.text = parseInt(this.killCounter.text) + parseInt(deadRobot.killCounter.text);
+    this.game.time.events.repeat(50, parseInt(deadRobot.killCounter.text), function () {
+        getMemberByName(this.state.groups.spawners, 'lootSpawner').spawn(deadRobot, this);
+    }, this);
 }
 
 Bots.DroppableRobot.prototype.animateDeath = function () {
