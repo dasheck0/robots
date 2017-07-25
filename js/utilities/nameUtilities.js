@@ -22,6 +22,14 @@ const randomInteger = (max) => {
 
 const isNameValid = (name)
 
+const shortenName = (name, length = 10) => {
+    if (name.length > length) {
+        return name.substring(0, length) + '...';
+    } else {
+        return name;
+    }
+};
+
 const getRandomName = () => {
     const rule = parseRule(structure().rule);
     const ruleCount = rule.length;

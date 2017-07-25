@@ -30,6 +30,7 @@ Bots.Level = function () {
         'explosion': Bots.Explosion.prototype.constructor,
         'dust': Bots.Dust.prototype.constructor,
         'dustSpawner': Bots.DustSpawner.prototype.constructor,
+        'statisticsPanel': Bots.StatisticsPanel.prototype.constructor,
         'oilSpawner': Bots.OilSpawner.prototype.constructor,
         'track': Bots.Track.prototype.constructor,
         'trackSpawner': Bots.TrackSpawner.prototype.constructor,
@@ -85,6 +86,13 @@ Bots.Level.prototype.update = function () {
             robot1.animateDeath();
         }
     }, null, this);
+
+    const panel = getMemberByName(this.groups.panel, 'statisticsPanel');
+    console.log("down", panel, this.game.input.keyboard.isDown(Phaser.Keyboard.SHIFT));
+
+    if (panel) {
+        panel.show(this.game.input.keyboard.isDown(Phaser.Keyboard.SHIFT));
+    }
 }
 
 Bots.Level.prototype.render = function () {
@@ -100,13 +108,16 @@ Bots.Level.prototype.onButtonPressed = function (button) {
         this.game.state.start('loading', true, false, payload, 'menu');
     }
 
-    if (button.name === 'pauseButton') {
-        const humanRobot = getHumanRobot(this.groups.robots);
-        getMemberByName(this.groups.spawners, 'pauseDialogSpawner').spawn(new Phaser.Point(humanRobot.x - Bots.screenSize.x / 2, humanRobot.y - Bots.screenSize.y / 2));
-    }
+    // if (button.name === 'pauseButton') {
+    //     const humanRobot = getHumanRobot(this.groups.robots);
+    //     getMemberByName(this.groups.spawners, 'pauseDialogSpawner').spawn(new Phaser.Point(humanRobot.x - Bots.screenSize.x / 2, humanRobot.y - Bots.screenSize.y / 2));
+    // }
 
-    if (button.name === 'crossButton') {
-        this.game.paused = false;
-        killFromGroup(getMemberByName(this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool], 'pauseDialog'), this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool]);
-    }
+    // if (button.name === 'crossButton') {
+    //
+    //     console.log(this.game.camera);
+    //
+    //     this.game.paused = false;
+    //     killFromGroup(getMemberByName(this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool], 'pauseDialog'), this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool]);
+    // }
 }

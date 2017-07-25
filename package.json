@@ -12,6 +12,7 @@
     "get-folder-size": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-imagemin": "^3.3.0",
     "gulp-minify": "^1.0.0",
     "opn": "^5.1.0"
   },

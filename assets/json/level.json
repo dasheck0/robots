@@ -24,6 +24,10 @@
       "type": "image",
       "source": "assets/images/sand_64.png"
     },
+    "logoBulletRight": {
+      "type": "image",
+      "source": "assets/images/tank_bulletFly3.png"
+    },
     "groundGrass": {
       "type": "image",
       "source": "assets/images/grass_64.png"
@@ -282,6 +286,10 @@
     "uiCross": {
       "type": "image",
       "source": "assets/images/cross.png"
+    },
+    "uiCheckmark": {
+      "type": "image",
+      "source": "assets/images/checkmark.png"
     }
   },
   "groups": [
@@ -292,10 +300,12 @@
     "shadows",
     "chests",
     "robots",
+    "bullets",
     "meteorits",
     "explosions",
     "loot",
-    "hud"
+    "hud",
+    "panel"
   ],
   "prefabs": {
     "uiDPad": {
@@ -794,6 +804,21 @@
         "size": {
           "x": 200,
           "y": 80
+        }
+      }
+    },
+    "statisticsPanel": {
+      "type": "statisticsPanel",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "groundSand",
+        "group": "panel",
+        "anchor": {
+          "x": 0,
+          "y": 0
         }
       }
     }

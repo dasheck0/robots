@@ -70,10 +70,6 @@ Bots.Robot.prototype.update = function () {
                     if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
                         this.weapon.fire();
                     }
-
-                    if (this.game.input.keyboard.isDown(Phaser.Keyboard.SHIFT)) {
-                        this.jump();
-                    }
                 } else {
                     if (this.dpad && this.dpad.isPressed) {
                         const angle = this.dpad.dpadAngle();
@@ -129,31 +125,4 @@ Bots.Robot.prototype.onBulletRobotCollide = function (bullet, robot) {
 
 Bots.Robot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {
     return robot !== this;
-}
-
-Bots.Robot.prototype.jump = function () {
-    // console.log("Jump", Bots.scale.x, this.properties.scaleMultiplier, Bots.scale.y, this.properties.scaleMultiplier);
-
-    this.isJumping = true;
-    this.game.add.tween(this.scale).to({
-        x: Bots.scale * this.properties.scaleMultiplier * 2,
-        y: Bots.scale * this.properties.scaleMultiplier * 2
-    }, 500, Phaser.Easing.Linear.None, true)
-        .onComplete.add(() => {
-        this.scale.x = Bots.scale * this.properties.scaleMultiplier * 2;
-        this.scale.y = Bots.scale * this.properties.scaleMultiplier * 2;
-
-        this.isJumping = false;
-        this.game.add.tween(this.scale).to({
-            x: Bots.scale * this.properties.scaleMultiplier,
-            y: Bots.scale * this.properties.scaleMultiplier
-        }, 500, Phaser.Easing.Linear.None, true)
-            .onComplete.add(() => {
-            this.scale.x = Bots.scale * this.properties.scaleMultiplier;
-            this.scale.y = Bots.scale * this.properties.scaleMultiplier;
-
-            getMemberByName(this.state.groups.spawners, 'earthQuakeSpawner').spawn(this);
-
-        }, this);
-    }, this);
 }

@@ -6,11 +6,10 @@ let Bots = Bots || {};
 
 Bots.BossRobot = function (state, name, position, properties) {
     Bots.DroppableRobot.call(this, state, name, position, properties);
+
     this.boss = true;
     this.currentDestination = null;
     this.body.mass = 100;
-
-    // this.jumpTimer = this.game.time.events.add(this.game.rnd.integerInRange(10000, 25000), this.initiateJump, this);
 };
 
 Bots.BossRobot.prototype = Object.create(Bots.DroppableRobot.prototype);

@@ -121,6 +121,8 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
         payload.prefabs.robotSpawner.properties.spawnKey = this.chooser.getChosenRobot().properties.secondKey;
         payload.prefabs.background.properties.key = this.backgroundChooser.selectedTile.properties.key;
 
+        Bots.humanRobotKey = this.chooser.getChosenRobot().properties.secondKey;
+
         this.chooser.chooseRobot(500);
         this.game.add.tween(this.groups.logo).to({ y: -200 }, 500, Phaser.Easing.Elastic.In, true);
         this.game.add.tween(this.groups.hud).to({ alpha: 0 }, 500, Phaser.Easing.Quintic.Out, true)
@@ -129,12 +131,12 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
         }, this);
     }
 
-    if (button.name === 'settingsButton') {
-        getMemberByName(this.groups.spawners, 'pauseDialogSpawner').spawn();
-    }
-
-    if (button.name === 'crossButton') {
-        this.game.paused = false;
-        killFromGroup(getMemberByName(this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool], 'pauseDialog'), this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool]);
-    }
+    // if (button.name === 'settingsButton') {
+    //     getMemberByName(this.groups.spawners, 'pauseDialogSpawner').spawn();
+    // }
+    //
+    // if (button.name === 'crossButton') {
+    //     this.game.paused = false;
+    //     killFromGroup(getMemberByName(this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool], 'pauseDialog'), this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool]);
+    // }
 }

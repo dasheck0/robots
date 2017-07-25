@@ -21,7 +21,7 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.body.collideWorldBounds = true;
     this.speedMultiplier = 1;
 
-    this.weapon = this.game.add.weapon(10, 'bullet');
+    this.weapon = this.game.add.weapon(10, 'bullet', 0, this.state.groups.bullets);
     this.weapon.bullets.forEach((bullet) => {
         bullet.scale.setTo(Bots.scale);
     }, this);

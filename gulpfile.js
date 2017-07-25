@@ -9,6 +9,13 @@ const opn = require('opn');
 const minify = require('gulp-minify');
 const babel = require('gulp-babel');
 const getFolderSize = require('get-folder-size');
+const imagemin = require('gulp-imagemin');
+
+gulp.task('minifyAssets', () =>
+    gulp.src('assets/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('assets2'))
+);
 
 gulp.task('copy', ['minify', 'transpile'], () => {
     const destination = '/Applications/MAMP/htdocs/dasheck-hackathon-phaser';

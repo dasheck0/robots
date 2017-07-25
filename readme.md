@@ -68,28 +68,32 @@ for a certain time.
 
 ### Crucial
 
-* Add pause mode in game
 * Add ~~menu~~, settings, credits, options
+* Statistics per TAB Button (With points, ranks, history, etc)
 
 ### Important
 
 * Add randomly placed obstacles (destroyable and not destroyable)
-* Add randomly placed structures (like a maze/labyrinth)
 * Add mines as secondary weapons and add camera shake for explosion
 * Drop loot after killing another robot
-* Add more robot ai types (timid, circeling, random)
-* Add stats for controlling weapon system
+* Add more robot ai types (timid, circeling, random) -> https://loonride.com/learn/phaser/slither-io-part-3 ?
 * Add sounds
 * Add temps special loot (e.g. invincible, super speed, mirror, ...)
 
 ### Nice to have
 
 * Animate gaining loots and stat boosts
-* Add task systems, which give medals and stat boosts
-* Add temp stat boosts for special actions
-* Increase size of robot for the minimap based on kill counter
-* Add more weapon graphics
+
+### Not for hackathon
+
 * Scrolling message window (like a ticker)
+* Add more weapon graphics
+* Increase size of robot for the minimap based on kill counter
+* Add temp stat boosts for special actions
+* Add task systems, which give medals and stat boosts
+* Add stats for controlling weapon system
+* Add randomly placed structures (like a maze/labyrinth)
+* Add pause mode in game
 
 ### Done
 
