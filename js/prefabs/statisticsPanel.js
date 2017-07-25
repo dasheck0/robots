@@ -63,8 +63,6 @@ Bots.StatisticsPanel = function (state, name, position, properties) {
         this.addChild(text);
     });
 
-
-
     this.objectiveText = this.game.add.text(this.topLeft.x + 360, this.topLeft.y + 16, 'Objective', this.captionTextStyle());
     this.addChild(this.objectiveText);
 
@@ -168,10 +166,7 @@ Bots.StatisticsPanel.prototype.regularTextStyleWithTabs = function (tabWidth, fo
 }
 
 Bots.StatisticsPanel.prototype.show = function (show) {
-
-    console.log("Showing", show, this.alpha);
     this.alpha = show ? 1 : 0;
-    console.log("Showing", show, this.alpha);
 }
 
 Bots.StatisticsPanel.prototype.update = function () {
@@ -190,5 +185,10 @@ Bots.StatisticsPanel.prototype.update = function () {
             .forEach((robot, index) => {
                 this.rankTexts[index].text = `${robot.level} ${shortenName(robot.name, 8)}`;
             });
+
+        this.attackText.text = `Atk\t${getMemberByName(this.state.groups.hud, 'atkText').text}`;
+        this.defenseText.text = `Def\t${getMemberByName(this.state.groups.hud, 'defText').text}`;
+        this.healthText.text = `HP\t${getMemberByName(this.state.groups.hud, 'healthText').text}`;
+        this.speedText.text = `Spd\t${getMemberByName(this.state.groups.hud, 'speedText').text}`;
     }
 }

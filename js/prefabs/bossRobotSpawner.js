@@ -11,10 +11,28 @@ Bots.BossRobotSpawner = function (state, name, position, properties) {
 Bots.BossRobotSpawner.prototype = Object.create(Bots.Spawner.prototype);
 Bots.BossRobotSpawner.prototype.constructor = Bots.BossRobotSpawner;
 
+Bots.BossRobotSpawner.prototype.spawn = function () {
+    if (this.isAllowedToSpawn()) {
+        const position = new Phaser.Point(this.game.rnd.between(-Bots.worldSize.x / 2, Bots.worldSize.x / 2), this.game.rnd.between(-Bots.worldSize.y / 2, Bots.worldSize.y / 2));
+
+        // let object = this.pool.getFirstDead();
+        // if (object) {
+        //     object.reset(position.x, position.y);
+        // } else {
+        const name = `object_${this.pool.countLiving()}`;
+        const object = this.createObject(name, position);
+        // }
+    }
+
+    if (this.properties.mode === 'infinite' || this.properties.mode === 'limited') {
+        this.scheduleSpawn();
+    }
+}
+
 Bots.BossRobotSpawner.prototype.createObject = function (name, position) {
+    console.log("Dropped boss", this.state.game);
     const maxHealth = this.state.game.rnd.integerInRange(5000, 6200);
 
-    console.log("Dropped boss");
 
     return new Bots.BossRobot(this.state, name, position, {
         group: "robots",
