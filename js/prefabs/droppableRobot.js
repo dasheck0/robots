@@ -89,9 +89,12 @@ Bots.DroppableRobot.prototype.dealDamage = function (damage) {
     return false;
 }
 
-Bots.DroppableRobot.prototype.killedOtherRobot = function () {
+Bots.DroppableRobot.prototype.killedOtherRobot = function (deadRobot) {
     this.dealDamage(-this.properties.maxHealth);
-    this.killCounter.text = parseInt(this.killCounter.text) + 1;
+    if (this.boss) {
+        console.log(this.kill.text, deadRobot.killCounter.text);
+    }
+    this.killCounter.text = parseInt(this.killCounter.text) + parseInt(deadRobot.killCounter.text);
 }
 
 Bots.DroppableRobot.prototype.animateDeath = function () {
@@ -199,15 +202,13 @@ Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
 
         if (robot.dealDamage(calculateDamage(this.properties.attack, robot.properties.defense))) {
             getMemberByName(this.state.groups.spawners, 'textSpawner').spawn(`${this.properties.displayName} (${this.killCounter.text}) killed ${robot.properties.displayName} (${robot.killCounter.text})`);
-            this.killedOtherRobot();
+            this.killedOtherRobot(robot);
         }
     }
 }
 
 Bots.DroppableRobot.prototype.onOilRobotOverlap = function (oil, robot) {
-    if (!robot.isJumping) {
-        robot.speedMultiplier = 0.5;
-    }
+    robot.speedMultiplier = 0.5;
 }
 
 Bots.DroppableRobot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {

@@ -134,5 +134,5 @@ Bots.BossRobot.prototype.initiateMeteoritHail = function () {
         }, this);
     }
 
-    this.meteoritTimer = this.game.time.events.add(this.game.rnd.integerInRange(2000, 5000), this.initiateMeteoritHail, this);
+    this.meteoritTimer = this.game.time.events.add(this.game.rnd.integerInRange(12000, 15000), this.initiateMeteoritHail, this);
 }

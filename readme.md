@@ -69,7 +69,6 @@ for a certain time.
 ### Crucial
 
 * Add ~~menu~~, settings, credits, options
-* Statistics per TAB Button (With points, ranks, history, etc)
 
 ### Important
 
@@ -97,6 +96,7 @@ for a certain time.
 
 ### Done
 
+* ~~Statistics per TAB Button (With points, ranks, history, etc)~~
 * ~~Add start button in menu~~
 * ~~Add bosses (Can jump and stun robots within distance, can drop missiles, yield medals uopn defeat)~~
 * ~~Add more crate graphics~~

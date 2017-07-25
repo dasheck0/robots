@@ -79,10 +79,12 @@ Bots.Level.prototype.update = function () {
     this.game.physics.arcade.collide(this.groups.chests, this.groups.robots);
     this.game.physics.arcade.collide(this.groups.robots, this.groups.robots, function (robot1, robot2) {
         if (robot1.boss && !robot2.isDead) {
+            robot1.killedOtherRobot(robot2);
             robot2.animateDeath();
         }
 
         if (robot2.boss && !robot1.isDead) {
+            robot2.killedOtherRobot(robot1);
             robot1.animateDeath();
         }
     }, null, this);
