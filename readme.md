@@ -74,14 +74,12 @@ for a certain time.
 
 * Add randomly placed obstacles (destroyable and not destroyable)
 * Add mines as secondary weapons and add camera shake for explosion
-* Drop loot after killing another robot
 * Add more robot ai types (timid, circeling, random) -> https://loonride.com/learn/phaser/slither-io-part-3 ?
 * Add sounds
 * Add temps special loot (e.g. invincible, super speed, mirror, ...)
 
 ### Nice to have
 
-* Animate gaining loots and stat boosts
 
 ### Not for hackathon
 
@@ -96,6 +94,8 @@ for a certain time.
 
 ### Done
 
+* ~~Animate gaining loots and stat boosts~~
+* ~~Drop loot after killing another robot~~
 * ~~Statistics per TAB Button (With points, ranks, history, etc)~~
 * ~~Add start button in menu~~
 * ~~Add bosses (Can jump and stun robots within distance, can drop missiles, yield medals uopn defeat)~~
