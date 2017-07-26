@@ -69,6 +69,9 @@ for a certain time.
 ### Crucial
 
 * Add ~~menu~~, settings, credits, options
+* Tweaking game parameters
+* Minify assets
+* Check licenses (i.e. https://opengameart.org/content/lpc-terrain-repack)
 
 ### Important
 
@@ -114,7 +117,6 @@ for a certain time.
 
 * [Robot pack](http://kenney.nl/assets/robot-pack)
 * [Tanks](http://kenney.nl/assets/tanks)
-* [Platformer Art Deluxe](http://kenney.nl/assets/platformer-art-deluxe)
 * [Hand Painted Texture - Sandstone](https://opengameart.org/content/hand-painted-texture-sandstone)
 * [Hand Painted Mountain Texture](https://opengameart.org/content/hand-painted-mountain-texture)
 * [Hand Painted Texture - Floor Tile](https://opengameart.org/content/hand-painted-texture-floor-tile)

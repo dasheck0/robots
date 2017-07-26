@@ -35,6 +35,10 @@ Bots.TextPrefab = function (state, name, position, properties) {
     if (properties.size) {
         this.autoSize(properties.size.width, properties.size.height);
     }
+
+    if (properties.lineSpacing) {
+        this.lineSpacing = properties.lineSpacing;
+    }
 };
 
 Bots.TextPrefab.prototype = Object.create(Phaser.Text.prototype);

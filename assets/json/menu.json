@@ -432,26 +432,11 @@
         ]
       }
     },
-    "settingsButton": {
-      "type": "button",
-      "position": {
-        "x": 616,
-        "y": 24
-      },
-      "properties": {
-        "group": "hud",
-        "key": "uiSettings",
-        "anchor": {
-          "x": 0.5,
-          "y": 0.5
-        }
-      }
-    },
     "informationButton": {
       "type": "button",
       "position": {
         "x": 616,
-        "y": 72
+        "y": 24
       },
       "properties": {
         "group": "hud",

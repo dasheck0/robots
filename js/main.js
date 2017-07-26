@@ -12,10 +12,12 @@ window.onload = function () {
     game.state.add('loading', new Bots.Loading());
     game.state.add('level', new Bots.Level());
     game.state.add('menu', new Bots.Menu());
+    game.state.add('credits', new Bots.Credits());
 
     game.state.start('boot', true, false, {
         menu: 'assets/json/menu.json',
-        level: 'assets/json/level.json'
+        level: 'assets/json/level.json',
+        credits: 'assets/json/credits.json'
     });
 
     for (let i = 0; i < 50; i++) {
