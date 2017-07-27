@@ -84,6 +84,10 @@
       "type": "image",
       "source": "assets/images/mountain2_64.png"
     },
+    "groundDirt": {
+      "type": "image",
+      "source": "assets/images/041.png"
+    },
     "grass2": {
       "type": "image",
       "source": "assets/images/grass2_64.png"
@@ -194,7 +198,7 @@
     },
     "explosion2": {
       "type": "spritesheet",
-      "source": "assets/images/explosion2.png",
+      "source": "assets/images/exp2_0.png",
       "frameWidth": 64,
       "frameHeight": 64,
       "frames": 16
@@ -503,28 +507,22 @@
             "author": "Kenney"
           },
           {
-            "key": "groundStone",
-            "title": "Hand Painted Texture - Sandstone",
-            "link": "https://opengameart.org/content/hand-painted-texture-sandstone",
-            "author": "The Chayed - KIIRA"
-          },
-          {
             "key": "groundTiled",
-            "title": "Hand Painted Texture - Floor Tile",
-            "link": "https://opengameart.org/content/hand-painted-texture-floor-tile",
-            "author": "The Chayed - KIIRA"
+            "title": "Stone blocks",
+            "link": "https://opengameart.org/content/stoneblocks",
+            "author": "SpriteAttack"
           },
           {
-            "key": "death_skull",
-            "title": "95 Game icons",
-            "link": "https://opengameart.org/content/95-game-icons",
-            "author": "sbed"
+            "key": "lucifer_cannon",
+            "title": "Powers Icons",
+            "link": "https://opengameart.org/content/powers-icons",
+            "author": "Clint Bellanger"
           },
           {
             "key": "explosion2",
-            "title": "Bomb Explosion Animation",
-            "link": "https://opengameart.org/content/bomb-explosion-animation",
-            "author": "qubodup"
+            "title": "Explosion",
+            "link": "https://opengameart.org/content/explosion",
+            "author": "Cuzco"
           },
           {
             "key": "blackSmoke",
@@ -563,28 +561,16 @@
             "author": "Kenney"
           },
           {
-            "key": "oil",
-            "title": "LCP Terrain Pack",
-            "link": "https://opengameart.org/content/lpc-terrain-repack",
-            "author": "vaious"
-          },
-          {
             "key": "meteorGrey_big1",
             "title": "Space Shooter Redux",
             "link": "https://opengameart.org/content/space-shooter-redux",
             "author": "Kenney"
           },
           {
-            "key": "uiWindowTL",
-            "title": "FREE UI ASSET PACK 1",
-            "link": "https://opengameart.org/content/free-ui-asset-pack-1",
-            "author": "CTatz"
-          },
-          {
-            "key": "groundMountain2",
-            "title": "2d Lost Garden Zelda style tiles resized to 32x32 with additions",
-            "link": "https://opengameart.org/content/2d-lost-garden-zelda-style-tiles-resized-to-32x32-with-additions",
-            "author": "Daniel Cook, Jetrel, Saphy (TMW), Zabin, Bertram"
+            "key": "groundDirt",
+            "title": "50 free textures 5 - with normalmaps",
+            "link": "https://opengameart.org/content/50-free-textures-5-with-normalmaps",
+            "author": "rubberduck"
           }
         ]
       }

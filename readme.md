@@ -117,22 +117,26 @@ for a certain time.
 
 * [Robot pack](http://kenney.nl/assets/robot-pack)
 * [Tanks](http://kenney.nl/assets/tanks)
-* [Hand Painted Texture - Sandstone](https://opengameart.org/content/hand-painted-texture-sandstone)
-* [Hand Painted Mountain Texture](https://opengameart.org/content/hand-painted-mountain-texture)
-* [Hand Painted Texture - Floor Tile](https://opengameart.org/content/hand-painted-texture-floor-tile)
-* [Hand Painted Grass Texture](https://opengameart.org/content/hand-painted-grass-texture)
-* [Hand Painted Sand Texture](https://opengameart.org/content/hand-painted-sand-texture-0)
-* [95 Game icons](https://opengameart.org/content/95-game-icons)
-* [Bomb Explosion Animation](https://opengameart.org/content/bomb-explosion-animation)
 * [Smoke Particle Assets](https://opengameart.org/content/smoke-particle-assets)
 * [Topdown Tanks](https://kenney.nl/assets/topdown-tanks)
 * [Game icons](https://opengameart.org/content/game-icons)
 * [Cloud set](https://opengameart.org/content/cloud-set)
 * [Onscreen - Controls](http://kenney.nl/assets/onscreen-controls)
 * [Sokoban (100+ Tiles)](https://opengameart.org/content/sokoban-100-tiles)
-* [LCP Terrain Pack](https://opengameart.org/content/lpc-terrain-repack)
 * [Space Shooter Redux](https://opengameart.org/content/space-shooter-redux)
 * [FREE UI ASSET PACK 1](https://opengameart.org/content/free-ui-asset-pack-1)
+* [Stone blocks](https://opengameart.org/content/stoneblocks) by SpriteAttack
+* [50 free textures 5 - with normalmaps](https://opengameart.org/content/50-free-textures-5-with-normalmaps) by rubberduck
+* [Explosion](https://opengameart.org/content/explosion) by Cuzco
+* [Powers Icons](https://opengameart.org/content/powers-icons) by Clint Bellanger
+
+## Assets removed due to insufficient licenses
+
+* [Hand Painted Texture - Sandstone](https://opengameart.org/content/hand-painted-texture-sandstone)
+* [Hand Painted Texture - Floor Tile](https://opengameart.org/content/hand-painted-texture-floor-tile)
+* [95 Game icons](https://opengameart.org/content/95-game-icons)
+* [Bomb Explosion Animation](https://opengameart.org/content/bomb-explosion-animation)
+* [LCP Terrain Pack](https://opengameart.org/content/lpc-terrain-repack)
 * [2d Lost Garden Zelda style tiles resized to 32x32 with additions](https://opengameart.org/content/2d-lost-garden-zelda-style-tiles-resized-to-32x32-with-additions)
 
 ## License

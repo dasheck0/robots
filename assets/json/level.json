@@ -56,6 +56,10 @@
       "type": "image",
       "source": "assets/images/tank_bullet3.png"
     },
+    "groundDirt": {
+      "type": "image",
+      "source": "assets/images/041.png"
+    },
     "ammo_box": {
       "type": "image",
       "source": "assets/images/ammo_box.png"
@@ -122,7 +126,7 @@
     },
     "explosion2": {
       "type": "spritesheet",
-      "source": "assets/images/explosion2.png",
+      "source": "assets/images/exp2_0.png",
       "frameWidth": 64,
       "frameHeight": 64,
       "frames": 16

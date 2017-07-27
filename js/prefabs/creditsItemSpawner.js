@@ -13,7 +13,7 @@ Bots.CreditsItemSpawner = function (state, name, position, properties) {
 Bots.CreditsItemSpawner.prototype = Object.create(Bots.Spawner.prototype);
 Bots.CreditsItemSpawner.prototype.constructor = Bots.CreditsItemSpawner;
 
-Bots.Spawner.prototype.spawn = function () {
+Bots.CreditsItemSpawner.prototype.spawn = function () {
     this.properties.items.forEach((item, index) => {
         const name = `object_${this.pool.countLiving()}`;
         const object = this.createObject(name, item, index);

@@ -16,6 +16,10 @@
       "type": "image",
       "source": "assets/images/grass2_64.png"
     },
+    "groundDirt": {
+      "type": "image",
+      "source": "assets/images/041.png"
+    },
     "stone": {
       "type": "image",
       "source": "assets/images/stone_64.png"
@@ -512,6 +516,7 @@
         },
         "spacing": 16,
         "backgrounds": [
+          "groundDirt",
           "groundStone",
           "groundMountain",
           "groundSand",
