@@ -161,7 +161,16 @@ Bots.DroppableRobot.prototype.update = function (instance) {
         instance.healthBar.clear();
 
         if (instance.properties.health > 0) {
-            instance.healthBar.beginFill(0x00ff00);
+            let color = 0x00ff00;
+            if (instance.properties.health < 0.5 * instance.properties.maxHealth) {
+                color = 0xffae00;
+            }
+
+            if (instance.properties.health < 0.25 * instance.properties.maxHealth) {
+                color = 0xff0000;
+            }
+
+            instance.healthBar.beginFill(color);
             instance.healthBar.lineStyle(0);
             instance.healthBar.drawRect(instance.x - instance.width / 2 + 16, instance.y + instance.height / 2 + 4, (instance.width - 16) * (instance.properties.health / instance.properties.maxHealth), 4);
             instance.healthBar.endFill();

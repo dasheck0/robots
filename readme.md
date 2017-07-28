@@ -64,14 +64,20 @@ meteors dropping from the sky, which will likely kill you instantly.
 Sometimes the earth shatters for no reason, stunning each robot nearby
 for a certain time.
 
+### HUD
+
+Keep everything in sight by using your hud. Simply press shift (or tap 
+the button when you are on mobile) and show your HUD. This contains 
+information about yourself, the current robots ranking based on their level
+and a basic help as well as a "how to". Never get lost with your HUD!  
+
 ## Road map
 
 ### Crucial
 
-* Add ~~menu~~, settings, credits, options
 * Tweaking game parameters
 * Minify assets
-* Check licenses (i.e. https://opengameart.org/content/lpc-terrain-repack)
+* Check licenses
 
 ### Important
 
@@ -79,10 +85,14 @@ for a certain time.
 * Add mines as secondary weapons and add camera shake for explosion
 * Add more robot ai types (timid, circeling, random) -> https://loonride.com/learn/phaser/slither-io-part-3 ?
 * Add sounds
-* Add temps special loot (e.g. invincible, super speed, mirror, ...)
+* Add consumables - invisible, mirror, stun enemies,  
+* Add randomly driving robots for menu (just to make it more dynamic)
+* Do not spawn boss continuously and place warning when he appears (with warning symbol, flashing screen and shaking)
+* Add oil on street again
+* Robot should emit smoke when on low health
+* Revamp damaga calculation
 
 ### Nice to have
-
 
 ### Not for hackathon
 
@@ -97,6 +107,8 @@ for a certain time.
 
 ### Done
 
+* ~~Draw healthbar in different colors based on HP~~
+* ~~Add menu, settings, credits, options~~
 * ~~Animate gaining loots and stat boosts~~
 * ~~Drop loot after killing another robot~~
 * ~~Statistics per TAB Button (With points, ranks, history, etc)~~
@@ -125,10 +137,10 @@ for a certain time.
 * [Sokoban (100+ Tiles)](https://opengameart.org/content/sokoban-100-tiles)
 * [Space Shooter Redux](https://opengameart.org/content/space-shooter-redux)
 * [FREE UI ASSET PACK 1](https://opengameart.org/content/free-ui-asset-pack-1)
-* [Stone blocks](https://opengameart.org/content/stoneblocks) by SpriteAttack
-* [50 free textures 5 - with normalmaps](https://opengameart.org/content/50-free-textures-5-with-normalmaps) by rubberduck
-* [Explosion](https://opengameart.org/content/explosion) by Cuzco
-* [Powers Icons](https://opengameart.org/content/powers-icons) by Clint Bellanger
+* [Stone blocks](https://opengameart.org/content/stoneblocks)
+* [50 free textures 5 - with normalmaps](https://opengameart.org/content/50-free-textures-5-with-normalmaps)
+* [Explosion](https://opengameart.org/content/explosion)
+* [Powers Icons](https://opengameart.org/content/powers-icons)
 
 ## Assets removed due to insufficient licenses
 
