@@ -14,7 +14,8 @@ Bots.Menu = function () {
         'menuRobotChooser': Bots.MenuRobotChooser.prototype.constructor,
         'menuBackgroundChooser': Bots.MenuBackgroundChooser.prototype.constructor,
         'pauseDialogSpawner': Bots.PauseDialogSpawner.prototype.constructor,
-        'selectableSprite': Bots.SelectableSprite.prototype.constructor
+        'selectableSprite': Bots.SelectableSprite.prototype.constructor,
+        'menuRobotSpawner': Bots.MenuRobotSpawner.prototype.constructor
     }
 };
 
@@ -39,8 +40,6 @@ Bots.Menu.prototype.create = function () {
 
     this.data.groups.forEach(groupName => (this.groups[groupName] = this.game.add.group()), this);
     for (var prefabName in this.data.prefabs) {
-        console.log(prefabName);
-
         if (this.data.prefabs.hasOwnProperty(prefabName)) {
             this.createPrefab(prefabName, this.data.prefabs[prefabName]);
         }
@@ -100,6 +99,10 @@ Bots.Menu.prototype.createPrefab = function (prefabName, properties) {
     }
 };
 
+Bots.Menu.prototype.update = function () {
+    this.game.physics.arcade.collide(this.groups.robots);
+}
+
 Bots.Menu.prototype.render = function () {
     if (Bots.debug) {
         this.game.debug.text(this.game.time.fps, 2, 14, "#00ff00");
@@ -134,15 +137,6 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
         Bots.humanRobotKey = this.chooser.getChosenRobot().properties.secondKey;
         this.fadeOutUI('credits', payload);
     }
-
-    // if (button.name === 'settingsButton') {
-    //     getMemberByName(this.groups.spawners, 'pauseDialogSpawner').spawn();
-    // }
-    //
-    // if (button.name === 'crossButton') {
-    //     this.game.paused = false;
-    //     killFromGroup(getMemberByName(this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool], 'pauseDialog'), this.groups[getMemberByName(this.groups.spawners, 'pauseDialogSpawner').properties.pool]);
-    // }
 }
 
 Bots.Menu.prototype.fadeOutUI = function (nextState, payload) {

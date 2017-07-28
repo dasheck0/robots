@@ -76,6 +76,22 @@
       "type": "image",
       "source": "assets/images/tank_bulletFly2.png"
     },
+    "robot3Dblue": {
+      "type": "image",
+      "source": "assets/images/robot_3Dblue.png"
+    },
+    "robot3Dgreen": {
+      "type": "image",
+      "source": "assets/images/robot_3Dgreen.png"
+    },
+    "robot3Dred": {
+      "type": "image",
+      "source": "assets/images/robot_3Dred.png"
+    },
+    "robot3Dyellow": {
+      "type": "image",
+      "source": "assets/images/robot_3Dyellow.png"
+    },
     "logoBulletRight": {
       "type": "image",
       "source": "assets/images/tank_bulletFly3.png"
@@ -152,6 +168,8 @@
   "groups": [
     "background",
     "spawners",
+    "shadows",
+    "robots",
     "logo",
     "chooser",
     "selectables",
@@ -434,6 +452,24 @@
           "yellowRobotMoving",
           "greyRobotMoving"
         ]
+      }
+    },
+    "menuRobotSpawner": {
+      "type": "menuRobotSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "robots",
+        "mode": "limited",
+        "limit": 6,
+        "spawnTimeInSeconds": {
+          "min": 0,
+          "max": 1
+        }
       }
     },
     "informationButton": {
