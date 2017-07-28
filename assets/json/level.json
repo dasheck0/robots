@@ -305,6 +305,7 @@
     "chests",
     "robots",
     "bullets",
+    "smoke",
     "meteorits",
     "explosions",
     "loot",
@@ -667,6 +668,19 @@
         "key": "",
         "group": "spawners",
         "pool": "hud",
+        "mode": "never"
+      }
+    },
+    "smokeSpawner": {
+      "type": "smokeSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "",
+        "group": "spawners",
+        "pool": "smoke",
         "mode": "never"
       }
     },

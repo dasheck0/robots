@@ -87,7 +87,6 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 * Add sounds
 * Add consumables - invisible, mirror, stun enemies,  
 * Do not spawn boss continuously and place warning when he appears (with warning symbol, flashing screen and shaking)
-* Robot should emit smoke when on low health (only bosses)
 * Revamp damage calculation
 * Add help for minimap!
 * Show hud in the first game or a hint so that the player knows how to show it
@@ -107,6 +106,7 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ### Done
 
+* ~~Robot should emit smoke when on low health (only bosses)~~
 * ~~Add randomly driving robots for menu (just to make it more dynamic)~~
 * ~~Add oil on street again~~
 * ~~Draw healthbar in different colors based on HP~~

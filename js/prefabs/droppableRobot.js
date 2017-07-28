@@ -134,6 +134,11 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
                 this.meteoritTimer = null;
             }
 
+            if (this.smokeTimer) {
+                this.game.time.events.remove(this.smokeTimer);
+                this.smokeTimer = null;
+            }
+
             killFromGroup(this.killCounter, this.state.groups.hud);
             killFromGroup(this.healthBar, this.state.groups.hud);
             killFromGroup(this.nameText, this.state.groups.hud);

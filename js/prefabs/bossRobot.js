@@ -26,6 +26,10 @@ Bots.BossRobot.prototype.initializeObject = function () {
         getMemberByName(this.state.groups.spawners, 'trackSpawner').spawn(this);
     }, this);
 
+    this.smokeTimer = this.game.time.events.loop(500, function () {
+        getMemberByName(this.state.groups.spawners, 'smokeSpawner').spawn(this);
+    }, this);
+
     this.initiateJump();
     this.initiateMeteoritHail();
 }
