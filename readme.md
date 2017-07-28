@@ -89,8 +89,8 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 * Add randomly driving robots for menu (just to make it more dynamic)
 * Do not spawn boss continuously and place warning when he appears (with warning symbol, flashing screen and shaking)
 * Add oil on street again
-* Robot should emit smoke when on low health
-* Revamp damaga calculation
+* Robot should emit smoke when on low health (only bosses)
+* Revamp damage calculation
 
 ### Nice to have
 

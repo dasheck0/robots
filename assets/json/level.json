@@ -720,7 +720,7 @@
         "group": "spawners",
         "pool": "oil",
         "mode": "limited",
-        "limit": 15,
+        "limit": 10,
         "spawnTimeInSeconds": {
           "min": 5,
           "max": 15
