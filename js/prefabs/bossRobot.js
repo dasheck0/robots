@@ -22,16 +22,10 @@ Bots.BossRobot.prototype.initializeObject = function () {
     this.properties.maxSpeed = this.properties.speed * 2;
     this.body.maxVelocity.setTo(this.properties.maxSpeed);
 
-    this.trackTimer = this.game.time.events.loop(100, function () {
-        getMemberByName(this.state.groups.spawners, 'trackSpawner').spawn(this);
-    }, this);
-
-    this.smokeTimer = this.game.time.events.loop(500, function () {
-        getMemberByName(this.state.groups.spawners, 'smokeSpawner').spawn(this);
-    }, this);
-
-    this.initiateJump();
-    this.initiateMeteoritHail();
+    this.smokeTimer = this.game.time.events.loop(500, ()=> getMemberByName(this.state.groups.spawners, 'smokeSpawner').spawn(this), this);
+    this.checkSurroundingsTimer = this.game.time.events.loop(1000, this.attackSurrounding, this);
+    this.jumpTimer = this.game.time.events.add(11284, this.jump, this);
+    this.meteoritTimer = this.game.time.events.add(17420, this.initiateMeteoritHail, this);
 }
 
 Bots.BossRobot.prototype.getClosestMemberOfGroup = function (group) {
@@ -68,10 +62,10 @@ Bots.BossRobot.prototype.update = function () {
             this.rotation = this.game.physics.arcade.angleToXY(this, this.currentDestination.x, this.currentDestination.y, true);
             this.game.physics.arcade.moveToObject(this, this.currentDestination, this.properties.maxSpeed);
         }
-
-        if (!this.checkSurroundingsTimer) {
-            this.checkSurroundingsTimer = this.game.time.events.loop(1000, this.attackSurrounding, this);
-        }
+        //
+        // if (!this.checkSurroundingsTimer) {
+        //     this.checkSurroundingsTimer = this.game.time.events.loop(1000, this.attackSurrounding, this);
+        // }
     }
 }
 
@@ -92,11 +86,6 @@ Bots.BossRobot.prototype.attackSurrounding = function () {
     this.attackedNearbyObjectInTurn = false;
     this.attackNearbyObjects(this.state.groups.robots);
     this.attackNearbyObjects(this.state.groups.chests);
-}
-
-Bots.BossRobot.prototype.initiateJump = function () {
-    this.jump();
-    this.jumpTimer = this.game.time.events.add(this.game.rnd.integerInRange(10000, 25000), this.initiateJump, this);
 }
 
 Bots.BossRobot.prototype.jump = function () {
@@ -137,6 +126,4 @@ Bots.BossRobot.prototype.initiateMeteoritHail = function () {
             getMemberByName(this.state.groups.spawners, 'meteoritSpawner').forceSpawn(position);
         }, this);
     }
-
-    this.meteoritTimer = this.game.time.events.add(this.game.rnd.integerInRange(12000, 15000), this.initiateMeteoritHail, this);
 }
