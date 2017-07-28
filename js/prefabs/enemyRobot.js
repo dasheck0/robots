@@ -16,7 +16,7 @@ Bots.EnemyRobot.prototype.initializeObject = function () {
     Bots.DroppableRobot.prototype.initializeObject(this.game);
 
     this.properties.rotationSpeed = this.properties.speed / 17;
-    this.properties.maxSpeed = this.properties.speed * 2;
+    this.properties.maxSpeed = this.properties.speed * 2.5;
     this.body.maxVelocity.setTo(this.properties.maxSpeed);
 
     this.trackTimer = this.game.time.events.loop(100, function () {

@@ -67,6 +67,8 @@ Bots.Level.prototype.create = function () {
     }
 
     this.game.world.setBounds(-Bots.worldSize.x / 2, -Bots.worldSize.y / 2, Bots.worldSize.x, Bots.worldSize.y);
+    Bots.killCount = 0;
+    Bots.deathCount = 0;
 };
 
 Bots.Level.prototype.createPrefab = function (prefabName, properties) {

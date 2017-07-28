@@ -8,6 +8,8 @@ Bots.Robot = function (state, name, position, properties) {
     Bots.DroppableRobot.call(this, state, name, position, properties);
 
     this.human = true;
+    this.deaths = 0;
+    this.kills = 0;
 
     this.game.camera.follow(this);
     this.game.camera.deadzone = new Phaser.Rectangle(Bots.cameraPadding, Bots.cameraPadding, Bots.screenSize.x - 4 * Bots.minimapPadding.x - Bots.minimapWidth - Bots.cameraPadding, Bots.screenSize.y - 2 * Bots.cameraPadding);
@@ -39,7 +41,7 @@ Bots.Robot.prototype.initializeObject = function () {
     getMemberByName(this.state.groups.hud, 'speedText').text = this.properties.speed;
 
     this.properties.rotationSpeed = this.properties.speed / 17;
-    this.properties.maxSpeed = this.properties.speed * 2;
+    this.properties.maxSpeed = this.properties.speed * 2.5;
     this.body.maxVelocity.setTo(this.properties.maxSpeed);
 }
 

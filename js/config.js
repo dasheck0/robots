@@ -12,3 +12,5 @@ Bots.cameraPadding = 100;
 Bots.minimapWidth = Bots.screenSize.x * 0.25;
 Bots.minimapHeight = (Bots.minimapWidth * Bots.worldSize.y) / Bots.worldSize.x;
 Bots.minimapPadding = new Phaser.Point(16, 16);
+Bots.killCount = 0;
+Bots.deathCount = 0;

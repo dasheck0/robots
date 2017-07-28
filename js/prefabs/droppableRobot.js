@@ -12,6 +12,8 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.human = false;
     this.isDead = false;
     this.isJumping = false;
+    this.kills = 0;
+    this.deaths = 0;
 
     this.scale.setTo(Bots.scale);
     this.game.physics.enable(this, Phaser.Physics.ARCADE);
@@ -21,15 +23,15 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.body.collideWorldBounds = true;
     this.speedMultiplier = 1;
 
-    this.weapon = this.game.add.weapon(10, 'bullet', 0, this.state.groups.bullets);
+    this.weapon = this.game.add.weapon(10 + this.game.rnd.integerInRange(-2, 2), 'bullet', 0, this.state.groups.bullets);
     this.weapon.bullets.forEach((bullet) => {
         bullet.scale.setTo(Bots.scale);
     }, this);
     this.weapon.bulletKillType = Phaser.Weapon.KILL_DISTANCE;
     this.weapon.bulletKillDistance = 1000;
-    this.weapon.bulletSpeed = 600;
-    this.weapon.fireRate = 100; // 1 per 60 ms
-    this.weapon.bulletAngleVariance = 5;
+    this.weapon.bulletSpeed = 600 + this.game.rnd.integerInRange(-50, 50);
+    this.weapon.fireRate = 200 + this.game.rnd.integerInRange(-30, 30); // 1 per 60 ms
+    this.weapon.bulletAngleVariance = 5 + this.game.rnd.integerInRange(-5, 5);
     this.weapon.trackSprite(this, 0, 0, true);
 
     this.killCounter = this.game.add.text(0, 0, '1', { font: '10pt Arial', fill: '#ffffff', align: 'right' })
@@ -93,6 +95,14 @@ Bots.DroppableRobot.prototype.killedOtherRobot = function (deadRobot) {
     this.dealDamage(-this.properties.maxHealth);
     if (this.boss) {
         console.log(this.kill.text, deadRobot.killCounter.text);
+    }
+
+    if (this.human) {
+        Bots.killCount += 1;
+    }
+
+    if (deadRobot.human) {
+        Bots.deathCount += 1;
     }
 
     this.killCounter.text = parseInt(this.killCounter.text) + parseInt(deadRobot.killCounter.text);

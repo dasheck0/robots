@@ -26,7 +26,7 @@ Bots.StatisticsPanel = function (state, name, position, properties) {
     this.addChild(this.rankText);
 
     this.rankTexts = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 12; i++) {
         const rankText = this.game.add.text(this.topLeft.x + 16, this.topLeft.y + 48 + i * 16, '', this.regularTextStyle());
         this.addChild(rankText);
 
@@ -43,17 +43,23 @@ Bots.StatisticsPanel = function (state, name, position, properties) {
     this.game.add.tween(this.player).to({ angle: 360 }, 30000, Phaser.Easing.Linear.None, true, 0, -1);
     this.addChild(this.player);
 
-    this.attackText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 32, 'Atl\t120', this.regularTextStyleWithTabs(32));
+    this.attackText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 32, 'Atl\t120', this.regularTextStyleWithTabs(48));
     this.addChild(this.attackText);
 
-    this.defenseText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 48, 'Def\t120', this.regularTextStyleWithTabs(32));
+    this.defenseText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 48, 'Def\t120', this.regularTextStyleWithTabs(48));
     this.addChild(this.defenseText);
 
-    this.healthText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 64, 'HP\t4800', this.regularTextStyleWithTabs(32));
+    this.healthText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 64, 'HP\t4800', this.regularTextStyleWithTabs(48));
     this.addChild(this.healthText);
 
-    this.speedText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 80, 'Spd\t120', this.regularTextStyleWithTabs(32));
+    this.speedText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 80, 'Spd\t120', this.regularTextStyleWithTabs(48));
     this.addChild(this.speedText);
+
+    this.killsText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 96, 'Kills\t120', this.regularTextStyleWithTabs(48));
+    this.addChild(this.killsText);
+
+    this.deathsText = this.game.add.text(this.topLeft.x + 16 + 100, this.topLeft.y + 48 + 64 + 112, 'Deaths\t120', this.regularTextStyleWithTabs(48));
+    this.addChild(this.deathsText);
 
     this.helpText = this.game.add.text(this.topLeft.x + 200, this.topLeft.y + 16, 'Help', this.captionTextStyle());
     this.addChild(this.helpText);
@@ -181,7 +187,7 @@ Bots.StatisticsPanel.prototype.update = function () {
 
         robotNamesWithLevel
             .sort((l, r) => r.level - l.level)
-            .slice(0, 10)
+            .slice(0, this.rankTexts.length)
             .forEach((robot, index) => {
                 this.rankTexts[index].text = `${robot.level} ${shortenName(robot.name, 8)}`;
             });
@@ -190,5 +196,7 @@ Bots.StatisticsPanel.prototype.update = function () {
         this.defenseText.text = `Def\t${getMemberByName(this.state.groups.hud, 'defText').text}`;
         this.healthText.text = `HP\t${getMemberByName(this.state.groups.hud, 'healthText').text}`;
         this.speedText.text = `Spd\t${getMemberByName(this.state.groups.hud, 'speedText').text}`;
+        this.killsText.text = `Kills\t${Bots.killCount}`;
+        this.deathsText.text = `Deaths\t${Bots.deathCount}`;
     }
 }
