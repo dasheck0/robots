@@ -9,6 +9,10 @@ Bots.Loot = function (state, name, position, properties) {
     Bots.Prefab.call(this, state, name, position, properties);
 
     this.properties.robot.properties[this.properties.type] += this.properties.amount;
+    if (this.properties.robot.properties[this.properties.type] > this.properties.maxValue) {
+        this.properties.robot.properties[this.properties.type] = this.properties.maxValue;
+    }
+
     if (this.properties.robot.human) {
         // update hud
         const tweenColor = this.properties.amount >= 0 ? '#00ff00' : '#ff0000';

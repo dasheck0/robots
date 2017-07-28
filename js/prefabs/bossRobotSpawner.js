@@ -31,7 +31,7 @@ Bots.BossRobotSpawner.prototype.spawn = function () {
 
 Bots.BossRobotSpawner.prototype.createObject = function (name, position) {
     console.log("Dropped boss", this.state.game);
-    const maxHealth = this.state.game.rnd.integerInRange(5000, 6200);
+    const maxHealth = this.state.game.rnd.integerInRange(500, 620);
 
 
     return new Bots.BossRobot(this.state, name, position, {
@@ -39,8 +39,8 @@ Bots.BossRobotSpawner.prototype.createObject = function (name, position) {
         key: sample(['robot3Dred', 'robot3Dblue', 'robot3Dgreen', 'robot3Dyellow']),
         friction: 10,
         rotationSpeed: 5,
-        attack: this.state.game.rnd.integerInRange(60, 120),
-        defense: this.state.game.rnd.integerInRange(30, 35),
+        attack: this.state.game.rnd.integerInRange(60, 80),
+        defense: this.state.game.rnd.integerInRange(80, 90),
         speed: this.state.game.rnd.integerInRange(20, 35),
         health: maxHealth,
         maxHealth: maxHealth,

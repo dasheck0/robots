@@ -28,7 +28,7 @@ Bots.Meteorit.prototype.initializeObject = function () {
     const bounds = this.getBounds();
     this.state.groups.robots.forEachAlive((robot) => {
         if (!robot.isDead && !robot.boss && Phaser.Rectangle.intersects(bounds, robot.getBounds())) {
-            if (robot.dealDamage(calculateDamage(this.properties.attack, robot.properties.defense))) {
+            if (robot.dealDamage(calculateDamage2(this.properties.attack, robot.properties.defense))) {
                 getMemberByName(this.state.groups.spawners, 'textSpawner').spawn(`${robot.properties.displayName} (${robot.killCounter.text}) was killed by a comet`);
             }
         }

@@ -90,6 +90,7 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 * Revamp damage calculation
 * Add help for minimap!
 * Show hud in the first game or a hint so that the player knows how to show it
+* Atk, Def, Spd, Health fixed values based on chosen robot (yellow -> good def)
 
 ### Nice to have
 

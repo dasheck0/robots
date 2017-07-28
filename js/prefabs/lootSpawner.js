@@ -45,24 +45,28 @@ Bots.LootSpawner.prototype.generateLootProperties = function (robot) {
     if (robot) {
         const properties = [{
             type: 'attack',
-            amount: this.game.rnd.integerInRange(robot.properties.attack * 0.05, robot.properties.attack * 0.15),
+            amount: this.game.rnd.integerInRange(5, 10),
             key: 'lucifer_cannon',
-            hudTextName: 'atkText'
+            hudTextName: 'atkText',
+            maxValue: 255
         }, {
             type: 'defense',
-            amount: this.game.rnd.integerInRange(robot.properties.attack * 0.08, robot.properties.attack * 0.12),
+            amount: this.game.rnd.integerInRange(5, 10),
             key: 'shield',
-            hudTextName: 'defText'
+            hudTextName: 'defText',
+            maxValue: 255
         }, {
             type: 'maxHealth',
-            amount: this.game.rnd.integerInRange(robot.properties.attack * 0.15, robot.properties.attack * 0.20),
+            amount: this.game.rnd.integerInRange(10, 20),
             key: 'medical_pack',
-            hudTextName: 'healthText'
+            hudTextName: 'healthText',
+            maxValue: 999
         }, {
             type: 'speed',
-            amount: this.game.rnd.integerInRange(robot.properties.attack * 0.05, robot.properties.attack * 0.1),
+            amount: this.game.rnd.integerInRange(5, 10),
             key: 'jet_pack',
-            hudTextName: 'speedText'
+            hudTextName: 'speedText',
+            maxValue: 255
         }];
 
         return sample(properties);

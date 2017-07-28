@@ -12,17 +12,15 @@ Bots.RobotSpawner.prototype = Object.create(Bots.Spawner.prototype);
 Bots.RobotSpawner.prototype.constructor = Bots.RobotSpawner;
 
 Bots.RobotSpawner.prototype.createObject = function (name, position) {
-    // position = new Phaser.Point(0, 0);
-
     return new Bots.Robot(this.state, name, position, {
         "group": "robots",
         "key": this.properties.spawnKey,
         "friction": 10,
         "attack": 34,
         "defense": 48,
-        "speed": 175,
-        "health": 100000,
-        "maxHealth": 100000,
+        "speed": 70,
+        "health": 100,
+        "maxHealth": 100,
         "displayName": "Player",
         scaleMultiplier: 1
     });
