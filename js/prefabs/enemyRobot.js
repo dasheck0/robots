@@ -13,7 +13,7 @@ Bots.EnemyRobot.prototype = Object.create(Bots.DroppableRobot.prototype);
 Bots.EnemyRobot.prototype.constructor = Bots.EnemyRobot;
 
 Bots.EnemyRobot.prototype.initializeObject = function () {
-    Bots.DroppableRobot.prototype.initializeObject(this.game);
+    Bots.DroppableRobot.prototype.initializeObject(this);
 
     this.properties.rotationSpeed = this.properties.speed / 17;
     this.properties.maxSpeed = this.properties.speed * 2.5;
@@ -26,7 +26,7 @@ Bots.EnemyRobot.prototype.initializeObject = function () {
     }, this);
 }
 
-Bots.EnemyRobot.prototype.getClosestMemberOfGroup = function (group) {
+Bots.EnemyRobot.prototype.getClosestMemberOfGroup = function (group, isRobot) {
     let closestMember = null;
     let closestDistance = Number.MAX_VALUE;
 
@@ -34,8 +34,10 @@ Bots.EnemyRobot.prototype.getClosestMemberOfGroup = function (group) {
         if (member.name !== this.name) {
             const distance = this.game.physics.arcade.distanceBetween(this, member);
             if (distance < closestDistance) {
-                closestDistance = distance;
-                closestMember = member;
+                if (isRobot && !member.isDead && !member.spawnProtect) {
+                    closestDistance = distance;
+                    closestMember = member;
+                }
             }
         }
     });
@@ -52,7 +54,7 @@ Bots.EnemyRobot.prototype.update = function () {
 
     if (!this.stunned) {
         if (this.dropped && !this.isDead) {
-            const closestRobot = this.getClosestMemberOfGroup(this.state.groups.robots);
+            const closestRobot = this.getClosestMemberOfGroup(this.state.groups.robots, true);
             const closestChest = this.getClosestMemberOfGroup(this.state.groups.chests);
 
             const member = (closestRobot.present && closestRobot.distance < closestChest.distance) ? closestRobot : closestChest;
@@ -65,7 +67,7 @@ Bots.EnemyRobot.prototype.update = function () {
                     } else {
                     }
 
-                    this.weapon.fire();
+                    Bots.DroppableRobot.prototype.fire.call(this);
                 }
 
                 const offset = -60 * this.game.rnd.realInRange(this.properties.accuracy, 1) + 60;

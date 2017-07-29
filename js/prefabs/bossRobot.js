@@ -16,7 +16,7 @@ Bots.BossRobot.prototype = Object.create(Bots.DroppableRobot.prototype);
 Bots.BossRobot.prototype.constructor = Bots.BossRobot;
 
 Bots.BossRobot.prototype.initializeObject = function () {
-    Bots.DroppableRobot.prototype.initializeObject(this.game);
+    Bots.DroppableRobot.prototype.initializeObject(this);
 
     this.properties.rotationSpeed = this.properties.speed / 17;
     this.properties.maxSpeed = this.properties.speed * 2;
@@ -74,11 +74,11 @@ Bots.BossRobot.prototype.attackNearbyObjects = function (group) {
         group.forEachAlive((object) => {
             if (this.game.physics.arcade.distanceBetween(this, object) < this.properties.shootRange && this.game.rnd.frac() < this.properties.sloppiness) {
                 this.rotation = this.game.physics.arcade.angleBetween(this, object);
-                this.weapon.fire();
+                Bots.DroppableRobot.prototype.fire.call(this);
                 this.attackedNearbyObjectInTurn = true;
                 return;
             }
-        });
+        }, this);
     }
 }
 

@@ -56,12 +56,20 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.shadow.tint = 0x000000;
     this.shadow.name = `${name}_shadow`;
     this.state.groups.shadows.add(this.shadow);
+
+    this.spawnProtect = true;
 };
 
 Bots.DroppableRobot.prototype = Object.create(Bots.Droppable.prototype);
 Bots.DroppableRobot.prototype.constructor = Bots.DroppableRobot;
 
-Bots.DroppableRobot.prototype.initializeObject = function (game) {
+Bots.DroppableRobot.prototype.initializeObject = function (instance) {
+    instance.alpha = 0.5;
+    instance.spawnProtect = true;
+    instance.game.time.events.add(2000, () => {
+        instance.alpha = 1;
+        instance.spawnProtect = false;
+    }, instance);
 }
 
 Bots.DroppableRobot.prototype.reset = function (x, y) {
@@ -69,6 +77,10 @@ Bots.DroppableRobot.prototype.reset = function (x, y) {
 }
 
 Bots.DroppableRobot.prototype.dealDamage = function (damage) {
+    if (this.spawnProtect) {
+        return false;
+    }
+
     if (this.boss && damage < 0) {
         damage = 0;
     }
@@ -241,4 +253,10 @@ Bots.DroppableRobot.prototype.onOilRobotOverlap = function (oil, robot) {
 
 Bots.DroppableRobot.prototype.onBulletRobotCollideProcess = function (bullet, robot) {
     return robot !== this;
+}
+
+Bots.DroppableRobot.prototype.fire = function () {
+    if (!this.isDead && !this.spawnProtect) {
+        this.weapon.fire();
+    }
 }

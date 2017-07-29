@@ -17,7 +17,7 @@ gulp.task('minifyAssets', () =>
         .pipe(gulp.dest('assets2'))
 );
 
-gulp.task('copy', ['minify', 'transpile'], () => {
+gulp.task('copy', ['minify', 'transpile', 'linkPhaser', 'calculateSize'], () => {
     const destination = '/Applications/MAMP/htdocs/dasheck-hackathon-phaser';
     const sources = ['dist', 'assets'].reverse();
 

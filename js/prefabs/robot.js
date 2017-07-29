@@ -33,7 +33,7 @@ Bots.Robot.prototype = Object.create(Bots.DroppableRobot.prototype);
 Bots.Robot.prototype.constructor = Bots.Robot;
 
 Bots.Robot.prototype.initializeObject = function () {
-    Bots.DroppableRobot.prototype.initializeObject(this.game);
+    Bots.DroppableRobot.prototype.initializeObject(this);
 
     getMemberByName(this.state.groups.hud, 'atkText').text = this.properties.attack;
     getMemberByName(this.state.groups.hud, 'defText').text = this.properties.defense;
@@ -70,7 +70,7 @@ Bots.Robot.prototype.update = function () {
                     }
 
                     if (this.game.input.keyboard.isDown(Phaser.Keyboard.SPACEBAR)) {
-                        this.weapon.fire();
+                        Bots.DroppableRobot.prototype.fire.call(this);
                     }
                 } else {
                     if (this.dpad && this.dpad.isPressed) {
@@ -82,7 +82,7 @@ Bots.Robot.prototype.update = function () {
                     }
 
                     if (this.shootButton && this.shootButton.isPressed) {
-                        this.weapon.fire();
+                        Bots.DroppableRobot.prototype.fire.call(this);
                     }
                 }
 
