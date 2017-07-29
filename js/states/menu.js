@@ -92,6 +92,7 @@ Bots.Menu.prototype.create = function () {
     this.chooser.showRobot(0, true);
 
     this.backgroundChooser = getMemberByName(this.groups.spawners, 'menuBackgroundChooser');
+    getMemberByName(this.groups.hud, 'soundButton').loadTexture(Bots.soundsEnabled ? 'uiMusicOn' : 'uiMusicOff');
 };
 
 Bots.Menu.prototype.createPrefab = function (prefabName, properties) {
@@ -140,6 +141,11 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
 
         Bots.humanRobotKey = this.chooser.getChosenRobot().properties.secondKey;
         this.fadeOutUI('credits', payload);
+    }
+
+    if (button.name === 'soundButton') {
+        Bots.soundsEnabled = !Bots.soundsEnabled;
+        button.loadTexture(Bots.soundsEnabled ? 'uiMusicOn' : 'uiMusicOff');
     }
 }
 

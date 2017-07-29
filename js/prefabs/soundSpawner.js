@@ -12,12 +12,14 @@ Bots.SoundSpawner.prototype = Object.create(Bots.Spawner.prototype);
 Bots.SoundSpawner.prototype.constructor = Bots.SoundSpawner;
 
 Bots.SoundSpawner.prototype.spawn = function (source, key) {
-    const humanRobot = getHumanRobot(this.state.groups.robots);
+    if (Bots.soundsEnabled) {
+        const humanRobot = getHumanRobot(this.state.groups.robots);
 
-    if (humanRobot) {
-        const distance = this.game.physics.arcade.distanceBetween(source, humanRobot);
-        if (distance < 300) {
-            const sound = this.createObject(`sound_${key}`, key);
+        if (humanRobot) {
+            const distance = this.game.physics.arcade.distanceBetween(source, humanRobot);
+            if (distance < 300) {
+                const sound = this.createObject(`sound_${key}`, key);
+            }
         }
     }
 }

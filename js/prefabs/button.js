@@ -41,7 +41,10 @@ Bots.Button.prototype.onButtonReleased = function () {
         this.scale.setTo(1);
         this.shadow.scale.setTo(1);
 
-        this.state.prefabs.clickSound.safelyPlay();
+        if (Bots.soundsEnabled) {
+            this.state.prefabs.clickSound.safelyPlay();
+        }
+        
         this.state.onButtonPressed(this);
     }
 }

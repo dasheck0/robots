@@ -56,6 +56,14 @@
       "type": "image",
       "source": "assets/images/information.png"
     },
+    "uiMusicOn": {
+      "type": "image",
+      "source": "assets/images/musicOn.png"
+    },
+    "uiMusicOff": {
+      "type": "image",
+      "source": "assets/images/musicOff.png"
+    },
     "uiStart": {
       "type": "image",
       "source": "assets/images/buttonStart.png"
@@ -485,6 +493,21 @@
       "properties": {
         "group": "hud",
         "key": "uiInformation",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        }
+      }
+    },
+    "soundButton": {
+      "type": "button",
+      "position": {
+        "x": 616,
+        "y": 72
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiMusicOn",
         "anchor": {
           "x": 0.5,
           "y": 0.5

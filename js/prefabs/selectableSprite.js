@@ -15,7 +15,10 @@ Bots.SelectableSprite = function (state, name, position, properties) {
     this.inputEnabled = true;
     this.events.onInputUp.add(() => {
         if (!this.game.paused || this.properties.force) {
-            this.state.prefabs.clickSound.safelyPlay();
+            if (Bots.soundsEnabled) {
+                this.state.prefabs.clickSound.safelyPlay();
+            }
+            
             this.isSelected = true;
             properties.parent.onTileSelected(this);
         }
