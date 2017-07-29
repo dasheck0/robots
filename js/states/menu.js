@@ -15,7 +15,9 @@ Bots.Menu = function () {
         'menuBackgroundChooser': Bots.MenuBackgroundChooser.prototype.constructor,
         'pauseDialogSpawner': Bots.PauseDialogSpawner.prototype.constructor,
         'selectableSprite': Bots.SelectableSprite.prototype.constructor,
-        'menuRobotSpawner': Bots.MenuRobotSpawner.prototype.constructor
+        'sound': Bots.SoundPrefab.prototype.constructor,
+        'menuRobotSpawner': Bots.MenuRobotSpawner.prototype.constructor,
+        'sound': Bots.SoundPrefab.prototype.constructor
     }
 };
 
@@ -96,6 +98,8 @@ Bots.Menu.prototype.createPrefab = function (prefabName, properties) {
     if (this.prefabClasses.hasOwnProperty(properties.type)) {
         const position = new Phaser.Point(properties.position.x, properties.position.y);
         const prefab = new this.prefabClasses[properties.type](this, prefabName, position, properties.properties);
+
+        this.prefabs[prefabName] = prefab;
     }
 };
 

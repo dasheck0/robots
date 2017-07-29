@@ -12,7 +12,8 @@ Bots.Credits = function () {
         'button': Bots.Button.prototype.constructor,
         'creditsItem': Bots.CreditsItem.prototype.constructor,
         'creditsItemSpawner': Bots.CreditsItemSpawner.prototype.constructor,
-        'text': Bots.TextPrefab.prototype.constructor
+        'text': Bots.TextPrefab.prototype.constructor,
+        'sound': Bots.SoundPrefab.prototype.constructor
     }
 };
 
@@ -51,6 +52,8 @@ Bots.Credits.prototype.createPrefab = function (prefabName, properties) {
     if (this.prefabClasses.hasOwnProperty(properties.type)) {
         const position = new Phaser.Point(properties.position.x, properties.position.y);
         const prefab = new this.prefabClasses[properties.type](this, prefabName, position, properties.properties);
+
+        this.prefabs[prefabName] = prefab;
     }
 };
 

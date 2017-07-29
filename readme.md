@@ -84,7 +84,6 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 * Add randomly placed obstacles (destroyable and not destroyable)
 * Add mines as secondary weapons and add camera shake for explosion
 * Add more robot ai types (timid, circeling, random) -> https://loonride.com/learn/phaser/slither-io-part-3 ?
-* Add sounds
 * Add consumables - invisible, mirror, stun enemies,  
 * Do not spawn boss continuously and place warning when he appears (with warning symbol, flashing screen and shaking)
 * Revamp damage calculation
@@ -107,6 +106,7 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ### Done
 
+* ~~Add sounds~~
 * ~~Spawn protect~~
 * ~~Robot should emit smoke when on low health (only bosses)~~
 * ~~Add randomly driving robots for menu (just to make it more dynamic)~~
@@ -131,6 +131,8 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ## Used assets
 
+### Images
+
 * [Robot pack](http://kenney.nl/assets/robot-pack)
 * [Tanks](http://kenney.nl/assets/tanks)
 * [Smoke Particle Assets](https://opengameart.org/content/smoke-particle-assets)
@@ -145,6 +147,14 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 * [50 free textures 5 - with normalmaps](https://opengameart.org/content/50-free-textures-5-with-normalmaps)
 * [Explosion](https://opengameart.org/content/explosion)
 * [Powers Icons](https://opengameart.org/content/powers-icons)
+
+### Sounds
+
+* [droplet4](http://freesound.org/people/willy_ineedthatapp_com/sounds/167329/) by willy_ineedthatapp
+* [whack01](http://freesound.org/people/Qat/sounds/114682/) by Qat
+* [LightBulletPing](http://freesound.org/people/wilhellboy/sounds/351369/) by wilhellby
+* [PVC Rocket Cannon_2](http://freesound.org/people/bowlingballout/sounds/151714/) by bowlingballout
+* [MoCa abstract kick](http://freesound.org/people/moca/sounds/49030/) by moca
 
 ## Assets removed due to insufficient licenses
 

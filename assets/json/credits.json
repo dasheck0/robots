@@ -8,6 +8,10 @@
       "type": "image",
       "source": "assets/images/arrowLeft.png"
     },
+    "clickSound": {
+      "type": "sound",
+      "source": "assets/sounds/click.mp3"
+    },
     "uiSettings": {
       "type": "image",
       "source": "assets/images/gear.png"
@@ -573,6 +577,16 @@
             "author": "rubberduck"
           }
         ]
+      }
+    },
+    "clickSound": {
+      "type": "sound",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "clickSound"
       }
     }
   }

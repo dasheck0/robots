@@ -9,6 +9,8 @@ Bots.Explosion = function (state, name, position, properties) {
 
     const explosion = this.animations.add('explosion');
     this.animations.play('explosion', 25, false, true);
+
+    getMemberByName(this.state.groups.spawners, 'soundSpawner').spawn(this, 'explosionSound');
 };
 
 Bots.Explosion.prototype = Object.create(Bots.Prefab.prototype);

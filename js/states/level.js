@@ -28,6 +28,7 @@ Bots.Level = function () {
         'smokeSpawner': Bots.SmokeSpwaner.prototype.constructor,
         'earthQuakeSpawner': Bots.EarthQuakeSpawner.prototype.constructor,
         'textSpawner': Bots.TextSpawner.prototype.constructor,
+        'soundSpawner': Bots.SoundSpawner.prototype.constructor,
         'explosion': Bots.Explosion.prototype.constructor,
         'dust': Bots.Dust.prototype.constructor,
         'dustSpawner': Bots.DustSpawner.prototype.constructor,
@@ -38,7 +39,8 @@ Bots.Level = function () {
         'button': Bots.Button.prototype.constructor,
         'dpad': Bots.DPad.prototype.constructor,
         'control': Bots.Control.prototype.constructor,
-        'pauseDialogSpawner': Bots.PauseDialogSpawner.prototype.constructor
+        'pauseDialogSpawner': Bots.PauseDialogSpawner.prototype.constructor,
+        'sound': Bots.SoundPrefab.prototype.constructor
     }
 };
 
@@ -75,6 +77,8 @@ Bots.Level.prototype.createPrefab = function (prefabName, properties) {
     if (this.prefabClasses.hasOwnProperty(properties.type)) {
         const position = new Phaser.Point(properties.position.x, properties.position.y);
         const prefab = new this.prefabClasses[properties.type](this, prefabName, position, properties.properties);
+
+        this.prefabs[prefabName] = prefab;
     }
 };
 

@@ -30,9 +30,12 @@ Bots.DroppableRobot = function (state, name, position, properties) {
     this.weapon.bulletKillType = Phaser.Weapon.KILL_DISTANCE;
     this.weapon.bulletKillDistance = 1000;
     this.weapon.bulletSpeed = 600 + this.game.rnd.integerInRange(-50, 50);
-    this.weapon.fireRate = 200 + this.game.rnd.integerInRange(-30, 30); // 1 per 60 ms
+    this.weapon.fireRate = 300 + this.game.rnd.integerInRange(-30, 30); // 1 per 60 ms
     this.weapon.bulletAngleVariance = 5 + this.game.rnd.integerInRange(-5, 5);
     this.weapon.trackSprite(this, 0, 0, true);
+    this.weapon.onFire.add(() => {
+        getMemberByName(this.state.groups.spawners, 'soundSpawner').spawn(this, 'shotSound');
+    }, this);
 
     this.killCounter = this.game.add.text(0, 0, '1', { font: '10pt Arial', fill: '#ffffff', align: 'right' })
     this.killCounter.anchor.setTo(1, 0);
@@ -224,6 +227,7 @@ Bots.DroppableRobot.prototype.update = function (instance) {
 
 Bots.DroppableRobot.prototype.onBulletChestCollide = function (bullet, chest) {
     bullet.kill();
+    getMemberByName(this.state.groups.spawners, 'soundSpawner').spawn(chest, 'plingSound');
 
     if (chest.hit()) {
         killFromGroup(chest.shadow, this.state.groups.shadows);
@@ -242,6 +246,7 @@ Bots.DroppableRobot.prototype.onBulletRobotCollide = function (bullet, robot) {
 
         if (robot.dealDamage(calculateDamage2(this.properties.attack, robot.properties.defense))) {
             getMemberByName(this.state.groups.spawners, 'textSpawner').spawn(`${this.properties.displayName} (${this.killCounter.text}) killed ${robot.properties.displayName} (${robot.killCounter.text})`);
+
             this.killedOtherRobot(robot);
         }
     }

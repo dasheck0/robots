@@ -32,6 +32,10 @@
       "type": "image",
       "source": "assets/images/grass_64.png"
     },
+    "clickSound": {
+      "type": "sound",
+      "source": "assets/sounds/click.mp3"
+    },
     "groundTiled": {
       "type": "image",
       "source": "assets/images/tiled_64.png"
@@ -580,6 +584,16 @@
           "x": 200,
           "y": 80
         }
+      }
+    },
+    "clickSound": {
+      "type": "sound",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "clickSound"
       }
     }
   }

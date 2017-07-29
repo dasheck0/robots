@@ -298,6 +298,22 @@
     "uiCheckmark": {
       "type": "image",
       "source": "assets/images/checkmark.png"
+    },
+    "shotSound": {
+      "type": "sound",
+      "source": "assets/sounds/shot.mp3"
+    },
+    "explosionSound": {
+      "type": "sound",
+      "source": "assets/sounds/explosion.mp3"
+    },
+    "plingSound": {
+      "type": "sound",
+      "source": "assets/sounds/pling.mp3"
+    },
+    "clickSound": {
+      "type": "sound",
+      "source": "assets/sounds/click.mp3"
     }
   },
   "groups": [
@@ -831,6 +847,27 @@
           "x": 0,
           "y": 0
         }
+      }
+    },
+    "soundSpawner": {
+      "type": "soundSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "group": "spawners",
+        "mode": "never"
+      }
+    },
+    "clickSound": {
+      "type": "sound",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "key": "clickSound"
       }
     }
   }
