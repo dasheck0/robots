@@ -19,8 +19,4 @@ window.onload = function () {
         level: 'assets/json/level.json',
         credits: 'assets/json/credits.json'
     });
-
-    for (let i = 0; i < 50; i++) {
-        console.log(getRandomName());
-    }
 };

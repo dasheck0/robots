@@ -18,12 +18,8 @@ Bots.MenuRobotChooser = function (state, name, position, properties) {
             robot.x = position.x;
             robot.y = position.y;
 
-            console.log("fjknsd", `${name}Text`);
-
             const text = getMemberByName(this.state.groups.robotTexts, `${name}Text`);
-            console.log("tet", text);
             if (text) {
-                console.log("Adding it");
                 robot.addChild(text);
             }
         }

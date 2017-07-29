@@ -6,7 +6,6 @@
 let Bots = Bots || {};
 
 Bots.SoundPrefab = function (state, name, position, properties) {
-    console.log("props", properties);
     Phaser.Sound.call(this, state.game, properties.key);
 
     this.name = name;

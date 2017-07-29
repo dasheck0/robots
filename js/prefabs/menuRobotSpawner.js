@@ -12,7 +12,6 @@ Bots.MenuRobotSpawner.prototype = Object.create(Bots.Spawner.prototype);
 Bots.MenuRobotSpawner.prototype.constructor = Bots.MenuRobotSpawner;
 
 Bots.MenuRobotSpawner.prototype.createObject = function (name, position) {
-    console.log("Spawning", position, Bots.worldSize);
     position = new Phaser.Point(randomInteger(2 * Bots.screenSize.x) - Bots.screenSize.x / 2, randomInteger(2 * Bots.screenSize.y) - Bots.screenSize.y / 2);
 
     return new Bots.MenuRobot(this.state, name, position, {

@@ -38,8 +38,6 @@ Bots.Credits.prototype.create = function () {
 
     this.data.groups.forEach(groupName => (this.groups[groupName] = this.game.add.group()), this);
     for (var prefabName in this.data.prefabs) {
-        console.log("prefabName", prefabName);
-
         if (this.data.prefabs.hasOwnProperty(prefabName)) {
             this.createPrefab(prefabName, this.data.prefabs[prefabName]);
         }

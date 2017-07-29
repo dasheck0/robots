@@ -26,8 +26,6 @@ Bots.TileSprite = function (state, name, position, properties) {
     if (properties.anchor) {
         this.anchor.setTo(properties.anchor.x, properties.anchor.y);
     }
-
-    console.log("Name", name, position, properties);
 };
 
 Bots.TileSprite.prototype = Object.create(Phaser.TileSprite.prototype);

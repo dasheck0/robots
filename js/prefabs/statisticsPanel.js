@@ -190,8 +190,6 @@ Bots.StatisticsPanel.prototype.show = function (show) {
 
 Bots.StatisticsPanel.prototype.update = function () {
     if (this.alpha === 1) {
-        console.log("bfdsnmfdf,");
-
         const robotNamesWithLevel = [];
         this.state.groups.robots.forEachAlive((robot) => {
             robotNamesWithLevel.push({

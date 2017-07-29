@@ -18,7 +18,6 @@ Bots.Boot.prototype.init = function (data) {
 
 Bots.Boot.prototype.preload = function () {
     for (const name in this.data) {
-        console.log("Data", name);
         if (this.data.hasOwnProperty(name)) {
             this.load.text(name, this.data[name]);
         }

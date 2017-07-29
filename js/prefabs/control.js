@@ -13,7 +13,6 @@ Bots.Control = function (state, name, position, properties) {
     this.events.onInputDown.add(() => (this.isPressed = true), this);
     this.events.onInputUp.add(() => {
         this.isPressed = false;
-        console.log("Up");
     }, this);
 };
 

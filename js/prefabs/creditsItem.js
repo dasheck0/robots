@@ -20,8 +20,6 @@ Bots.CreditsItem = function (state, name, position, properties) {
     const scaleX = (factor * this.properties.size.width) / this.sprite.width;
     const scaleY = (factor * this.properties.size.height) / this.sprite.height;
 
-    console.log("ghj", scaleX, scaleY, 'choosing', scaleX < scaleY ? scaleX : scaleY);
-
     this.sprite.scale.setTo((scaleX < scaleY) ? scaleX : scaleY);
     this.sprite.x = -this.properties.size.width / 2 + this.sprite.width / 2 + 8;
     this.addChild(this.sprite);

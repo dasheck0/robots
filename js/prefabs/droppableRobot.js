@@ -108,9 +108,6 @@ Bots.DroppableRobot.prototype.dealDamage = function (damage) {
 
 Bots.DroppableRobot.prototype.killedOtherRobot = function (deadRobot) {
     this.dealDamage(-this.properties.maxHealth);
-    if (this.boss) {
-        console.log(this.kill.text, deadRobot.killCounter.text);
-    }
 
     if (this.human) {
         Bots.killCount += 1;

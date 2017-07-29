@@ -25,8 +25,6 @@ Bots.MessagePrefab = function (state, name, position, properties) {
     this.drawRect(-Bots.screenSize.x / 2, -this.messageHeight / 2, Bots.screenSize.x, this.messageHeight);
     this.endFill();
 
-    console.log(properties);
-
     this.text = this.game.add.text(0, 2, properties.text, properties.style);
     this.text.anchor.setTo(0.5);
     this.addChild(this.text);
