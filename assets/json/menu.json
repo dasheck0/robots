@@ -669,8 +669,8 @@
         "shadow": true,
         "spacing": 16,
         "backgrounds": [
-          "grass2",
           "stone",
+          "grass2",
           "groundDirt",
           "groundStone",
           "groundMountain",
@@ -706,6 +706,27 @@
       },
       "properties": {
         "key": "clickSound"
+      }
+    },
+    "hintText": {
+      "type": "text",
+      "position": {
+        "x": 632,
+        "y": 360
+      },
+      "properties": {
+        "group": "hud",
+        "text": "Tip: Press shift in game to open the HUD!",
+        "style": {
+          "font": "10pt Arial",
+          "fill": "#ffffff",
+          "align": "right"
+        },
+        "anchor": {
+          "x": 1,
+          "y": 1
+        },
+        "shadow": true
       }
     }
   }
