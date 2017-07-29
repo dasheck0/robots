@@ -9,13 +9,15 @@ Bots.MenuBackgroundChooser = function (state, name, position, properties) {
 
     this.selectedTile = null;
     this.backgrounds = [];
-    properties.backgrounds.forEach((key) => {
+    properties.backgrounds.forEach((key, index) => {
         const spriteProperties = {
             key,
             group: properties.pool,
             anchor: properties.anchor,
             scale: properties.scale,
-            parent: this
+            parent: this,
+            shadow: properties.shadow,
+            index: index
         };
 
         const selectableSprite = new Bots.SelectableSprite(state, key, position, spriteProperties);

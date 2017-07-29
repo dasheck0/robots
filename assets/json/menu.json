@@ -465,7 +465,7 @@
         "group": "spawners",
         "pool": "robots",
         "mode": "limited",
-        "limit": 6,
+        "limit": 3,
         "spawnTimeInSeconds": {
           "min": 0,
           "max": 1
@@ -550,17 +550,18 @@
           "x": 0.5,
           "y": 0.5
         },
+        "shadow": true,
         "spacing": 16,
         "backgrounds": [
+          "stone",
+          "grass2",
           "groundDirt",
           "groundStone",
           "groundMountain",
           "groundSand",
           "groundGrass",
           "groundTiled",
-          "groundMountain2",
-          "grass2",
-          "stone"
+          "groundMountain2"
         ]
       }
     },
