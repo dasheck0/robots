@@ -16,7 +16,9 @@ directory. This will install required dependencies (i.e. gulp). Then
 run `gulp transpile minify` to create the `dist` directory, which will
 contain the games sources. You can verify that the required space does not
 exceed 500 KB by running `gulp calculateSize`. Then open the `index.html`
-and the game should start.
+and the game should start. If you do not see any of this files, then 
+checkout the develop branch. The master branch will likely contain only
+the files allowed in the hackathon, since we need to meet the 500 KB limit.
 
 ### Objective
 
@@ -24,6 +26,23 @@ Robots is a game where you control a robot and try to survive as long as
 you can. Other robots will spawn and attack you. But fear not! Dodge 
 their bullets and fire your own to destroy them and gain loot and other 
 goodies. These will help to upgrade your robot. 
+
+### Controls
+
+#### Desktop
+
+* Up - Move forwards
+* Down - Move backwards
+* Left - Turn left
+* Right - Turn right
+* Space - Shoot
+* Shift - Show ingame hud
+
+#### Mobile
+
+In the bottom left you have dpad, which works like you would expect.
+In the bottom right you have two buttons. The right one, will shoot if you 
+press it and the left one will show the hud.
 
 ### Features
 
@@ -180,16 +199,18 @@ optimizations done, but again, this was a hackathon. So bear with me!
 
 I am from Germany and involved with programming for almost 15 years. I
 actually started with developing games back in the days with C++ and OpenGL,
-before switching to Irrlicht 3D, Unity 3D and finally PhaserJS. So far
-PhaserJS gave me the best experience, since it is easy to understand
-and extremly powerful letting me completely focus on the actual game. 
-Projects with the previously mentioned engines were never completed, since
+before switching to Irrlicht 3D (still C++), Unity 3D (C#) and finally 
+[PhaserJS](https://phaser.io/) (Javascript). So far [PhaserJS](https://phaser.io/) 
+gave me the best experience, since it is easy to understand
+and extremely powerful letting me completely focus on the actual game. 
+My projects with the previously mentioned engines were never completed, since
 I got stuck in patching the engine or building missing parts 
 (i.e. gamestates, object pooling, ...). 
 
-This is the first bigger game I finished. It will be released on itch.io (TODO add link!). 
-Any feedback is appreciated. You can contact my via twitter, email or provide the feedback directly via itch.io.
-Thanks for reading, playing and feedbacking!
+This is the first bigger game I finish and I am really glad that I did. 
+It will be released on [itch.io](https://dasheck.itch.io/bots). 
+Any feedback is appreciated. You can contact my via [twitter](https://twitter.com/dasheck), [email](mailto:stefan@rpdev.net) or provide the feedback directly via [itch](https://dasheck.itch.io/bots).
+Thanks for reading, playing and giving feedback!
 
 ## License
 
