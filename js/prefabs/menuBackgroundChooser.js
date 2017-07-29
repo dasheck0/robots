@@ -9,6 +9,8 @@ Bots.MenuBackgroundChooser = function (state, name, position, properties) {
 
     this.selectedTile = null;
     this.backgrounds = [];
+    let selectedTile = null;
+
     properties.backgrounds.forEach((key, index) => {
         const spriteProperties = {
             key,
@@ -20,8 +22,13 @@ Bots.MenuBackgroundChooser = function (state, name, position, properties) {
             index: index
         };
 
+
         const selectableSprite = new Bots.SelectableSprite(state, key, position, spriteProperties);
         this.backgrounds.push(selectableSprite);
+
+        if (Bots.background === key) {
+            selectedTile = selectableSprite;
+        }
     });
 
     this.backgrounds.forEach((background, index) => {
@@ -30,7 +37,7 @@ Bots.MenuBackgroundChooser = function (state, name, position, properties) {
         background.y -= Math.trunc(index / properties.columns) * (background.width + properties.spacing);
     });
 
-    this.onTileSelected(this.backgrounds[0]);
+    this.onTileSelected(selectedTile === null ? this.backgrounds[0] : selectedTile);
 }
 
 Bots.MenuBackgroundChooser.prototype = Object.create(Bots.Prefab.prototype);

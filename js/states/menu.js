@@ -127,6 +127,7 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
     if (button.name === 'startButton') {
         const content = this.game.cache.getText('level');
         const payload = JSON.parse(content);
+        Bots.background = this.backgroundChooser.selectedTile.properties.key;
         payload.prefabs.robotSpawner.properties.spawnKey = this.chooser.getChosenRobot().properties.secondKey;
         payload.prefabs.background.properties.key = this.backgroundChooser.selectedTile.properties.key;
 
@@ -138,6 +139,7 @@ Bots.Menu.prototype.onButtonPressed = function (button) {
     if (button.name === 'informationButton') {
         const content = this.game.cache.getText('credits');
         const payload = JSON.parse(content);
+        Bots.background = this.backgroundChooser.selectedTile.properties.key;
         payload.prefabs.background.properties.key = this.backgroundChooser.selectedTile.properties.key;
 
         Bots.humanRobotKey = this.chooser.getChosenRobot().properties.secondKey;

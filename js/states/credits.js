@@ -67,6 +67,7 @@ Bots.Credits.prototype.onButtonPressed = function (button) {
     if (button.name === 'menuButton') {
         const content = this.game.cache.getText('menu');
         const payload = JSON.parse(content);
+        payload.prefabs.background.properties.key = Bots.background;
         this.game.state.start('loading', true, false, payload, 'menu');
     }
 }

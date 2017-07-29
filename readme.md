@@ -82,8 +82,6 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 ### Important
 
 * Add more robot ai types (timid, circeling, random) -> https://loonride.com/learn/phaser/slither-io-part-3 ?
-* Add help for minimap!
-* Show hud in the first game or a hint so that the player knows how to show it
 
 ### Nice to have
 
@@ -103,6 +101,8 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ### Done
 
+* ~~Add help for minimap!~~
+* ~~Show hud in the first game or a hint so that the player knows how to show it~~
 * ~~Do not spawn boss continuously and place warning when he appears (with warning symbol, flashing screen and shaking)~~
 * ~~Revamp damage calculation~~
 * ~~Atk, Def, Spd, Health fixed values based on chosen robot (yellow -> good def)~~

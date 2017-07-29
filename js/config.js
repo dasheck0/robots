@@ -15,3 +15,4 @@ Bots.minimapPadding = new Phaser.Point(16, 16);
 Bots.killCount = 0;
 Bots.deathCount = 0;
 Bots.soundsEnabled = false;
+Bots.background = '';
