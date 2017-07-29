@@ -553,8 +553,8 @@
         "shadow": true,
         "spacing": 16,
         "backgrounds": [
-          "stone",
           "grass2",
+          "stone",
           "groundDirt",
           "groundStone",
           "groundMountain",
