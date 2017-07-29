@@ -381,14 +381,15 @@
         "group": "credits",
         "fixedToCamera": true,
         "style": {
-          "font": "30pt Arial",
+          "font": "25pt Arial",
           "fill": "#ffffff",
           "align": "center"
         },
         "anchor": {
           "x": 0.5,
           "y": 0.5
-        }
+        },
+        "shadow": true
       }
     },
     "text": {
@@ -398,12 +399,12 @@
         "y": 48
       },
       "properties": {
-        "text": "This is my contribution for the 2017 Phaser hackathon held by Zenva. The objective was to create a fun game using only the Phaser game engine and a predefined based of assets. Furthermore you only had 500 KB of space for the whole game.\n\nMy take was a game heavily inspired by Slither.io called Bots.io. You are a robot driving an a huge world loaded with other robots with the same goal - killing each other. Dive into the vivid world of Bots.io and claim your place!\n\nAnyway, this challenge was real fun! I want to thank Zenva for hosting such a hackathon to begin with. Furthermore I want to thank all people I took the assets from. Thore are listed below with the respective assets I used from them. And finally I want to thank my wife, who immensely supported my in my endeavour by not only actively playing and testing but also by understanding and maintaining her patience. I love you!",
+        "text": "This is my contribution for the 2017 Phaser hackathon hosted by Zenva. The objective was to create a fun game using only the Phaserjs game engine and a predefined set of assets. Furthermore you only had 500 KB of space for the whole game.\n\nMy take was a game heavily inspired by Slither.io and is called Bots. You are a robot driving in a huge world packed with other robots with the same goal - killing each other. Dive into the vivid world of Bots and claim your place!\n\nAnyway, this challenge was real fun! I want to thank Zenva for hosting such a hackathon to begin with. Furthermore I want to thank all people I took the assets from. Those are listed below with the respective assets I used from them. And finally I want to thank my wife, who immensely supported me in my endeavour by not only actively playing and testing the game but also by understanding and maintaining her patience. I love you!",
         "group": "credits",
         "fixedToCamera": true,
         "lineSpacing": -5,
         "style": {
-          "font": "8pt Arial",
+          "font": "10pt Arial",
           "fill": "#ffffff",
           "align": "left",
           "wordWrap": true,
@@ -412,7 +413,8 @@
         "anchor": {
           "x": 0,
           "y": 0
-        }
+        },
+        "shadow": true
       }
     },
     "thankYouText": {
@@ -436,14 +438,15 @@
         "anchor": {
           "x": 0.5,
           "y": 0
-        }
+        },
+        "shadow": true
       }
     },
     "creditsItemSpawner": {
       "type": "creditsItemSpawner",
       "position": {
         "x": 0,
-        "y": 220
+        "y": 280
       },
       "properties": {
         "group": "spawners",
