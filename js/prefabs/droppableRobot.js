@@ -265,3 +265,9 @@ Bots.DroppableRobot.prototype.fire = function () {
         this.weapon.fire();
     }
 }
+
+Bots.DroppableRobot.prototype.applySpeedIncrease = function () {
+    this.properties.rotationSpeed = this.properties.speed / 17;
+    this.properties.maxSpeed = this.properties.speed * 2.5;
+    this.body.maxVelocity.setTo(this.boss ? 100 : this.properties.maxSpeed);
+}

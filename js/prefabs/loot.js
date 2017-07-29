@@ -13,6 +13,10 @@ Bots.Loot = function (state, name, position, properties) {
         this.properties.robot.properties[this.properties.type] = this.properties.maxValue;
     }
 
+    if (this.properties.type === 'speed') {
+        this.properties.robot.applySpeedIncrease();
+    }
+
     if (this.properties.robot.human) {
         // update hud
         const tweenColor = this.properties.amount >= 0 ? '#00ff00' : '#ff0000';
