@@ -30,40 +30,40 @@ Bots.RobotSpawner.prototype.createObject = function (name, position) {
 
 Bots.RobotSpawner.prototype.robotStats = function () {
     switch (this.properties.spawnKey) {
-        case 'robot3Dblue':
+        case 'robot3Dred':
             return {
-                attack: 34,
-                defense: 60,
-                speed: 70,
-                health: 150,
-                maxHealth: 150
+                attack: 70,
+                defense: 70,
+                speed: 90,
+                health: 200,
+                maxHealth: 200
             };
 
         case 'robot3Dgreen':
             return {
                 attack: 50,
-                defense: 20,
-                speed: 90,
-                health: 100,
-                maxHealth: 100
+                defense: 50,
+                speed: 80,
+                health: 150,
+                maxHealth: 150
             };
 
-        case 'robot3Dred':
+        case 'robot3Dyellow':
             return {
-                attack: 50,
-                defense: 50,
+                attack: 40,
+                defense: 45,
                 speed: 70,
                 health: 120,
                 maxHealth: 120
             };
 
-        case 'robot3Dyellow':
+        case 'robot3Dblue':
             return {
-                attack: 28,
-                defense: 75,
-                speed: 50,
-                health: 230,
-                maxHealth: 230
+                attack: 40,
+                defense: 40,
+                speed: 65,
+                health: 110,
+                maxHealth: 110
             };
 
         default:

@@ -182,6 +182,7 @@
     "spawners",
     "shadows",
     "robots",
+    "robotTexts",
     "logo",
     "chooser",
     "selectables",
@@ -202,6 +203,94 @@
           "height": 360
         },
         "fixedToCamera": true
+      }
+    },
+    "redRobotMovingText": {
+      "type": "text",
+      "position": {
+        "x": 0,
+        "y": -92
+      },
+      "properties": {
+        "text": "Easy",
+        "group": "robotTexts",
+        "fixedToCamera": true,
+        "style": {
+          "font": "18pt Arial",
+          "fill": "#ffffff",
+          "align": "center"
+        },
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "shadow": true
+      }
+    },
+    "greenRobotMovingText": {
+      "type": "text",
+      "position": {
+        "x": 0,
+        "y": -92
+      },
+      "properties": {
+        "text": "Medium",
+        "group": "robotTexts",
+        "fixedToCamera": true,
+        "style": {
+          "font": "18pt Arial",
+          "fill": "#ffffff",
+          "align": "center"
+        },
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "shadow": true
+      }
+    },
+    "yellowRobotMovingText": {
+      "type": "text",
+      "position": {
+        "x": 0,
+        "y": -92
+      },
+      "properties": {
+        "text": "Hard",
+        "group": "robotTexts",
+        "fixedToCamera": true,
+        "style": {
+          "font": "18pt Arial",
+          "fill": "#ffffff",
+          "align": "center"
+        },
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "shadow": true
+      }
+    },
+    "greyRobotMovingText": {
+      "type": "text",
+      "position": {
+        "x": 0,
+        "y": -92
+      },
+      "properties": {
+        "text": "Very hard",
+        "group": "robotTexts",
+        "fixedToCamera": true,
+        "style": {
+          "font": "18pt Arial",
+          "fill": "#ffffff",
+          "align": "center"
+        },
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "shadow": true
       }
     },
     "logoBulletLeft": {

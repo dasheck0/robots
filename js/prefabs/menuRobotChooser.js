@@ -9,7 +9,7 @@ Bots.MenuRobotChooser = function (state, name, position, properties) {
 
     this.index = 0;
     this.robots = [];
-    properties.robots.forEach((name) => {
+    properties.robots.forEach((name, index) => {
         const robot = getMemberByName(this.state.groups[properties.pool], name)
         if (robot) {
             this.robots.push(robot);
@@ -17,6 +17,15 @@ Bots.MenuRobotChooser = function (state, name, position, properties) {
             robot.alpha = 0;
             robot.x = position.x;
             robot.y = position.y;
+
+            console.log("fjknsd", `${name}Text`);
+
+            const text = getMemberByName(this.state.groups.robotTexts, `${name}Text`);
+            console.log("tet", text);
+            if (text) {
+                console.log("Adding it");
+                robot.addChild(text);
+            }
         }
     });
 }

@@ -8,6 +8,7 @@ Bots.Menu = function () {
 
     this.prefabClasses = {
         'sprite': Bots.Prefab.prototype.constructor,
+        'text': Bots.TextPrefab.prototype.constructor,
         'animatedSprite': Bots.AnimatedSprite.prototype.constructor,
         'tileSprite': Bots.TileSprite.prototype.constructor,
         'button': Bots.Button.prototype.constructor,

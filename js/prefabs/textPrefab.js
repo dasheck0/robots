@@ -39,6 +39,10 @@ Bots.TextPrefab = function (state, name, position, properties) {
     if (properties.lineSpacing) {
         this.lineSpacing = properties.lineSpacing;
     }
+
+    if (properties.shadow) {
+        this.setShadow(2, 2, 'rgba(0,0,0,0.5)', 0);
+    }
 };
 
 Bots.TextPrefab.prototype = Object.create(Phaser.Text.prototype);
