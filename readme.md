@@ -10,7 +10,7 @@ could be used and that the complete game must not exceed 500 KB of disk space.
 
 ### Installation
 
-To create the games distributin folder you have to setup the build
+To create the games dist folder you have to setup the build
 pipeline. This is as easy as running `npm install` on the projects 
 directory. This will install required dependencies (i.e. gulp). Then 
 run `gulp transpile minify` to create the `dist` directory, which will
@@ -75,18 +75,15 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ### Crucial
 
-* Tweaking game parameters
-* Minify assets
 * Check licenses
 
 ### Important
-
-* Add more robot ai types (timid, circeling, random) -> https://loonride.com/learn/phaser/slither-io-part-3 ?
 
 ### Nice to have
 
 ### Not for hackathon
 
+* Add more robot ai types (timid, circeling, random)
 * Add consumables - invisible, mirror, stun enemies,
 * Add randomly placed obstacles (destroyable and not destroyable)
 * Add mines as secondary weapons and add camera shake for explosion
@@ -101,6 +98,8 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ### Done
 
+* ~~Minify assets~~
+* ~~Tweaking game parameters~~
 * ~~Add help for minimap!~~
 * ~~Show hud in the first game or a hint so that the player knows how to show it~~
 * ~~Do not spawn boss continuously and place warning when he appears (with warning symbol, flashing screen and shaking)~~
@@ -128,6 +127,18 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 * ~~Add explosion tweens and scorch marks after killing a robot~~
 * ~~Add tracks to robot for the last 100 meters~~
 
+## Considerations
+
+This game was developed as part of a hackathon. Keep that in mind. The code
+and its structure does not need to apply to the highest quality standards
+and this game might contain bugs. If you have feedback to both see the about me
+section to find out how you can get in contact with me to actually tell me
+your feedback. 
+
+While the game runs on 60 fps on my machine it does not need to do so on 
+yours (especially when your device is a mobile device). There are many
+objects, which need to be rendered and calculated. There can be many 
+optimizations done, but again, this was a hackathon. So bear with me!
 
 ## Used assets
 
@@ -164,6 +175,21 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 * [Bomb Explosion Animation](https://opengameart.org/content/bomb-explosion-animation)
 * [LCP Terrain Pack](https://opengameart.org/content/lpc-terrain-repack)
 * [2d Lost Garden Zelda style tiles resized to 32x32 with additions](https://opengameart.org/content/2d-lost-garden-zelda-style-tiles-resized-to-32x32-with-additions)
+
+## About me
+
+I am from Germany and involved with programming for almost 15 years. I
+actually started with developing games back in the days with C++ and OpenGL,
+before switching to Irrlicht 3D, Unity 3D and finally PhaserJS. So far
+PhaserJS gave me the best experience, since it is easy to understand
+and extremly powerful letting me completely focus on the actual game. 
+Projects with the previously mentioned engines were never completed, since
+I got stuck in patching the engine or building missing parts 
+(i.e. gamestates, object pooling, ...). 
+
+This is the first bigger game I finished. It will be released on itch.io (TODO add link!). 
+Any feedback is appreciated. You can contact my via twitter, email or provide the feedback directly via itch.io.
+Thanks for reading, playing and feedbacking!
 
 ## License
 
