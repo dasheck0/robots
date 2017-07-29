@@ -60,37 +60,9 @@
       "type": "image",
       "source": "assets/images/041.png"
     },
-    "ammo_box": {
-      "type": "image",
-      "source": "assets/images/ammo_box.png"
-    },
-    "battery_pack": {
-      "type": "image",
-      "source": "assets/images/battery_pack.png"
-    },
-    "battery_pack_alt": {
-      "type": "image",
-      "source": "assets/images/battery_pack_alt.png"
-    },
-    "blaster": {
-      "type": "image",
-      "source": "assets/images/blaster.png"
-    },
-    "death_skull": {
-      "type": "image",
-      "source": "assets/images/death_skull.png"
-    },
     "jet_pack": {
       "type": "image",
       "source": "assets/images/jet_pack.png"
-    },
-    "kevlar": {
-      "type": "image",
-      "source": "assets/images/kevlar.png"
-    },
-    "lava": {
-      "type": "image",
-      "source": "assets/images/lava.png"
     },
     "lucifer_cannon": {
       "type": "image",
@@ -99,18 +71,6 @@
     "medical_pack": {
       "type": "image",
       "source": "assets/images/medical_pack.png"
-    },
-    "medical_pack_alt": {
-      "type": "image",
-      "source": "assets/images/medical_pack_alt.png"
-    },
-    "reactor": {
-      "type": "image",
-      "source": "assets/images/reactor.png"
-    },
-    "rifle": {
-      "type": "image",
-      "source": "assets/images/rifle.png"
     },
     "shield": {
       "type": "image",
