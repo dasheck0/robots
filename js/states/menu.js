@@ -109,12 +109,6 @@ Bots.Menu.prototype.update = function () {
     this.game.physics.arcade.collide(this.groups.robots);
 }
 
-Bots.Menu.prototype.render = function () {
-    if (Bots.debug) {
-        this.game.debug.text(this.game.time.fps, 2, 14, "#00ff00");
-    }
-}
-
 Bots.Menu.prototype.onButtonPressed = function (button) {
     if (button.name === 'leftButton') {
         this.chooser.showPrevious();

@@ -103,12 +103,6 @@ Bots.Level.prototype.update = function () {
     }
 }
 
-Bots.Level.prototype.render = function () {
-    if (Bots.debug) {
-        this.game.debug.text(this.game.time.fps, 2, 14, "#00ff00");
-    }
-}
-
 Bots.Level.prototype.onButtonPressed = function (button) {
     if (button.name === 'menuButton') {
         const content = this.game.cache.getText('menu');
