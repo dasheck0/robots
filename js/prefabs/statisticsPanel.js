@@ -64,7 +64,20 @@ Bots.StatisticsPanel = function (state, name, position, properties) {
     this.helpText = this.game.add.text(this.topLeft.x + 200, this.topLeft.y + 16, 'Help', this.captionTextStyle());
     this.addChild(this.helpText);
 
-    ['Up\tMove forwards', 'Down\tMove backwards', 'Left\tTurn left', 'Right\tTurn right', 'Space\tShoot', 'Shift\tShow info dialog'].forEach((item, index) => {
+    [
+        'Up\tMove forwards',
+        'Down\tMove backwards',
+        'Left\tTurn left',
+        'Right\tTurn right',
+        'Space\tShoot',
+        'Shift\tShow info dialog',
+        '',
+        'Minimap:',
+        'Blue\tYou',
+        'White\tEnemies',
+        'Red\tBoss',
+        'Green\tChests'
+    ].forEach((item, index) => {
         const text = this.game.add.text(this.topLeft.x + 200, this.topLeft.y + 48 + index * 16, item, this.regularTextStyleWithTabs(52));
         this.addChild(text);
     });
