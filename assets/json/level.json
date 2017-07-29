@@ -16,6 +16,10 @@
       "type": "image",
       "source": "assets/images/grass2_64.png"
     },
+    "warning": {
+      "type": "image",
+      "source": "assets/images/warning.png"
+    },
     "stone": {
       "type": "image",
       "source": "assets/images/stone_64.png"
@@ -290,6 +294,7 @@
     "explosions",
     "loot",
     "hud",
+    "messages",
     "panel"
   ],
   "prefabs": {
@@ -588,8 +593,8 @@
         "pool": "robots",
         "mode": "once",
         "spawnTimeInSeconds": {
-          "min": 0,
-          "max": 1
+          "min": 15,
+          "max": 30
         }
       }
     },
@@ -828,6 +833,18 @@
       },
       "properties": {
         "key": "clickSound"
+      }
+    },
+    "messageSpawner": {
+      "type": "messageSpawner",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "properties": {
+        "pool": "messages",
+        "group": "spawners",
+        "mode": "never"
       }
     }
   }

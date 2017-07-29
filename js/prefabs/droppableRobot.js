@@ -172,7 +172,7 @@ Bots.DroppableRobot.prototype.animateDeath = function () {
             if (this.human) {
                 getMemberByName(this.state.groups.spawners, 'robotSpawner').spawn('robot');
             } else if (this.boss) {
-                getMemberByName(this.state.groups.spawners, 'bossRobotSpawner').spawn('bossRobot');
+                getMemberByName(this.state.groups.spawners, 'bossRobotSpawner').spawn(true);
             }
         }, this);
     }, this);
@@ -269,5 +269,8 @@ Bots.DroppableRobot.prototype.fire = function () {
 Bots.DroppableRobot.prototype.applySpeedIncrease = function () {
     this.properties.rotationSpeed = this.properties.speed / 17;
     this.properties.maxSpeed = this.properties.speed * 2.5;
-    this.body.maxVelocity.setTo(this.boss ? 100 : this.properties.maxSpeed);
+
+    if (this.body) {
+        this.body.maxVelocity.setTo(this.boss ? 100 : this.properties.maxSpeed);
+    }
 }

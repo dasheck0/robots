@@ -40,6 +40,7 @@ Bots.Level = function () {
         'dpad': Bots.DPad.prototype.constructor,
         'control': Bots.Control.prototype.constructor,
         'pauseDialogSpawner': Bots.PauseDialogSpawner.prototype.constructor,
+        'messageSpawner': Bots.MessageSpawner.prototype.constructor,
         'sound': Bots.SoundPrefab.prototype.constructor
     }
 };

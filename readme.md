@@ -81,20 +81,17 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ### Important
 
-* Add randomly placed obstacles (destroyable and not destroyable)
-* Add mines as secondary weapons and add camera shake for explosion
 * Add more robot ai types (timid, circeling, random) -> https://loonride.com/learn/phaser/slither-io-part-3 ?
-* Add consumables - invisible, mirror, stun enemies,  
-* Do not spawn boss continuously and place warning when he appears (with warning symbol, flashing screen and shaking)
-* Revamp damage calculation
 * Add help for minimap!
 * Show hud in the first game or a hint so that the player knows how to show it
-* Atk, Def, Spd, Health fixed values based on chosen robot (yellow -> good def)
 
 ### Nice to have
 
 ### Not for hackathon
 
+* Add consumables - invisible, mirror, stun enemies,
+* Add randomly placed obstacles (destroyable and not destroyable)
+* Add mines as secondary weapons and add camera shake for explosion
 * Scrolling message window (like a ticker)
 * Add more weapon graphics
 * Increase size of robot for the minimap based on kill counter
@@ -106,6 +103,9 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ### Done
 
+* ~~Do not spawn boss continuously and place warning when he appears (with warning symbol, flashing screen and shaking)~~
+* ~~Revamp damage calculation~~
+* ~~Atk, Def, Spd, Health fixed values based on chosen robot (yellow -> good def)~~
 * ~~Add sounds~~
 * ~~Spawn protect~~
 * ~~Robot should emit smoke when on low health (only bosses)~~

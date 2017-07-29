@@ -14,4 +14,4 @@ Bots.minimapHeight = (Bots.minimapWidth * Bots.worldSize.y) / Bots.worldSize.x;
 Bots.minimapPadding = new Phaser.Point(16, 16);
 Bots.killCount = 0;
 Bots.deathCount = 0;
-Bots.soundsEnabled = true;
+Bots.soundsEnabled = false;
