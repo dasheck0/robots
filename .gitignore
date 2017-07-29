@@ -1,8 +1,10 @@
 *.iml
 .idea/
-#gulpfile.js
-dist
-#watch.sh
-#deliver.sh
+gulpfile.js
+#dist
+watch.sh
+deliver.sh
 node_modules
 sketch
+js
+package.json

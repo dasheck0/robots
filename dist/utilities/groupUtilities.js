@@ -1,0 +1,1 @@
+"use strict";var getMemberByName=function(t,n){if(t&&n)return t.filter(function(t){return t.name===n}).list[0]},getHumanRobot=function(t){return t.filter(function(t){return t.human}).list[0]},killFromGroup=function(t,n){t&&(t.kill(),t.destroy(),n.remove(t))};

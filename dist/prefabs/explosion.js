@@ -1,0 +1,1 @@
+"use strict";var Bots=Bots||{};Bots.Explosion=function(o,s,t,e){Bots.Prefab.call(this,o,s,t,e);this.animations.add("explosion");this.animations.play("explosion",25,!1,!0),getMemberByName(this.state.groups.spawners,"soundSpawner").spawn(this,"explosionSound")},Bots.Explosion.prototype=Object.create(Bots.Prefab.prototype),Bots.Explosion.prototype.constructor=Bots.Explosion;
