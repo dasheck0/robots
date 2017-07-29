@@ -147,6 +147,10 @@
       "type": "image",
       "source": "assets/images/flatDark48.png"
     },
+    "uiMenuButton": {
+      "type": "image",
+      "source": "assets/images/flatDark49.png"
+    },
     "crate_01": {
       "type": "image",
       "source": "assets/images/crate_01.png"
@@ -329,15 +333,15 @@
         "fixedToCamera": true,
         "alpha": 1,
         "scale": {
-          "x": 1.5,
-          "y": 1.5
+          "x": 0.75,
+          "y": 0.75
         }
       }
     },
     "uiShootButton": {
       "type": "control",
       "position": {
-        "x": 572,
+        "x": 588,
         "y": 292
       },
       "properties": {
@@ -350,8 +354,29 @@
         "fixedToCamera": true,
         "alpha": 1,
         "scale": {
-          "x": 1.5,
-          "y": 1.5
+          "x": 0.75,
+          "y": 0.75
+        }
+      }
+    },
+    "uiMenuButton": {
+      "type": "control",
+      "position": {
+        "x": 504,
+        "y": 292
+      },
+      "properties": {
+        "group": "hud",
+        "key": "uiMenuButton",
+        "anchor": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "fixedToCamera": true,
+        "alpha": 1,
+        "scale": {
+          "x": 0.75,
+          "y": 0.75
         }
       }
     },
@@ -793,38 +818,6 @@
         }
       }
     },
-    "pauseButton": {
-      "type": "button",
-      "position": {
-        "x": 24,
-        "y": 72
-      },
-      "properties": {
-        "group": "hud",
-        "key": "uiPause",
-        "anchor": {
-          "x": 0.5,
-          "y": 0.5
-        }
-      }
-    },
-    "pauseDialogSpawner": {
-      "type": "pauseDialogSpawner",
-      "position": {
-        "x": 0,
-        "y": 0
-      },
-      "properties": {
-        "key": "",
-        "group": "spawners",
-        "pool": "hud",
-        "mode": "never",
-        "size": {
-          "x": 200,
-          "y": 80
-        }
-      }
-    },
     "statisticsPanel": {
       "type": "statisticsPanel",
       "position": {
@@ -832,7 +825,7 @@
         "y": 0
       },
       "properties": {
-        "key": "groundSand",
+        "key": "",
         "group": "panel",
         "anchor": {
           "x": 0,

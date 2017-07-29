@@ -19,13 +19,16 @@ Bots.Robot = function (state, name, position, properties) {
 
     this.dpad = getMemberByName(this.state.groups.hud, 'uiDPad');
     this.shootButton = getMemberByName(this.state.groups.hud, 'uiShootButton');
+    this.menuButton = getMemberByName(this.state.groups.hud, 'uiMenuButton');
 
     if (this.game.device.desktop) {
         killFromGroup(this.dpad, this.state.groups.hud);
         killFromGroup(this.shootButton, this.state.groups.hud);
+        killFromGroup(this.menuButton, this.state.groups.hud);
 
         this.dpad = null;
         this.shootButton = null;
+        this.menuButton = null;
     }
 };
 
@@ -83,6 +86,12 @@ Bots.Robot.prototype.update = function () {
 
                     if (this.shootButton && this.shootButton.isPressed) {
                         Bots.DroppableRobot.prototype.fire.call(this);
+                    }
+
+                    if (this.menuButton) {
+                        const panel = getMemberByName(this.state.groups.panel, 'statisticsPanel');
+                        panel.show(this.menuButton.isPressed);
+                        panel.update();
                     }
                 }
 
