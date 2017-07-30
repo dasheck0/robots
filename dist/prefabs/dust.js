@@ -1,1 +1,0 @@
-"use strict";var Bots=Bots||{};Bots.Dust=function(t,s,o,e){Bots.Prefab.call(this,t,s,o,e),this.game.add.tween(this).to({alpha:0},5e3,Phaser.Easing.Quartic.In,!0).onComplete.add(function(){this.kill(),this.destroy(),this.state.groups[this.properties.group].remove(this)},this)},Bots.Dust.prototype=Object.create(Bots.Prefab.prototype),Bots.Dust.prototype.constructor=Bots.Dust;

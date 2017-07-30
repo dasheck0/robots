@@ -1,1 +1,0 @@
-"use strict";var sample=function(t,r){var n=Object.assign([],t).filter(function(t){return t!==r});return n[Math.floor(Math.random()*n.length)]};

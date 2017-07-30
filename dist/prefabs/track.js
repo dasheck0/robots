@@ -1,1 +1,0 @@
-"use strict";var Bots=Bots||{};Bots.Track=function(t,o,s,e){Bots.Prefab.call(this,t,o,s,e),this.game.add.tween(this).to({alpha:0},1e3,Phaser.Easing.Quartic.In,!0).onComplete.add(function(){this.kill(),this.destroy(),this.state.groups[this.properties.group].remove(this)},this)},Bots.Track.prototype=Object.create(Bots.Prefab.prototype),Bots.Track.prototype.constructor=Bots.Track;

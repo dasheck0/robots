@@ -1,1 +1,0 @@
-"use strict";var Bots=Bots||{};Bots.Control=function(t,o,s,e){var n=this;Bots.Prefab.call(this,t,o,s,e),this.isPressed=!1,this.inputEnabled=!0,this.events.onInputDown.add(function(){return n.isPressed=!0},this),this.events.onInputUp.add(function(){n.isPressed=!1},this)},Bots.Control.prototype=Object.create(Bots.Prefab.prototype),Bots.Control.prototype.constructor=Bots.Control;
