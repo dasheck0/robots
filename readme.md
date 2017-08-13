@@ -73,10 +73,10 @@ and a basic help as well as a "how to". Never get lost with your HUD!
 
 ## Screenshots
 
-![](https://github.com/dasheck0/robots/blob/develop/art/CapturFiles-20170729_102112.png)
-![](https://github.com/dasheck0/robots/blob/develop/art/CapturFiles-20170729_102158.png)
-![](https://github.com/dasheck0/robots/blob/develop/art/CapturFiles-20170729_102215.png)
-![](https://github.com/dasheck0/robots/blob/develop/art/CapturFiles-20170729_102242.png)
+<img src="https://github.com/dasheck0/robots/blob/develop/art/CapturFiles-20170729_102112.png" width="240">
+<img src="https://github.com/dasheck0/robots/blob/develop/art/CapturFiles-20170729_102158.png" width="240">
+<img src="https://github.com/dasheck0/robots/blob/develop/art/CapturFiles-20170729_102215.png" width="240">
+<img src="https://github.com/dasheck0/robots/blob/develop/art/CapturFiles-20170729_102242.png" width="240">
 
 ## Road map
 
