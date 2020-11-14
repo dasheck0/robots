@@ -194,7 +194,7 @@ Projects with the previously mentioned engines were never completed, since
 I got stuck in patching the engine or building missing parts 
 (i.e. gamestates, object pooling, ...). 
 
-This is the first bigger game I finished. It will be released on itch.io (TODO add link!). 
+This is the first bigger game I finished. You can play it on [itch.io](https://dasheck.itch.io/bots). 
 Any feedback is appreciated. You can contact my via twitter, email or provide the feedback directly via itch.io.
 Thanks for reading, playing and feedbacking!
 
